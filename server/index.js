@@ -21,6 +21,7 @@ app.use(express.json());
 
 //endpoints
 app.get("/api/properties", ctrl.getAllProperties);
+// app.get("/api/properties", ctrl.getPics);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on port ${SERVER_PORT}`);
