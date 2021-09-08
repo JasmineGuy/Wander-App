@@ -1,0 +1,46 @@
+.property-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 35vh;
+  width: 40%;
+  margin: 2rem;
+  border-bottom: 1px solid #dfe0e1;
+  border-top: 1px solid #dfe0e1;
+}
+
+.property-btn {
+  background-color: #ff385c;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/campers.jpeg?alt=media&token=1b8ed736-4a9a-4d42-853a-ecebd260cf5c");
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  border-radius: 32px;
+  border: 2px solid white;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 300px;
+  /* border: 1px solid red; */
+}
+.middle p {
+  margin: 0.25rem;
+  color: gray;
+}
+.line {
+  height: 2px;
+  width: 75px;
+  background-color: #dfe0e1;
+  margin-bottom: 1rem;
+}
+.right {
+  display: flex;
+  width: 20%;
+  height: 300px;
+  /* border: 1px solid red; */
+  justify-content: right;
+  align-items: flex-end;
+}

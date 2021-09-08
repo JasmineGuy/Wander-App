@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
 .title-holder h2 {
   color: #ff385c;
   margin-top: 3.5rem;
@@ -24,7 +29,7 @@
   background-color: black;
   border-radius: 32px;
   height: 100%;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 #treehouses {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/treehouses.jpeg?alt=media&token=7ec5b63d-47c7-4a0e-a5f9-8e8c7dfff755");
