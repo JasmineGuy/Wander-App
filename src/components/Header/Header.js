@@ -1,6 +1,7 @@
 import React from "react";
 import "../Header/Header.css";
 import { NavLink } from "react-router-dom";
+import * as Icon from "react-feather";
 
 const Header = () => {
   return (
@@ -13,11 +14,13 @@ const Header = () => {
           />
         </NavLink>
       </div>
-      <div className="nav-links">
-        <NavLink to="/properties">
-          <h4>View All Properties</h4>
+      <div className="links">
+        <NavLink className="nav-link" to="/properties">
+          <h4>View All</h4>
         </NavLink>
-        <h4>Link 2</h4>
+        <h4>
+          <Icon.User />
+        </h4>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
   font-family: "Roboto", sans-serif;
 }
 .title-holder h2 {
-  color: #dfe0e1;
+  color: gray;
   margin-top: 3.5rem;
   margin-left: 2rem;
 }
@@ -23,13 +23,16 @@
   width: 20%;
   /* margin: auto; */
   margin: 2rem;
-  color: #ff385c;
+  color: gray;
 }
 .category-btn {
   background-color: black;
   border-radius: 32px;
   height: 100%;
   border: 2px solid white;
+}
+.category-btn:hover {
+  cursor: pointer;
 }
 #treehouses {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/treehouses.jpeg?alt=media&token=7ec5b63d-47c7-4a0e-a5f9-8e8c7dfff755");

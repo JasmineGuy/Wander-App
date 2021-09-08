@@ -1,20 +1,3 @@
-/* .splash-container {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/splash.jpeg?alt=media&token=1633e425-beab-4d46-90c4-14cea8e1bec8");
-  background-repeat: no-repeat;
-  height: 1350px;
+.nav-link {
+  text-decoration: none;
 }
-.splash-img {
-  border: 1px solid red;
-}
-.search-bar input {
-  height: 55px;
-  width: 650px;
-  border-radius: 32px;
-  margin: auto;
-} */

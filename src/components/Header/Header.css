@@ -10,29 +10,35 @@
   align-items: center;
   height: 5vh;
   width: 100vw;
-  /* border: 1px solid blue; */
   margin: 2rem;
   color: white;
 }
 .logo-container {
   /* border: 1px solid red; */
   margin: 1rem;
-  /* height: 5vh; */
 }
 .logo-container img {
   margin-top: 1rem;
+  background-size: cover;
   /* border: 1px solid red; */
 }
-.nav-links {
+.links {
   display: flex;
   justify-content: space-around;
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
   margin: 1rem;
   width: 30vw;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
+  color: #ff385c;
+}
+.links:hover {
+  cursor: pointer;
 }
 .nav-link {
   text-decoration: none;
-  color: red;
+  color: #ff385c;
+}
+.nav-link:hover {
+  cursor: pointer;
 }

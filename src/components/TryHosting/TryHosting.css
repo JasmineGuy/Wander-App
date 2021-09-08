@@ -48,3 +48,6 @@
   border: 1px solid transparent;
   color: white;
 }
+.left button:hover {
+  cursor: pointer;
+}
