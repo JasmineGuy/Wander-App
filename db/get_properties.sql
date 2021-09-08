@@ -1,1 +1,3 @@
-SELECT * FROM properties;
+-- SELECT * FROM properties;
+
+SELECT * FROM pictures;

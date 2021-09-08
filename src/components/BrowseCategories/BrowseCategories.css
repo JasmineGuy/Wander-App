@@ -1,0 +1,44 @@
+.title-holder h2 {
+  color: #ff385c;
+  margin-top: 3.5rem;
+  margin-left: 2rem;
+}
+.cat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  /* border: 1px solid red; */
+}
+.cat-holder {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  height: 45vh;
+  width: 20%;
+  /* margin: auto; */
+  margin: 2rem;
+  color: #ff385c;
+}
+.category-btn {
+  background-color: black;
+  border-radius: 32px;
+  height: 100%;
+  border: 2px solid transparent;
+}
+#treehouses {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/treehouses.jpeg?alt=media&token=7ec5b63d-47c7-4a0e-a5f9-8e8c7dfff755");
+  background-size: cover;
+}
+#cabins {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/cabins.jpeg?alt=media&token=53380c80-d727-4dc9-88af-980279e5c78b");
+  background-size: cover;
+}
+#campers {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/campers.jpeg?alt=media&token=1b8ed736-4a9a-4d42-853a-ecebd260cf5c");
+  background-size: cover;
+}
+#domes {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Domes%2F4%2F1.jpeg?alt=media&token=2d70c147-ece5-4875-b80e-32f13f9b45b0");
+  background-size: cover;
+}

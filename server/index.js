@@ -12,6 +12,7 @@ massive({
   ssl: { rejectUnauthorized: false },
 })
   .then((dbInstance) => {
+    console.log("connected to db:");
     app.set("db", dbInstance);
   })
   .catch((err) => console.log(err));

@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .splash-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100vw;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: auto;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/splash.jpeg?alt=media&token=1633e425-beab-4d46-90c4-14cea8e1bec8");
+  background-repeat: no-repeat;
+  height: 1350px;
 }
-
-.App-link {
-  color: #61dafb;
+.splash-img {
+  border: 1px solid red;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.search-bar input {
+  height: 55px;
+  width: 650px;
+  border-radius: 32px;
+  margin: auto;
+} */
