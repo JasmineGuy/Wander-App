@@ -18,6 +18,7 @@ const Header = () => {
         <NavLink className="nav-link" to="/properties">
           <h4>View All</h4>
         </NavLink>
+        <h4>Trip Boards</h4>
         <h4>
           <Icon.User />
         </h4>

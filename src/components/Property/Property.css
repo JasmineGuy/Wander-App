@@ -4,18 +4,20 @@
   justify-content: space-around;
   align-items: center;
   height: 40vh;
-  width: 55vw;
-  margin: 2rem;
+  width: 100%;
   border-bottom: 1px solid #dfe0e1;
   border-top: 1px solid #dfe0e1;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
-
-.property-btn {
+.image-holder {
+  /* border: 1px solid red; */
+}
+.property-card img {
   background-color: #ff385c;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/campers.jpeg?alt=media&token=1b8ed736-4a9a-4d42-853a-ecebd260cf5c");
-  background-size: cover;
   height: 250px;
-  width: 250px;
+  width: 300px;
   border-radius: 32px;
   border: 2px solid white;
 }
@@ -26,8 +28,10 @@
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 300px;
+  height: 250px;
   margin: 0.5rem;
+  padding: 0.25rem;
+  /* border: 1px solid blue; */
 }
 .middle h3 {
   margin-bottom: -0.5px;
@@ -51,10 +55,11 @@
 }
 .right {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
   width: 25%;
   height: 300px;
   align-items: flex-end;
-  color: black;
+  color: #ff385c;
   margin: 0.25rem;
 }

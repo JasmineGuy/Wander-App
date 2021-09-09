@@ -1,40 +1,36 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-
+import React from "react";
+import * as Icon from "react-feather";
 import "../Property/Property.css";
 
-const Property = () => {
-  const [urls, setUrls] = useState([]);
-  useEffect(() => {
-    axios.get("/api/properties").then((res) => {
-      // console.log("res:", res.data);
-      setUrls(res.data[0].urls);
-    });
-  }, []);
+const Property = ({
+  image,
+  name,
+  guests,
+  beds,
+  baths,
+  amen1,
+  amen2,
+  amen3,
+  price,
+}) => {
   return (
     <div className="property-card">
-      <button className="property-btn"></button>
-      <div className="middle">
-        <h3>Property Name</h3>
-        <div className="line"></div>
-        <p>Max Guests</p>
-        <p>Bedrooms</p>
-        <p>Baths</p>
-        <div className="line"></div>
-        <div className="amenities">
-          <p>Amenity 1</p>
-          <p>Amenity 2</p>
-          <p>Amenity 3</p>
-          <p>Amenity 4</p>
-          <p>Amenity 5</p>
-          <p>Amenity 6</p>
-          <p>Amenity 7</p>
-          <p>Amenity 8</p>
-
-          <h4>Rating (# Reviews)</h4>
-        </div>
+      <div className="image-holder">
+        <img alt="property-pic" src={image} />
       </div>
-      <h2 className="right"> $50 /night</h2>
+      <div className="middle">
+        <h3>{name}</h3>
+        <div className="line"></div>
+        <p>Max Guests: {guests}</p>
+        <p>Bedrooms: {beds}</p>
+        <p>Baths: {baths}</p>
+
+        <h4>Rating (# Reviews)</h4>
+      </div>
+      <div className="right">
+        <Icon.Heart />
+        <h2 className="price"> ${price} /night</h2>
+      </div>
     </div>
   );
 };
