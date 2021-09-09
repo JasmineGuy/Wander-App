@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import "../Search/Search.css";
 import * as Icon from "react-feather";
 import axios from "axios";
 
 const Search = () => {
+  const history = useHistory();
   const [userInput, setUserInput] = useState("");
   const [properties, setProperties] = useState([]);
 
@@ -14,10 +16,9 @@ const Search = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+
     console.log("clicked", userInput);
-    axios
-      .post("/api/search", { userInput })
-      .then((res) => setProperties(res.data));
+    history.push(`/properties?query=${userInput}`);
   };
 
   console.log("properties:", properties);

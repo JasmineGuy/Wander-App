@@ -1,8 +1,6 @@
--- SELECT * FROM properties
--- WHERE city 
-
-
- select * from properties 
- where 
- LOWER(city)=LOWER($1) OR 
- LOWER(properties.state)=LOWER($1);
+SELECT * FROM properties
+JOIN pictures
+ON properties.property_id = pictures.property_id
+WHERE 
+LOWER(city)=LOWER($1) OR 
+LOWER(properties.state)=LOWER($1);

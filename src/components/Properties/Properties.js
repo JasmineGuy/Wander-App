@@ -4,6 +4,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import Property from "../Property/Property";
 import Map from "../Map/Map";
 import "../Properties/Properties.css";
@@ -22,15 +23,23 @@ const Properties = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const searchParam = params.get("id");
-    const id = categoryMapping[searchParam];
+    const categoryParam = params.get("id");
+    const searchParam = params.get("query");
+    const id = categoryMapping[categoryParam];
     console.log("id:", id);
     // console.log("in properties");
 
-    if (searchParam) {
+    console.log("s param:", searchParam);
+    console.log("c param:", categoryParam);
+
+    if (categoryParam) {
       axios.get(`/api/properties/${id}`).then((res) => {
         setProperties(res.data);
       });
+    } else if (searchParam) {
+      axios
+        .post("/api/search", { searchParam })
+        .then((res) => setProperties(res.data));
     } else {
       axios.get("/api/properties").then((res) => {
         setProperties(res.data);
@@ -86,6 +95,7 @@ const Properties = () => {
           <Map />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
