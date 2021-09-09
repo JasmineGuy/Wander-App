@@ -12,26 +12,40 @@ module.exports = {
       });
   },
 
-  getCampers: (req, res) => {
-    console.log("INSIDE GET CAMPERS");
-    const dbInstance = req.app.get("db");
-    dbInstance
-      .get_campers()
-      .then((campers) => res.status(200).send(campers))
-      .catch((err) => {
-        res.status(500).send({
-          errorMessage: "Oops it's busted",
-        });
-        console.log(err);
-      });
-  },
+  // getCampers: (req, res) => {
+  //   console.log("INSIDE GET CAMPERS");
+  //   const dbInstance = req.app.get("db");
+  //   dbInstance
+  //     .get_campers()
+  //     .then((campers) => res.status(200).send(campers))
+  //     .catch((err) => {
+  //       res.status(500).send({
+  //         errorMessage: "Oops it's busted",
+  //       });
+  //       console.log(err);
+  //     });
+  // },
   getResults: (req, res) => {
-    console.log("inside controller");
+    // console.log("inside controller");
     let { userInput } = req.body;
     console.log(userInput);
     const dbInstance = req.app.get("db");
     dbInstance
       .get_results([userInput])
       .then((results) => res.status(200).send(results));
+  },
+  getCategory: (req, res) => {
+    // console.log("inside get category");
+    let { id } = req.params;
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .get_category(id)
+      .then((results) => res.status(200).send(results))
+      .catch((err) => {
+        res.status(500).send({
+          errorMessage: "Oops it's busted",
+        });
+        console.log(err);
+      });
   },
 };

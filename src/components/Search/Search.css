@@ -21,6 +21,10 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+
+input {
+  padding-left: 20px;
+}
 .search-btn {
   background-color: #ff385c;
   color: white;
@@ -36,4 +40,5 @@ select:focus {
 }
 .search-btn:hover {
   cursor: pointer;
+  background-color: #f5103a;
 }

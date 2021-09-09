@@ -13,7 +13,7 @@ const BrowseCategories = () => {
   let history = useHistory();
 
   const handleClick = (category) => {
-    console.log("test: ", categoryMapping[category]);
+    // console.log("test: ", categoryMapping[category]);
     history.push(`/properties?id=${category}`);
   };
 
