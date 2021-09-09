@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 import Header from "../Header/Header";
@@ -18,7 +18,7 @@ const categoryMapping = {
 
 const Properties = () => {
   let location = useLocation();
-  let history = useHistory();
+  // let history = useHistory();
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
@@ -71,6 +71,7 @@ const Properties = () => {
               return (
                 <Property
                   key={index}
+                  id={property.property_id}
                   image={property.cover_pic}
                   name={property.name}
                   guests={property.max_guests}

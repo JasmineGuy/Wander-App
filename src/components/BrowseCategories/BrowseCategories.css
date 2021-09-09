@@ -1,12 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap");
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .title-holder h2 {
   color: gray;
   margin-top: 3.5rem;
-  margin-left: 2rem;
+  margin-left: 5rem;
+  font-size: 32px;
+  font-weight: bold;
+  /* border: 1px solid red; */
 }
 .cat-container {
   display: flex;
@@ -18,18 +21,22 @@
 .cat-holder {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* border: 1px solid red; */
   height: 45vh;
   width: 20%;
-  /* margin: auto; */
   margin: 2rem;
   color: gray;
+}
+.cat-holder h3 {
+  margin-left: 1.5rem;
 }
 .category-btn {
   background-color: black;
   border-radius: 32px;
   height: 100%;
   border: 2px solid white;
+  margin: 1rem;
 }
 .category-btn:hover {
   cursor: pointer;

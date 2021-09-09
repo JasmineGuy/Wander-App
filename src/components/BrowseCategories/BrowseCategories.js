@@ -2,18 +2,10 @@ import React from "react";
 import "../BrowseCategories/BrowseCategories.css";
 import { useHistory } from "react-router-dom";
 
-const categoryMapping = {
-  campers: 5,
-  domes: 8,
-  treehouses: 13,
-  cabins: 4,
-};
-
 const BrowseCategories = () => {
   let history = useHistory();
 
   const handleClick = (category) => {
-    // console.log("test: ", categoryMapping[category]);
     history.push(`/properties?id=${category}`);
   };
 

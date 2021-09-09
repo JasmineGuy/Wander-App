@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../Search/Search.css";
 import * as Icon from "react-feather";
-import axios from "axios";
 
 const Search = () => {
   const history = useHistory();
   const [userInput, setUserInput] = useState("");
-  const [properties, setProperties] = useState([]);
+  // const [properties, setProperties] = useState([]);
 
   const handleChange = (string) => {
     // console.log("user input:", string);
@@ -21,7 +20,7 @@ const Search = () => {
     history.push(`/properties?query=${userInput}`);
   };
 
-  console.log("properties:", properties);
+  // console.log("properties:", properties);
 
   return (
     <form className="search-bar" onSubmit={(e) => handleClick(e)}>
