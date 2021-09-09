@@ -20,7 +20,9 @@ const Header = () => {
         </NavLink>
         <h4>Trip Boards</h4>
         <h4>
-          <Icon.User />
+          <div className="circle">
+            <Icon.User />
+          </div>
         </h4>
       </div>
     </div>
