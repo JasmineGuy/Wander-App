@@ -10,13 +10,14 @@
   background-color: white;
   padding: 0.5rem;
   margin: 0.5rem;
+  min-height: 300px;
 }
 .image-holder {
   /* border: 1px solid red; */
 }
 .property-card img {
   background-color: #ff385c;
-  height: 250px;
+  min-height: 250px;
   width: 300px;
   border-radius: 32px;
   border: 2px solid white;
