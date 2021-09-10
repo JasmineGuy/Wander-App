@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
-import Header from "../Header/Header";
+import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Property from "../Property/Property";
 import Map from "../Map/Map";
@@ -63,7 +63,7 @@ const Properties = () => {
 
   return (
     <div>
-      <Header />
+      <Header2 />
       <div className="properties-display">
         <div className="list">
           {properties && properties.length ? (

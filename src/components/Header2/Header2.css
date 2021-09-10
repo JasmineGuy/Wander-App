@@ -8,17 +8,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  height: 10vh;
   width: 100vw;
-  margin-top: 2rem;
+  /* padding: 1rem; */
   color: white;
+  /* border: 1px solid red; */
 }
 .logo-container {
   /* border: 1px solid red; */
-  /* margin: 1rem; */
+  margin: 1rem;
 }
 .logo-container img {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   background-size: cover;
   /* border: 1px solid red; */
 }
@@ -26,7 +27,7 @@
   display: flex;
   justify-content: space-around;
   /* border: 1px solid gold; */
-  margin: 1rem;
+  /* margin: 1rem; */
   width: 30vw;
   font-family: "Roboto", sans-serif;
   text-decoration: none;

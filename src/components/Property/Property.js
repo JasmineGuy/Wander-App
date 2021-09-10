@@ -33,9 +33,9 @@ const Property = ({
         </div>
         <div className="middle-row">
           <ul>
-            <li>Max Guests: {guests} </li>
-            <li> Bedrooms: {beds} </li>
-            <li> Baths: {baths}</li>
+            <li>{guests} Guests</li>
+            <li> {beds} Beds</li>
+            <li> {baths} Baths</li>
           </ul>
         </div>
         <div className="bottom-row">

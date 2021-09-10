@@ -1,25 +1,40 @@
+.listing-container {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+}
 .title {
-  height: 3vh;
-  /* width: 95%; */
-  margin: 2.5rem;
-
+  height: 5vh;
+  margin-bottom: 1rem;
   /* border: 1px solid red; */
 }
 .ratings-wrapper {
   display: flex;
-  margin: 1.5rem;
-  /* width: 30%; */
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 40vw;
+  height: 5vh;
   /* border: 1px solid red; */
 }
+.ratings-wrapper h5 {
+  margin: 0.5rem;
+}
+
+/* photo styles */
 .images-container {
   height: 60vh;
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
   border-radius: 32px;
-  margin: 1.5rem;
+  margin: auto;
+  display: none;
+  /* border: 1px solid red; */
 }
 .left-side {
   width: 60%;
@@ -27,7 +42,6 @@
 .feature-img {
   height: 500px;
   width: 650px;
-  /* margin-left: -15px; */
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
   /* border: 1px solid red; */
@@ -43,4 +57,93 @@
   width: 350px;
   height: 250px;
   margin: 0.25rem;
+}
+
+/* host info styles */
+.host-info {
+  margin: 1rem;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 1rem; */
+  padding: 2rem;
+  /* border: 1px solid red; */
+}
+.pic {
+  width: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.pic-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  /* border: 1px solid blue; */
+  /* width: 100%;
+  height: 75px; */
+}
+.pic-circle img {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  /* border: 1px solid red; */
+}
+
+/* bullets styles */
+.bullets {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  width: 40vw;
+  margin: 1rem;
+}
+.first,
+.second,
+.third {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+}
+.description {
+  margin: 1rem;
+  width: 40vw;
+}
+.amenities {
+  margin: 1rem;
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid gray;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+}
+.offerings {
+  border: 1px solid red;
+  width: 40vw;
+  margin: 1rem;
+
+  /* padding: 2rem; */
+  /* margin: */
+}
+.list-container {
+  display: flex;
+  border: 2px solid green;
+}
+.left-list,
+.right-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
 }

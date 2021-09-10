@@ -15,7 +15,7 @@
   border-top: 1px solid #dfe0e1;
   background-color: white;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   min-height: 300px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -32,7 +32,10 @@
 .property-card img {
   background-color: #ff385c;
   min-height: 250px;
-  max-width: 350px;
+  min-width: 350px;
+  width: 350px;
+  height: 250px;
+  /* max-height: 250px; */
   border-radius: 32px;
 }
 .property-card img:hover {
