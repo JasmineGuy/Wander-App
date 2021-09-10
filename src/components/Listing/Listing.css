@@ -33,7 +33,7 @@
   align-items: center;
   border-radius: 32px;
   margin: auto;
-  display: none;
+  /* display: none; */
   /* border: 1px solid red; */
 }
 .left-side {
@@ -114,36 +114,84 @@
   padding: 1rem;
 }
 .description {
-  margin: 1rem;
+  margin: 2rem;
   width: 40vw;
 }
 .amenities {
   margin: 1rem;
   width: 40vw;
-  height: 30vh;
+  /* height: 35vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
   border-top: 1px solid gray;
   flex-wrap: wrap;
   /* border: 1px solid red; */
 }
 .offerings {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 40vw;
   margin: 1rem;
-
-  /* padding: 2rem; */
-  /* margin: */
 }
 .list-container {
   display: flex;
-  border: 2px solid green;
+  justify-content: right;
+  align-items: center;
+  /* border: 2px solid green; */
+  width: 100%;
+  margin: 1rem;
 }
 .left-list,
 .right-list {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+}
+.amen {
+  display: flex;
+  margin: 0.8rem;
+}
+/* review styles */
+
+.reviews {
+  height: 40vh;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+.review-title {
+  margin: 1rem;
+}
+.split {
+  /* border: 1px solid red; */
+  display: flex;
+  position: relative;
+}
+.booking-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* border: 1px solid blue; */
+  width: 100%;
+  position: sticky;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 32px;
+  height: 300px;
+  width: 400px;
+  border: 2px solid gray;
+  background-color: white;
+  /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12); */
+}
+
+input {
+  height: 60px;
+  border-radius: 12px;
 }

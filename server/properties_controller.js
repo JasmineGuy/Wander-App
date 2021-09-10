@@ -10,7 +10,7 @@ module.exports = {
       });
   },
   getProperty: (req, res) => {
-    console.log("in listing controller!");
+    // console.log("in listing controller!");
     let { id } = req.params;
     const dbInstance = req.app.get("db");
     dbInstance

@@ -1,0 +1,29 @@
+.things-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  height: 40vh;
+}
+.top-row {
+  margin: 1rem;
+}
+.btm-row {
+  display: flex;
+  justify-content: space-around;
+}
+.ttk-row {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  /* margin: 0.25rem; */
+  /* padding: 1rem; */
+  /* justify-content: space-around; */
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 1rem;
+  line-height: 3rem;
+}
