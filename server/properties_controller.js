@@ -15,7 +15,7 @@ module.exports = {
     const dbInstance = req.app.get("db");
     dbInstance
       .get_property(id)
-      .then((listing) => res.status(200).send(listing))
+      .then((listing) => res.status(200).send(listing[0]))
       .catch((err) => {
         res.status(500).send({
           errorMessage: "Oops it's busted",

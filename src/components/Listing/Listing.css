@@ -33,7 +33,7 @@
   align-items: center;
   border-radius: 32px;
   margin: auto;
-  /* display: none; */
+  display: none;
   /* border: 1px solid red; */
 }
 .left-side {
@@ -96,7 +96,11 @@
   height: 75px;
   /* border: 1px solid red; */
 }
-
+.text-row-2 {
+  display: flex;
+  width: 10vw;
+  justify-content: space-between;
+}
 /* bullets styles */
 .bullets {
   display: flex;
