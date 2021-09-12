@@ -6,7 +6,7 @@
   height: 60vh;
 }
 .top-row {
-  margin: 1rem;
+  margin: 3rem;
 }
 .btm-row {
   display: flex;
@@ -23,7 +23,11 @@
 .column {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin: 1rem;
+  width: 35%;
+  margin: 3rem;
   line-height: 3rem;
+}
+ion-icon {
+  font-size: 28px;
+  margin-right: 0.5rem;
 }

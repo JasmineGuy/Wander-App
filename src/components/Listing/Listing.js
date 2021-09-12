@@ -9,6 +9,35 @@ import Skeleton from "react-loading-skeleton";
 
 import ThingsToKnow from "../ThingsToKnow/ThingsToKnow";
 
+const categoryMapping = {
+  Backyard: "leaf-outline",
+  Bar: "beer-outline",
+  "BBQ Grill": "fast-food-outline",
+  "Beach Access": "boat-outline",
+  Breakfast: "cafe-outline",
+  "Dedicated Workspace": "desktop-outline",
+  Firepit: "bonfire-outline",
+  "Free Parking": "car-outline",
+  Hammock: "bed-outline",
+  "Hot Tub": "water-outline",
+  "Indoor Fireplace": "flame-outline",
+  Keypad: "key-outline",
+  Kitchen: "restaurant-outline",
+  "Lake Access": "boat-outline",
+  Lockbox: "lock-closed-outline",
+  "Long-Term Stays Allowed": "calendar-number-outline",
+  "Luggage Drop-off": "briefcase-outline",
+  "Patio or Balcony": "cloudy-night-outline",
+  "Pets Allowed": "paw-outline",
+  Pool: "fish-outline",
+  "Private Entrance": "footsteps-outline",
+  "Self Check-in": "business-outline",
+  "Suitable for Events": "balloon-outline",
+  "Trail Access": "bicycle-outline",
+  Waterfront: "water-outline",
+  Wifi: "wifi-outline",
+};
+
 const Listing = () => {
   const location = useLocation();
   const [property, setProperty] = useState();
@@ -24,10 +53,15 @@ const Listing = () => {
     });
   }, [location.pathname, location.search]);
 
-  // console.log("location:", location);
-  // console.log("location.search:", location.search);
-  // console.log("property:", property);
-  // console.log(property[0].name);
+  const renderAmenity = (amenity) => {
+    return (
+      <ion-icon
+        size="medium"
+        className="amen-icons"
+        name={categoryMapping[amenity]}
+      ></ion-icon>
+    );
+  };
 
   return (
     <div>
@@ -51,27 +85,19 @@ const Listing = () => {
           </div>
           <div className="images-container">
             <div className="left-side">
-              <img className="feature-img" alt="feature-img" src="" />
+              <img
+                className="feature-img"
+                alt="feature-img"
+                src={property.cover_pic}
+              />
             </div>
             <div className="middle">
-              <img
-                alt="feature-img"
-                src="https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Shipping%20Containers%2F1%2F2.jpeg?alt=media&token=931933bb-919e-4c57-b441-e5437ccf2513"
-              />
-              <img
-                alt="feature-img"
-                src="https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Shipping%20Containers%2F1%2F3.jpeg?alt=media&token=80f23afc-68a3-4a80-8e2b-c53f1c5a0073"
-              />
+              <img alt="feature-img" src={property.urls[1]} />
+              <img alt="feature-img" src={property.urls[2]} />
             </div>
             <div className="right-side">
-              <img
-                alt="feature-img"
-                src="https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Shipping%20Containers%2F1%2F4.jpeg?alt=media&token=35c727e7-257d-42d0-9c9c-0172eedab219"
-              />
-              <img
-                alt="feature-img"
-                src="https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Shipping%20Containers%2F1%2F5.jpeg?alt=media&token=d4ccf2dc-bbc2-427e-8cf3-fbd4ccdb331f"
-              />
+              <img alt="feature-img" src={property.urls[3]} id="top-right" />
+              <img alt="feature-img" src={property.urls[4]} id="bottom-right" />
             </div>
           </div>
           <div className="split">
@@ -121,37 +147,38 @@ const Listing = () => {
               <div className="list-container">
                 <div className="left-list">
                   <div className="amen">
-                    <Icon.Home />
+                    {renderAmenity(property.amen_1)}
                     <p>{property.amen_1}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Key />
+                    {renderAmenity(property.amen_2)}
                     <p>{property.amen_2}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Award />
+                    {renderAmenity(property.amen_3)}
                     <p>{property.amen_3}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Home />
+                    {renderAmenity(property.amen_4)}
+
                     <p>{property.amen_4}</p>
                   </div>
                 </div>
                 <div className="right-list">
                   <div className="amen">
-                    <Icon.Home />
+                    {renderAmenity(property.amen_5)}
                     <p>{property.amen_5}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Key />
+                    {renderAmenity(property.amen_6)}
                     <p>{property.amen_6}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Award />
+                    {renderAmenity(property.amen_7)}
                     <p>{property.amen_7}</p>
                   </div>
                   <div className="amen">
-                    <Icon.Home />
+                    {renderAmenity(property.amen_8)}
                     <p>{property.amen_8}</p>
                   </div>
                 </div>
@@ -168,7 +195,7 @@ const Listing = () => {
               </div>
             </div>
           </div>
-          <p>calendar</p>
+          {/* <p>calendar</p> */}
           <div className="reviews">
             <div className="review-title">
               <h2>Reviews</h2>
@@ -179,7 +206,7 @@ const Listing = () => {
               : "Be the first to review this property."} */}
             </div>
           </div>
-          <p>prop map</p>
+          {/* <p>prop map</p> */}
           <ThingsToKnow />
         </div>
       ) : (

@@ -9,6 +9,7 @@
     "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "ionicons": "^5.5.3",
     "massive": "^6.10.0",
     "nodemon": "^2.0.12",
     "react": "^17.0.2",

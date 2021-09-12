@@ -12,39 +12,34 @@ const ThingsToKnow = () => {
         <div className="column">
           <h3>House Rules</h3>
           <div className="ttk-row">
-            <Icon.Clock />
+            <ion-icon name="time-outline"></ion-icon>
             <p> Check-in: After 4:00 PM</p>
           </div>
           <div className="ttk-row">
-            <Icon.Clock />
+            <ion-icon name="timer-outline"></ion-icon>
             <p> Check-out: 11:00 AM</p>
           </div>
           <div className="ttk-row">
-            <Icon.Unlock />
+            <ion-icon name="bag-check-outline"></ion-icon>
             <p>Self check-in with smart lock</p>
           </div>
           <div className="ttk-row">
-            <Icon.Slash />
+            <ion-icon name="logo-no-smoking"></ion-icon>
             <p>No smoking</p>
           </div>
         </div>
         <div className="column">
           <h3>Health & Safety</h3>
           <div className="ttk-row">
-            <Icon.Thermometer />
-            <p>Social-distancing and COVID-19 guidelines apply</p>
+            <ion-icon name="medkit-outline"></ion-icon>
+            <p>COVID-19 guidelines apply</p>
           </div>
           <div className="ttk-row">
-            <Icon.Video />
+            <ion-icon name="videocam-outline"></ion-icon>
             <p>Security camera/recording device</p>
           </div>
           <div className="ttk-row">
-            <Icon.AlertCircle />
-
-            <p>Carbon Monoxide alarm</p>
-          </div>
-          <div className="ttk-row">
-            <Icon.AlertTriangle />
+            <ion-icon name="alert-circle-outline"></ion-icon>
             <p>Smoke alarm</p>
           </div>
         </div>
@@ -52,8 +47,8 @@ const ThingsToKnow = () => {
           <h3>Cancellation Policy</h3>
 
           <div className="ttk-row">
-            <Icon.PlusCircle />
-            <p>Add your trip to get the cancellation details</p>
+            <ion-icon name="hand-right-outline"></ion-icon>
+            <p>Cancellation details</p>
           </div>
         </div>
       </div>

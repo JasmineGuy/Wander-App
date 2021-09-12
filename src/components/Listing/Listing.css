@@ -2,6 +2,7 @@
   margin: 5rem;
   display: flex;
   flex-direction: column;
+  width: 75%;
 }
 .top {
   display: flex;
@@ -27,20 +28,21 @@
 /* photo styles */
 .images-container {
   height: 60vh;
-  width: 70%;
+  width: 78%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 32px;
-  margin: auto;
-  display: none;
+  /* margin: auto; */
+  /* display: none; */
   /* border: 1px solid red; */
 }
 .left-side {
   width: 60%;
 }
 .feature-img {
-  height: 500px;
+  margin-top: 5px;
+  height: 505px;
   width: 650px;
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
@@ -55,10 +57,15 @@
 .middle img,
 .right-side img {
   width: 350px;
-  height: 250px;
-  margin: 0.25rem;
+  height: 245px;
+  margin: 0.5rem;
 }
-
+#top-right {
+  border-top-right-radius: 32px;
+}
+#bottom-right {
+  border-bottom-right-radius: 32px;
+}
 /* host info styles */
 .host-info {
   margin: 1rem;
@@ -118,11 +125,11 @@
   padding: 1rem;
 }
 .description {
-  margin: 2rem;
+  margin: 3rem;
   width: 40vw;
 }
 .amenities {
-  margin: 1rem;
+  margin: 2rem;
   width: 40vw;
   /* height: 35vh; */
   display: flex;
@@ -136,7 +143,7 @@
 .offerings {
   /* border: 1px solid red; */
   width: 40vw;
-  margin: 1rem;
+  margin: 3rem;
 }
 .list-container {
   display: flex;
@@ -144,7 +151,7 @@
   align-items: center;
   /* border: 2px solid green; */
   width: 100%;
-  margin: 1rem;
+  margin: 3rem;
 }
 .left-list,
 .right-list {
@@ -155,7 +162,13 @@
 }
 .amen {
   display: flex;
+  align-items: center;
   margin: 0.8rem;
+  /* border: 1px solid green; */
+}
+ion-icon {
+  font-size: 28px;
+  margin-right: 0.5rem;
 }
 /* review styles */
 
@@ -165,7 +178,7 @@
   border-bottom: 1px solid gray;
 }
 .review-title {
-  margin: 1rem;
+  margin: 3rem;
 }
 .split {
   /* border: 1px solid red; */
