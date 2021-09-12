@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
+import Review from "../Review/Review";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "../Listing/Listing.css";
@@ -29,7 +30,7 @@ const categoryMapping = {
   "Luggage Drop-off": "briefcase-outline",
   "Patio or Balcony": "cloudy-night-outline",
   "Pets Allowed": "paw-outline",
-  Pool: "fish-outline",
+  Pool: "help-buoy-outline",
   "Private Entrance": "footsteps-outline",
   "Self Check-in": "business-outline",
   "Suitable for Events": "balloon-outline",
@@ -41,6 +42,7 @@ const categoryMapping = {
 const Listing = () => {
   const location = useLocation();
   const [property, setProperty] = useState();
+  const [reviews, setReviews] = useState();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -48,8 +50,18 @@ const Listing = () => {
     console.log("id from params:", id);
 
     axios.get(`/api/listing/${id}`).then((res) => {
-      console.log("res.data:", res.data);
+      // console.log("res.data:", res.data);
       setProperty(res.data);
+    });
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+
+    axios.get(`/api/reviews/${id}`).then((res) => {
+      console.log("reviews res.data:", res.data);
+      setReviews(res.data);
     });
   }, [location.pathname, location.search]);
 
@@ -201,9 +213,23 @@ const Listing = () => {
               <h2>Reviews</h2>
             </div>
             <div className="review-holder">
-              {/* {reviews.length
-              ? "here are the reviews"
-              : "Be the first to review this property."} */}
+              {reviews && reviews.length ? (
+                reviews.map((review, index) => {
+                  return (
+                    <Review
+                      key={index}
+                      text={review.text}
+                      first={review.f_name}
+                      last={review.l_name}
+                      image={review.img_url}
+                    />
+                  );
+                })
+              ) : (
+                <div>
+                  <p> Be the first to review this property</p>
+                </div>
+              )}
             </div>
           </div>
           {/* <p>prop map</p> */}

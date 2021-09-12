@@ -1,6 +1,5 @@
 import React from "react";
 import "../ThingsToKnow/ThingsToKnow.css";
-import * as Icon from "react-feather";
 
 const ThingsToKnow = () => {
   return (
@@ -21,7 +20,7 @@ const ThingsToKnow = () => {
           </div>
           <div className="ttk-row">
             <ion-icon name="bag-check-outline"></ion-icon>
-            <p>Self check-in with smart lock</p>
+            <p>Self check-in </p>
           </div>
           <div className="ttk-row">
             <ion-icon name="logo-no-smoking"></ion-icon>

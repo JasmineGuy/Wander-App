@@ -1,12 +1,13 @@
 .things-container {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid gray;
+  /* border-top: 1px solid gray; */
   border-bottom: 1px solid gray;
-  height: 60vh;
+  height: 45vh;
 }
 .top-row {
-  margin: 3rem;
+  margin-left: 3rem;
+  margin-top: 2rem;
 }
 .btm-row {
   display: flex;

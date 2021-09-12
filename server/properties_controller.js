@@ -10,12 +10,25 @@ module.exports = {
       });
   },
   getProperty: (req, res) => {
-    // console.log("in listing controller!");
     let { id } = req.params;
     const dbInstance = req.app.get("db");
     dbInstance
       .get_property(id)
       .then((listing) => res.status(200).send(listing[0]))
+      .catch((err) => {
+        res.status(500).send({
+          errorMessage: "Oops it's busted",
+        });
+        console.log(err);
+      });
+  },
+  getReviews: (req, res) => {
+    console.log("in listing controller!");
+    let { id } = req.params;
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .get_reviews(id)
+      .then((reviews) => res.status(200).send(reviews))
       .catch((err) => {
         res.status(500).send({
           errorMessage: "Oops it's busted",

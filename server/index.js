@@ -23,6 +23,7 @@ app.post("/api/search", ctrl.getResults);
 app.get("/api/properties", ctrl.getAllProperties);
 app.get("/api/properties/:id", ctrl.getCategory);
 app.get("/api/listing/:id", ctrl.getProperty);
+app.get("/api/reviews/:id", ctrl.getReviews);
 
 // app.get("/api/campers", ctrl.getCampers);
 

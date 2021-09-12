@@ -1,0 +1,27 @@
+.review-card {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid green; */
+  width: 35%;
+  /* flex-direction: column; */
+}
+.actual-review {
+  /* border: 1px solid purple; */
+  /* width: 35%; */
+  margin: 0.5rem;
+}
+.actual-review img {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.info-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 10vh;
+  /* border: 1px solid red; */
+}
