@@ -1,0 +1,17 @@
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+button {
+  height: 60px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #ff385c;
+  border: 1px solid transparent;
+  color: white;
+  font-weight: 700;
+  margin: 2rem;
+}

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Review from "../Review/Review";
+import ReviewButton from "../ReviewButton/ReviewButton";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "../Listing/Listing.css";
 import * as Icon from "react-feather";
 import Skeleton from "react-loading-skeleton";
+import ReviewModal from "../ReviewModal/ReviewModal";
 
 import ThingsToKnow from "../ThingsToKnow/ThingsToKnow";
 
@@ -43,6 +45,7 @@ const Listing = () => {
   const location = useLocation();
   const [property, setProperty] = useState();
   const [reviews, setReviews] = useState();
+  const [isModalActive, setIsModalActive] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -74,6 +77,15 @@ const Listing = () => {
       ></ion-icon>
     );
   };
+
+  const openModal = () => {
+    setIsModalActive(true);
+  };
+  const closeModal = () => {
+    setIsModalActive(false);
+  };
+
+  console.log("active?:", isModalActive);
 
   return (
     <div>
@@ -231,6 +243,9 @@ const Listing = () => {
                 </div>
               )}
             </div>
+            <div className="button-wrapper">
+              <ReviewButton openModal={openModal} />
+            </div>
           </div>
           {/* <p>prop map</p> */}
           <ThingsToKnow />
@@ -241,6 +256,8 @@ const Listing = () => {
         </div>
       )}
       <Footer />
+
+      <ReviewModal closeModal={closeModal} isModalActive={isModalActive} />
     </div>
   );
 };
