@@ -1,4 +1,5 @@
 import React from "react";
+import Search from "../Search/Search";
 import { NavLink } from "react-router-dom";
 import * as Icon from "react-feather";
 import "../Header2/Header2.css";
@@ -14,6 +15,7 @@ const Header2 = () => {
           />
         </NavLink>
       </div>
+      <Search />
       <div className="links">
         <NavLink className="nav-link" to="/properties">
           <h4>View All</h4>

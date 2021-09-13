@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Review from "../Review/Review";
+// import Map from "../Map/Map";
 import ReviewButton from "../ReviewButton/ReviewButton";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
@@ -99,6 +100,13 @@ const Listing = () => {
     });
   };
 
+  // console.log("property:", property.long);
+  // const locationInfo = {
+  //   address: "1600 Ampitheatre Parkway, Mountain View, California.",
+  //   lat: 37.42216,
+  //   lng: -122.08427,
+  // };
+
   return (
     <div>
       <Header2 />
@@ -175,6 +183,9 @@ const Listing = () => {
               </div>
               <div className="description">
                 <p>{property.description}</p>
+                {/* <div className="about-modal-button">
+                  <button className="show-more-btn">Show More</button>
+                </div> */}
               </div>
               <div className="amenities"></div>
               <div className="offerings">
@@ -229,7 +240,7 @@ const Listing = () => {
                 <form className="booking-form">
                   <input type="date" />
                   <input type="date" />
-                  <button>Check Availability</button>
+                  <button className="booking-btn">Reserve</button>
                 </form>
               </div>
             </div>
@@ -267,7 +278,7 @@ const Listing = () => {
               <ReviewButton openModal={openModal} />
             </div>
           </div>
-          {/* <p>prop map</p> */}
+          {/* <Map /> */}
           <ThingsToKnow />
         </div>
       ) : (

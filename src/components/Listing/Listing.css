@@ -217,7 +217,7 @@ ion-icon {
 }
 .pricing-info h3 {
   font-size: 24px;
-  color: #ff385c;
+  /* color: #ff385c; */
 }
 .box {
   display: flex;
@@ -239,4 +239,8 @@ ion-icon {
 input {
   height: 60px;
   border-radius: 12px;
+}
+.booking-btn {
+  width: 370px;
+  font-size: 20px;
 }
