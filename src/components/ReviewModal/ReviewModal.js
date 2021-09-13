@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DialogOverlay, DialogContent, Dialog } from "@reach/dialog";
+import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import ReactStars from "react-stars";
 import axios from "axios";
@@ -9,11 +9,12 @@ const ReviewModal = ({ isModalActive, closeModal }) => {
   const [rating, setRating] = useState();
 
   const assignRating = (rating) => {
+    console.log("star rating:", rating);
     setRating(rating);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/api/review").then((res) => {
+    axios.post(`/api/review/${id}`).then((res) => {
       console.log(res.data);
     });
   };

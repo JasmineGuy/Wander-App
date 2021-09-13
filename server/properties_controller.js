@@ -23,7 +23,7 @@ module.exports = {
       });
   },
   getReviews: (req, res) => {
-    console.log("in listing controller!");
+    // console.log("in listing controller!");
     let { id } = req.params;
     const dbInstance = req.app.get("db");
     dbInstance
@@ -57,5 +57,15 @@ module.exports = {
         });
         console.log(err);
       });
+  },
+  createReview: (req, res) => {
+    console.log("made it to review controller!");
+    let { id } = req.params;
+    let { reviewText } = req.body;
+    console.log(review);
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .create_review([id, reviewText])
+      .then((results) => res.status(200).send(results));
   },
 };

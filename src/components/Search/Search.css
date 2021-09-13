@@ -34,9 +34,9 @@ input {
   padding: 0.5rem;
   border: 2px solid transparent;
   position: absolute;
-  z-index: 10;
-  right: 10px;
-  top: 6px;
+  z-index: 1;
+  right: -20px;
+  top: -25px;
 }
 .search-btn:hover {
   cursor: pointer;
