@@ -23,7 +23,6 @@ module.exports = {
       });
   },
   getReviews: (req, res) => {
-    // console.log("in listing controller!");
     let { id } = req.params;
     const dbInstance = req.app.get("db");
     dbInstance
@@ -59,13 +58,33 @@ module.exports = {
       });
   },
   createReview: (req, res) => {
-    console.log("made it to review controller!");
     let { id } = req.params;
-    let { reviewText } = req.body;
-    console.log(review);
+    let { text, rating, userID } = req.body;
+    // console.log("review text:", text);
     const dbInstance = req.app.get("db");
     dbInstance
-      .create_review([id, reviewText])
+      .create_review([userID, id, text, rating])
+      .then((results) => res.status(200).send(results));
+  },
+  editReview: (req, res) => {
+    // console.log("made it to edit controller!");
+    // console.log("should be rating info:", req.body);
+    // console.log("should be rating id:", req.params);
+    let { id } = req.params;
+    let { text, rating, propId } = req.body;
+    // console.log("review text:", text);
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .edit_review([text, rating, id, propId])
+      .then((results) => res.status(200).send(results));
+  },
+  deleteReview: (req, res) => {
+    // console.log("made it to delete controller!");
+    let { id } = req.params;
+    console.log("delete id:", id);
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .delete_review([id])
       .then((results) => res.status(200).send(results));
   },
 };

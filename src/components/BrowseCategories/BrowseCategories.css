@@ -16,12 +16,13 @@
   justify-content: center;
   align-items: center;
   height: 55vh;
+  margin-left: -2rem;
   /* border: 1px solid red; */
 }
 .cat-holder {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   /* border: 1px solid red; */
   height: 45vh;
   width: 20%;
@@ -34,7 +35,8 @@
 .category-btn {
   background-color: black;
   border-radius: 32px;
-  height: 100%;
+  min-height: 95%;
+  min-width: 100%;
   border: 2px solid white;
   margin: 1rem;
 }

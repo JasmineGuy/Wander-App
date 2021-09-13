@@ -25,6 +25,8 @@ app.get("/api/properties/:id", ctrl.getCategory);
 app.get("/api/listing/:id", ctrl.getProperty);
 app.get("/api/reviews/:id", ctrl.getReviews);
 app.post("/api/review/:id", ctrl.createReview);
+app.put("/api/review/:id", ctrl.editReview);
+app.delete("/api/review/:id", ctrl.deleteReview);
 
 // app.get("/api/campers", ctrl.getCampers);
 

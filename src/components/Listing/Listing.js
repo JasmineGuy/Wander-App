@@ -46,14 +46,14 @@ const Listing = () => {
   const [property, setProperty] = useState();
   const [reviews, setReviews] = useState();
   const [isModalActive, setIsModalActive] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [reviewData, setReviewData] = useState();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
-    console.log("id from params:", id);
 
     axios.get(`/api/listing/${id}`).then((res) => {
-      // console.log("res.data:", res.data);
       setProperty(res.data);
     });
   }, [location.pathname, location.search]);
@@ -63,7 +63,6 @@ const Listing = () => {
     const id = params.get("id");
 
     axios.get(`/api/reviews/${id}`).then((res) => {
-      console.log("reviews res.data:", res.data);
       setReviews(res.data);
     });
   }, [location.pathname, location.search]);
@@ -85,7 +84,20 @@ const Listing = () => {
     setIsModalActive(false);
   };
 
-  console.log("active?:", isModalActive);
+  const editReview = (reviewData) => {
+    // console.log("clicked to edit");
+    setIsModalActive(true);
+    setIsEditing(true);
+    setReviewData(reviewData);
+  };
+
+  const deleteReview = (reviewData) => {
+    console.log("clicked to delete");
+    setReviewData(reviewData);
+    axios.delete(`/api/review/${reviewData.review_id}`).then((res) => {
+      console.log("review has been deleted");
+    });
+  };
 
   return (
     <div>
@@ -210,8 +222,11 @@ const Listing = () => {
             </div>
             <div className="booking-box">
               <div className="box">
-                <h3>{property.price_per_night}/ night</h3>
-                <form>
+                <div className="pricing-info">
+                  <h3> $ {property.price_per_night}</h3>
+                  <p> / night</p>
+                </div>
+                <form className="booking-form">
                   <input type="date" />
                   <input type="date" />
                   <button>Check Availability</button>
@@ -230,16 +245,21 @@ const Listing = () => {
                   return (
                     <Review
                       key={index}
+                      reviewID={review.review_id}
+                      reviewText={review.text}
                       text={review.text}
                       first={review.f_name}
                       last={review.l_name}
                       image={review.img_url}
+                      reviewData={review}
+                      editReview={editReview}
+                      deleteReview={deleteReview}
                     />
                   );
                 })
               ) : (
                 <div>
-                  <p> Be the first to review this property</p>
+                  <p className=""> Be the first to review this property</p>
                 </div>
               )}
             </div>
@@ -257,7 +277,15 @@ const Listing = () => {
       )}
       <Footer />
 
-      <ReviewModal closeModal={closeModal} isModalActive={isModalActive} />
+      <ReviewModal
+        propertyId={
+          property && property.property_id ? property.property_id : null
+        }
+        closeModal={closeModal}
+        isModalActive={isModalActive}
+        isEditing={isEditing}
+        reviewData={reviewData}
+      />
     </div>
   );
 };

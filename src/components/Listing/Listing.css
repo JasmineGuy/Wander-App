@@ -203,8 +203,21 @@ ion-icon {
   justify-content: center;
   align-items: flex-start;
   /* border: 1px solid blue; */
-  width: 100%;
+  width: 55vh;
   position: sticky;
+  margin-top: 1rem;
+  position: sticky;
+}
+.pricing-info {
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid red;
+}
+.pricing-info h3 {
+  font-size: 24px;
+  color: #ff385c;
 }
 .box {
   display: flex;
@@ -216,7 +229,13 @@ ion-icon {
   border: 2px solid gray;
   background-color: white;
 }
-
+.booking-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
 input {
   height: 60px;
   border-radius: 12px;
