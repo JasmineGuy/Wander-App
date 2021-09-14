@@ -1,9 +1,10 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import Pin from "../Pin/Pin";
 import "./Map.css";
 
 const containerStyle = {
-  width: "800px",
+  width: "1000px",
   height: "500px",
 };
 
@@ -13,12 +14,13 @@ const Map = ({ lat, lng }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.GOOGLE_API_KEY,
+    googleMapsApiKey: "",
   });
 
   const center = {
     lat: lat,
     lng: lng,
+    address: "320 Singleton Blvd Dallas TX, 75212",
   };
 
   //   console.log("isloaded:", isLoaded);
@@ -38,9 +40,6 @@ const Map = ({ lat, lng }) => {
 
   return isLoaded ? (
     <div className="container-div">
-      <div className="map-title">
-        <h2>Where you'll be staying</h2>
-      </div>
       <div className="map-wrapper">
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -50,7 +49,7 @@ const Map = ({ lat, lng }) => {
           onUnmount={onUnmount}
         >
           {/* Child components, such as markers, info windows, etc. */}
-          <></>
+          <Pin lat={center.lat} lng={center.lng} address={center.address} />
         </GoogleMap>
       </div>
     </div>

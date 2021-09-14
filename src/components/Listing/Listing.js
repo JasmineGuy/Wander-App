@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import axios from "axios";
-import * as Icon from "react-feather";
 import Skeleton from "react-loading-skeleton";
 
 import Header2 from "../Header2/Header2";
@@ -52,13 +53,16 @@ const Listing = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [reviewData, setReviewData] = useState();
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [average, setAverage] = useState();
+  const [count, setCount] = useState();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
     console.log("id:", id);
     axios.get(`/api/listing/${id}`).then((res) => {
-      console.log("resdata:", res.data);
       setProperty(res.data);
     });
   }, [location.pathname, location.search]);
@@ -66,9 +70,26 @@ const Listing = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
-
     axios.get(`/api/reviews/${id}`).then((res) => {
       setReviews(res.data);
+    });
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    axios.get(`/api/average/${id}`).then((res) => {
+      let result = res.data[0].avg * 100;
+      let rounded = Math.round(result) / 100;
+      setAverage(rounded);
+    });
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    axios.get(`/api/count/${id}`).then((res) => {
+      setCount(res.data[0].count);
     });
   }, [location.pathname, location.search]);
 
@@ -113,8 +134,9 @@ const Listing = () => {
     });
   };
 
-  console.log("property:", property);
-
+  // console.log("property:", property);
+  console.log("count:", count);
+  console.log("avg:", average);
   return (
     <div>
       <Header2 />
@@ -125,8 +147,10 @@ const Listing = () => {
           </div>
           <div className="gray">
             <div className="ratings-wrapper">
-              {renderAmenity("Star")}
-              <p>Rating (# reviews)</p>
+              <ion-icon name="star" id="star"></ion-icon>
+              <p>
+                {average} ({count} reviews)
+              </p>
             </div>
             <div>
               <p id="generic-address">
@@ -174,15 +198,15 @@ const Listing = () => {
               </div>
               <div className="bullets">
                 <div className="first">
-                  <Icon.Home />
+                  <ion-icon name="home-outline"></ion-icon>
                   <p>Entire Home</p>
                 </div>
                 <div className="second">
-                  <Icon.Key />
+                  <ion-icon name="bag-check-outline"></ion-icon>
                   <p>Self Check-in</p>
                 </div>
                 <div className="third">
-                  <Icon.Award />
+                  <ion-icon name="medal-outline"></ion-icon>
                   <p>{property.f_name} is a Superhost</p>
                 </div>
               </div>
@@ -236,15 +260,31 @@ const Listing = () => {
             <div className="split-right">
               <div className="booking-box">
                 <div className="box">
-                  <div className="pricing-info">
-                    <h3> $ {property.price_per_night}</h3>
-                    <p> / night</p>
+                  <div className="box-header">
+                    <div className="pricing-info">
+                      <h3> $ {property.price_per_night}</h3>
+                      <p> / night</p>
+                    </div>
+                    <div className="x">
+                      <p>
+                        {" "}
+                        {average} ({count} reviews)
+                      </p>
+                    </div>
                   </div>
-                  <form className="booking-form">
-                    <input type="date" />
-                    <input type="date" />
-                    <button className="booking-btn">Reserve</button>
-                  </form>
+                  <div className="booking-form">
+                    <DatePicker
+                      className="date-picker"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                    />
+                    <DatePicker
+                      className="date-picker"
+                      selected={endDate}
+                      onChange={(date) => setEndDate(date)}
+                    />
+                    {/* <button className="booking-btn">Reserve</button> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -252,7 +292,10 @@ const Listing = () => {
           {/* <p>calendar</p> */}
           <div className="reviews">
             <div className="review-title">
-              <h2>Reviews</h2>
+              <h2>
+                <ion-icon name="star" id="star"></ion-icon>
+                {average} ({count} reviews)
+              </h2>
             </div>
             <div className="review-holder">
               {reviews && reviews.length ? (
@@ -282,8 +325,10 @@ const Listing = () => {
               <ReviewButton openModal={openModal} />
             </div>
           </div>
-          {/* <p>Map Placeholder</p> */}
-          <div>
+          <div className="map-section">
+            <div className="map-title">
+              <h2>Where you'll be</h2>
+            </div>
             <Map lat={32.77786047151945} lng={-96.82844087369267} />
           </div>
           <ThingsToKnow />

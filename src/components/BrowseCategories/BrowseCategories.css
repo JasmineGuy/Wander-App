@@ -6,7 +6,7 @@
 .title-holder h2 {
   color: gray;
   margin-top: 3.5rem;
-  margin-left: 5rem;
+  margin-left: 2rem;
   font-size: 32px;
   font-weight: bold;
   /* border: 1px solid red; */
@@ -16,29 +16,29 @@
   justify-content: center;
   align-items: center;
   height: 55vh;
-  margin-left: -2rem;
+  margin: 1rem;
   /* border: 1px solid red; */
 }
 .cat-holder {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* border: 1px solid red; */
-  height: 45vh;
-  width: 20%;
-  margin: 2rem;
+  /* border: 1px solid blue; */
+  height: 80%;
+  width: 25%;
+  margin: 0.5rem;
   color: gray;
 }
 .cat-holder h3 {
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
 }
 .category-btn {
   background-color: black;
-  border-radius: 32px;
+  border-radius: 12px;
   min-height: 95%;
   min-width: 100%;
   border: 2px solid white;
-  margin: 1rem;
+  margin: 0.25rem;
 }
 .category-btn:hover {
   cursor: pointer;

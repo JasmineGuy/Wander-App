@@ -26,6 +26,9 @@ app.get("/api/listing/:id", ctrl.getProperty);
 app.get("/api/reviews/:id", ctrl.getReviews);
 app.post("/api/review/:id", ctrl.createReview);
 app.put("/api/review/:id", ctrl.editReview);
+app.get("/api/average/:id", ctrl.getAverage);
+app.get("/api/count/:id", ctrl.getCount);
+
 app.delete("/api/review/:id", ctrl.deleteReview);
 
 // app.get("/api/campers", ctrl.getCampers);

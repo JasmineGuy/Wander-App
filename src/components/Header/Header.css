@@ -8,10 +8,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  height: 10vh;
   width: 100vw;
   margin-top: 2rem;
-  color: white;
+  /* color: white; */
+  /* border: 1px solid red; */
 }
 .logo-container {
   /* border: 1px solid red; */

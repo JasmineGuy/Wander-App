@@ -6,7 +6,7 @@ import "../Header2/Header2.css";
 
 const Header2 = () => {
   return (
-    <div className="header">
+    <div className="header2">
       <div className="logo-container">
         <NavLink className="nav-link" to="/">
           <img
@@ -14,6 +14,9 @@ const Header2 = () => {
             src="https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Wander_logo_200_2.png?alt=media&token=92df445f-0b42-4b5b-af20-d7a332f398e7"
           />
         </NavLink>
+      </div>
+      <div className="search-container">
+        <Search />
       </div>
       <div className="links">
         <NavLink className="nav-link" to="/properties">

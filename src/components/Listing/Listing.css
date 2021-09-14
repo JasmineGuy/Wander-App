@@ -2,25 +2,24 @@
   margin: 5rem;
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 85%;
 }
-/* .top {
-  display: flex;
-  flex-direction: column;
-  width: 100vw; */
-/* border: 1px solid red; */
-/* } */
 .title {
   height: 5vh;
+  display: flex;
   margin-bottom: 1rem;
-  margin-top: 1rem;
   padding: 0rem, 1rem 1rem 1rem;
-  /* border: 1px solid red; */
+}
+#star {
+  color: #ff385c;
+  size: small;
+  /* margin-top: 0.5rem; */
 }
 .ratings-wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 20vw;
+  justify-content: space-around;
+  align-items: center;
+  width: 15vw;
   height: 5vh;
   /* border: 1px solid red; */
 }
@@ -29,6 +28,7 @@
 }
 .gray {
   display: flex;
+  align-items: center;
   /* border: 1px solid red; */
   /* margin-left: 0.5rem; */
 }
@@ -51,6 +51,7 @@
 .feature-img {
   margin-top: 5px;
   min-height: 505px;
+  max-height: 505px;
   width: 100%;
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
@@ -62,6 +63,7 @@
   flex-direction: column;
   width: 20%;
   margin: 0.5rem;
+  margin-bottom: 0.75rem;
   /* border: 1px solid red; */
 }
 .middle img,
@@ -79,27 +81,16 @@
 /* host info styles */
 .host-info {
   margin: 1rem;
-  /* width: 40vw; */
   display: flex;
   justify-content: space-between;
-  /* border-top: 1px solid gray; */
-  /* border-bottom: 1px solid gray; */
-
-  /* border: 1px solid red; */
 }
 .text {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 2rem;
-  /* border: 1px solid red; */
 }
-/* .pic {
-  width: 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+
 .pic-circle {
   display: flex;
   flex-direction: column;
@@ -136,6 +127,7 @@
   display: flex;
   margin: 1rem;
   padding: 1rem;
+  align-items: center;
 }
 .description {
   margin: 3rem;
@@ -195,6 +187,8 @@ ion-icon {
 }
 .review-title {
   margin: 2rem;
+  display: flex;
+  align-items: center;
 }
 .review-holder {
   display: flex;
@@ -233,9 +227,11 @@ ion-icon {
 .pricing-info {
   display: flex;
   height: 5vh;
+  width: 50%;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid red;
+  margin: 0.5rem;
+  /* border: 1px solid red; */
 }
 .pricing-info h3 {
   font-size: 24px;
@@ -246,23 +242,63 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   border-radius: 32px;
-  height: 300px;
+  height: 250px;
   width: 400px;
-  border: 2px solid gray;
+  border: 2px solid lightgray;
   background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+}
+.box-header {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.x p {
+  text-decoration: underline;
 }
 .booking-form {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  /* justify-content: space-between; */
   margin-top: 1rem;
-  /* flex-direction: column; */
   flex-wrap: wrap;
+  border: 1px solid red;
+  width: 95%;
+  height: 100%;
 }
-input {
+/* input {
+  width: 30%;
   height: 60px;
   border-radius: 12px;
+  border: 1px solid lightgray;
+} */
+.date-picker {
+  height: 60px;
+  border-radius: 12px;
+  width: 40%;
+  border: 1px solid lightgray;
+
+  /* border: 1px solid blue; */
 }
 .booking-btn {
   width: 370px;
   font-size: 20px;
+}
+.map-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+  margin-left: 7rem;
+}
+.map-title {
+  display: flex;
+  margin-right: 55rem;
+  /* border: 1px solid red; */
+  height: 75px;
+  width: 300px;
+  /* width: 100%; */
 }

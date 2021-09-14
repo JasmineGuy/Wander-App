@@ -6,6 +6,7 @@ import Skeleton from "react-loading-skeleton";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Property from "../Property/Property";
+import Map from "../Map/Map";
 import "../Properties/Properties.css";
 
 const categoryMapping = {
@@ -80,6 +81,7 @@ const Properties = () => {
                   amen2={property.amen_2}
                   amen3={property.amen_3}
                   price={property.price_per_night}
+                  host={property.f_name}
                 />
               );
             })
@@ -87,11 +89,13 @@ const Properties = () => {
             // skeleton
             // null
             <div>
-              <Skeleton />
+              <Skeleton count={100} duration={3} />
             </div>
           )}
         </div>
-        <div className="map"></div>
+        <div className="map">
+          <Map />
+        </div>
       </div>
       <Footer />
     </div>

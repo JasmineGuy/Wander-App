@@ -18,7 +18,7 @@ const Property = ({
   const history = useHistory();
 
   const clickHandler = () => {
-    console.log("clicked");
+    // console.log("clicked");
     history.push(`/listing?id=${id}`);
   };
   return (
@@ -32,19 +32,30 @@ const Property = ({
           <div className="line"></div>
         </div>
         <div className="middle-row">
-          <ul>
-            <li>{guests} Guests</li>
-            <li> {beds} Beds</li>
-            <li> {baths} Baths</li>
-          </ul>
+          <div className="feature-row">
+            <p>{guests} Guests</p>
+            <p> {beds} Beds</p>
+            <p> {baths} Baths</p>
+          </div>
+          <div className="amenity-row">
+            <p>{amen1}</p>
+            <p>{amen2}</p>
+            <p>{amen3}</p>
+          </div>
         </div>
         <div className="bottom-row">
-          <h4>Rating (# Reviews)</h4>
+          <div className="review-part">
+            <h4>Rating (# Reviews)</h4>
+          </div>
+          <div className="cost-part">
+            <h3 className="price"> ${price}</h3>
+            <p>/ night</p>
+          </div>
         </div>
       </div>
-      <div className="fave">
+      {/* <div className="fave">
         <h3 className="price"> ${price} /night</h3>
-      </div>
+      </div> */}
     </div>
   );
 };

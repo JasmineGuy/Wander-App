@@ -39,6 +39,32 @@ module.exports = {
         console.log(err);
       });
   },
+  getAverage: (req, res) => {
+    let { id } = req.params;
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .get_average(id)
+      .then((average) => res.status(200).send(average))
+      .catch((err) => {
+        res.status(500).send({
+          errorMessage: "Oops your app is busted",
+        });
+        console.log(err);
+      });
+  },
+  getCount: (req, res) => {
+    let { id } = req.params;
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .get_count(id)
+      .then((count) => res.status(200).send(count))
+      .catch((err) => {
+        res.status(500).send({
+          errorMessage: "Oops your app is busted",
+        });
+        console.log(err);
+      });
+  },
 
   getResults: (req, res) => {
     let { searchParam } = req.body;

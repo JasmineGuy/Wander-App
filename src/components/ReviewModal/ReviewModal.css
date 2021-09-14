@@ -34,3 +34,18 @@
   justify-content: center;
   /* border: 1px solid red; */
 }
+.review-btn {
+  cursor: pointer;
+}
+.review-btn.disabled {
+  background-color: gray;
+  cursor: default;
+}
+.close-x {
+  text-align: right;
+}
+.response-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
