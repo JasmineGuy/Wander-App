@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Property from "../Property/Property";
-import Map from "../Map/Map";
 import "../Properties/Properties.css";
 
 const categoryMapping = {
@@ -92,9 +91,7 @@ const Properties = () => {
             </div>
           )}
         </div>
-        <div className="map">
-          <Map />
-        </div>
+        <div className="map"></div>
       </div>
       <Footer />
     </div>

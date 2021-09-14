@@ -15,7 +15,6 @@ const Header2 = () => {
           />
         </NavLink>
       </div>
-      <Search />
       <div className="links">
         <NavLink className="nav-link" to="/properties">
           <h4>View All</h4>

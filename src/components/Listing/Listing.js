@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+
+import axios from "axios";
+import * as Icon from "react-feather";
+import Skeleton from "react-loading-skeleton";
+
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Review from "../Review/Review";
-// import Map from "../Map/Map";
 import ReviewButton from "../ReviewButton/ReviewButton";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
 import "../Listing/Listing.css";
-import * as Icon from "react-feather";
-import Skeleton from "react-loading-skeleton";
 import ReviewModal from "../ReviewModal/ReviewModal";
-
 import ThingsToKnow from "../ThingsToKnow/ThingsToKnow";
+import Map from "../Map/Map";
 
 const categoryMapping = {
   Backyard: "leaf-outline",
@@ -37,6 +39,7 @@ const categoryMapping = {
   "Private Entrance": "footsteps-outline",
   "Self Check-in": "business-outline",
   "Suitable for Events": "balloon-outline",
+  Star: "star-outline",
   "Trail Access": "bicycle-outline",
   Waterfront: "water-outline",
   Wifi: "wifi-outline",
@@ -53,8 +56,9 @@ const Listing = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
-
+    console.log("id:", id);
     axios.get(`/api/listing/${id}`).then((res) => {
+      console.log("resdata:", res.data);
       setProperty(res.data);
     });
   }, [location.pathname, location.search]);
@@ -76,6 +80,15 @@ const Listing = () => {
         name={categoryMapping[amenity]}
       ></ion-icon>
     );
+  };
+
+  let map;
+  const google = window.google;
+  const initMap = () => {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8,
+    });
   };
 
   const openModal = () => {
@@ -100,31 +113,25 @@ const Listing = () => {
     });
   };
 
-  // console.log("property:", property.long);
-  // const locationInfo = {
-  //   address: "1600 Ampitheatre Parkway, Mountain View, California.",
-  //   lat: 37.42216,
-  //   lng: -122.08427,
-  // };
+  console.log("property:", property);
 
   return (
     <div>
       <Header2 />
       {property ? (
         <div className="listing-container">
-          <div className="top">
-            <div className="title">
-              <h1>{property.name}</h1>
-            </div>
+          <div className="title">
+            <h1>{property.name}</h1>
+          </div>
+          <div className="gray">
             <div className="ratings-wrapper">
-              <h5>
-                {" "}
-                <Icon.Star color="red" size={16} />
-                Rating (# reviews)
-              </h5>
-              <h5>
+              {renderAmenity("Star")}
+              <p>Rating (# reviews)</p>
+            </div>
+            <div>
+              <p id="generic-address">
                 {property.city}, {property.state}, {property.country}
-              </h5>
+              </p>
             </div>
           </div>
           <div className="images-container">
@@ -160,11 +167,9 @@ const Listing = () => {
                     <p>{property.baths} Baths </p>
                   </div>
                 </div>
-                <div className="pic">
-                  <div className="pic-circle">
-                    {/* <Icon.Award /> */}
-                    <img alt="host" src={property.img_url} />
-                  </div>
+
+                <div className="pic-circle">
+                  <img alt="host" src={property.img_url} />
                 </div>
               </div>
               <div className="bullets">
@@ -183,9 +188,6 @@ const Listing = () => {
               </div>
               <div className="description">
                 <p>{property.description}</p>
-                {/* <div className="about-modal-button">
-                  <button className="show-more-btn">Show More</button>
-                </div> */}
               </div>
               <div className="amenities"></div>
               <div className="offerings">
@@ -231,17 +233,19 @@ const Listing = () => {
                 </div>
               </div>
             </div>
-            <div className="booking-box">
-              <div className="box">
-                <div className="pricing-info">
-                  <h3> $ {property.price_per_night}</h3>
-                  <p> / night</p>
+            <div className="split-right">
+              <div className="booking-box">
+                <div className="box">
+                  <div className="pricing-info">
+                    <h3> $ {property.price_per_night}</h3>
+                    <p> / night</p>
+                  </div>
+                  <form className="booking-form">
+                    <input type="date" />
+                    <input type="date" />
+                    <button className="booking-btn">Reserve</button>
+                  </form>
                 </div>
-                <form className="booking-form">
-                  <input type="date" />
-                  <input type="date" />
-                  <button className="booking-btn">Reserve</button>
-                </form>
               </div>
             </div>
           </div>
@@ -278,7 +282,10 @@ const Listing = () => {
               <ReviewButton openModal={openModal} />
             </div>
           </div>
-          {/* <Map /> */}
+          {/* <p>Map Placeholder</p> */}
+          <div>
+            <Map lat={32.77786047151945} lng={-96.82844087369267} />
+          </div>
           <ThingsToKnow />
         </div>
       ) : (

@@ -11,10 +11,14 @@ module.exports = {
   },
   getProperty: (req, res) => {
     let { id } = req.params;
+    // console.log("controller id:", id);
     const dbInstance = req.app.get("db");
     dbInstance
       .get_property(id)
-      .then((listing) => res.status(200).send(listing[0]))
+      .then((listing) => {
+        // console.log("listing:", listing);
+        res.status(200).send(listing[0]);
+      })
       .catch((err) => {
         res.status(500).send({
           errorMessage: "Oops it's busted",

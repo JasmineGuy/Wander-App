@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/host.jpeg?alt=media&token=bed2af83-1dbd-4c09-b250-66aa6e85474f");
-  height: 40vh;
+  min-height: 40vh;
   border-radius: 32px;
   width: 90vw;
   margin: auto;

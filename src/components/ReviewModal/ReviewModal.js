@@ -55,7 +55,6 @@ const ReviewModal = ({
   return (
     <div className="review-modal">
       <Dialog className="modal" isOpen={isModalActive} onDismiss={closeModal}>
-        {/* <form onSubmit={(e) => handleSubmit(e)}> */}
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="top-form">
             How would your rate your stay?
@@ -72,7 +71,6 @@ const ReviewModal = ({
               className="review-space"
               placeholder="Leave a detailed review here"
               onChange={handleReviewText}
-              // defaultValue={reviewText}
               value={reviewText}
             ></textarea>
           </div>

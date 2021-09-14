@@ -4,46 +4,54 @@
   flex-direction: column;
   width: 75%;
 }
-.top {
+/* .top {
   display: flex;
   flex-direction: column;
-}
+  width: 100vw; */
+/* border: 1px solid red; */
+/* } */
 .title {
   height: 5vh;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0rem, 1rem 1rem 1rem;
   /* border: 1px solid red; */
 }
 .ratings-wrapper {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
-  width: 40vw;
+  width: 20vw;
   height: 5vh;
   /* border: 1px solid red; */
 }
 .ratings-wrapper h5 {
   margin: 0.5rem;
 }
-
+.gray {
+  display: flex;
+  /* border: 1px solid red; */
+  /* margin-left: 0.5rem; */
+}
+#generic-address {
+  margin-left: 1rem;
+  text-decoration: underline;
+}
 /* photo styles */
 .images-container {
-  height: 60vh;
-  width: 78%;
+  width: 100vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-radius: 32px;
-  /* margin: auto; */
-  /* display: none; */
   /* border: 1px solid red; */
 }
 .left-side {
-  width: 60%;
+  width: 45%;
 }
 .feature-img {
   margin-top: 5px;
-  height: 505px;
-  width: 650px;
+  min-height: 505px;
+  width: 100%;
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
   /* border: 1px solid red; */
@@ -52,12 +60,14 @@
 .right-side {
   display: flex;
   flex-direction: column;
+  width: 20%;
+  margin: 0.5rem;
   /* border: 1px solid red; */
 }
 .middle img,
 .right-side img {
-  width: 350px;
-  height: 245px;
+  width: 100%;
+  min-height: 245px;
   margin: 0.5rem;
 }
 #top-right {
@@ -69,43 +79,46 @@
 /* host info styles */
 .host-info {
   margin: 1rem;
-  width: 40vw;
+  /* width: 40vw; */
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid gray;
+  /* border-top: 1px solid gray; */
+  /* border-bottom: 1px solid gray; */
+
+  /* border: 1px solid red; */
 }
 .text {
   display: flex;
   flex-direction: column;
-  /* margin-left: 1rem; */
+  width: 100%;
   padding: 2rem;
   /* border: 1px solid red; */
 }
-.pic {
+/* .pic {
   width: 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid red; */
-}
+} */
 .pic-circle {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
   /* border: 1px solid blue; */
-  /* width: 100%;
-  height: 75px; */
+  width: 30%;
+  /* height: 75px;  */
 }
 .pic-circle img {
   border-radius: 50%;
   width: 75px;
   height: 75px;
+  margin-right: 3rem;
   /* border: 1px solid red; */
 }
 .text-row-2 {
   display: flex;
-  width: 10vw;
+  width: 50%;
   justify-content: space-between;
 }
 /* bullets styles */
@@ -173,7 +186,7 @@ ion-icon {
 /* review styles */
 
 .reviews {
-  /* height: 80vh; */
+  width: 90vw;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
   display: flex;
@@ -194,9 +207,18 @@ ion-icon {
   /* max-height: 45vh; */
 }
 .split {
-  /* border: 1px solid red; */
   display: flex;
-  position: relative;
+  justify-content: space-between;
+  margin: auto;
+  width: 85vw;
+}
+.split-left {
+  width: 60%;
+}
+.split-right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 .booking-box {
   display: flex;

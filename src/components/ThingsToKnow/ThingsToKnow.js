@@ -35,7 +35,7 @@ const ThingsToKnow = () => {
           </div>
           <div className="ttk-row">
             <ion-icon name="videocam-outline"></ion-icon>
-            <p>Security camera/recording device</p>
+            <p>Security camera</p>
           </div>
           <div className="ttk-row">
             <ion-icon name="alert-circle-outline"></ion-icon>

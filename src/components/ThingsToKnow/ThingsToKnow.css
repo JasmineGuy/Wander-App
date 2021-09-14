@@ -1,8 +1,11 @@
 .things-container {
   display: flex;
   flex-direction: column;
-  /* border-bottom: 1px solid gray; */
-  height: 60vh;
+  justify-content: center;
+  border-top: 1px solid gray;
+  width: 100%;
+  height: 50vh;
+  margin: 1rem;
 }
 .top-row {
   margin-left: 3rem;
@@ -15,12 +18,12 @@
 .ttk-row {
   display: flex;
   align-items: center;
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
 }
 .column {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 30%;
   margin: 3rem;
   line-height: 3rem;
 }
