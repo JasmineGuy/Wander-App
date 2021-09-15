@@ -14,25 +14,36 @@ const ReviewModal = ({
   reviewData,
 }) => {
   const [rating, setRating] = useState();
-  const [reviewText, setReviewText] = useState();
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [reviewText, setReviewText] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
   const [responseMessage, setResponseMessage] = useState("");
 
   useEffect(() => {
-    if (reviewData && reviewData.text) setReviewText(reviewData.text);
+    if (reviewData) {
+      if (reviewData.text) {
+        setReviewText(reviewData.text);
+      }
+      if (reviewData.rating) {
+        setRating(reviewData.rating);
+      }
+    }
   }, [reviewData]);
-  console.log("reviewData", reviewData);
+
+  useEffect(() => {
+    if (rating && reviewText) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [rating, reviewText]);
 
   const assignRating = (rating) => {
-    console.log("star rating:", rating);
     setRating(rating);
   };
 
   const handleReviewText = (e) => {
     setReviewText(e.target.value);
   };
-
-  console.log("IS DISABLED: ", isDisabled);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,15 +71,19 @@ const ReviewModal = ({
           setResponseMessage("Your review has been updated.");
         });
     }
+
+    setTimeout(() => {
+      console.log("byebye");
+      handleCloseModal();
+    }, 3000);
   };
 
   const handleCloseModal = () => {
-    if (isDisabled) {
-      setIsDisabled(false);
-    }
-    if (responseMessage) {
-      setResponseMessage("");
-    }
+    setReviewText("");
+    setRating();
+    setIsDisabled(false);
+    setResponseMessage("");
+
     closeModal();
   };
 

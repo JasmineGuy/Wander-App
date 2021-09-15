@@ -3,6 +3,7 @@ import BrowseCategories from "../BrowseCategories/BrowseCategories";
 import Footer from "../Footer/Footer";
 import Splash from "../Splash/Splash";
 import TryHosting from "../TryHosting/TryHosting";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -10,7 +11,9 @@ const Home = () => {
       <Splash />
       <BrowseCategories />
       <TryHosting />
-      <Footer />
+      <div className="footer-wrapper">
+        <Footer />
+      </div>
     </div>
   );
 };

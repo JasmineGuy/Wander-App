@@ -22,8 +22,8 @@ select:focus {
   outline: none;
 }
 
-input {
-  padding-left: 20px;
+.search-bar input {
+  padding-left: 30px;
 }
 .search-btn {
   background-color: #ff385c;

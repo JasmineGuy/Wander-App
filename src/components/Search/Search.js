@@ -6,10 +6,8 @@ import * as Icon from "react-feather";
 const Search = () => {
   const history = useHistory();
   const [userInput, setUserInput] = useState("");
-  // const [properties, setProperties] = useState([]);
 
   const handleChange = (string) => {
-    // console.log("user input:", string);
     setUserInput(string);
   };
 
@@ -19,8 +17,6 @@ const Search = () => {
     console.log("clicked", userInput);
     history.push(`/properties?query=${userInput}`);
   };
-
-  // console.log("properties:", properties);
 
   return (
     <form className="search-bar" onSubmit={(e) => handleClick(e)}>

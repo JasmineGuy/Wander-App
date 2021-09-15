@@ -5,23 +5,19 @@
   width: 85%;
 }
 .title {
-  height: 5vh;
+  min-height: 5vh;
   display: flex;
-  margin-bottom: 1rem;
-  padding: 0rem, 1rem 1rem 1rem;
 }
 #star {
   color: #ff385c;
   size: small;
-  /* margin-top: 0.5rem; */
 }
 .ratings-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 15vw;
+  width: 12vw;
   height: 5vh;
-  /* border: 1px solid red; */
 }
 .ratings-wrapper h5 {
   margin: 0.5rem;
@@ -29,8 +25,6 @@
 .gray {
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
-  /* margin-left: 0.5rem; */
 }
 #generic-address {
   margin-left: 1rem;
@@ -43,7 +37,6 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 32px;
-  /* border: 1px solid red; */
 }
 .left-side {
   width: 45%;
@@ -55,7 +48,6 @@
   width: 100%;
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
-  /* border: 1px solid red; */
 }
 .middle,
 .right-side {
@@ -64,12 +56,12 @@
   width: 20%;
   margin: 0.5rem;
   margin-bottom: 0.75rem;
-  /* border: 1px solid red; */
 }
 .middle img,
 .right-side img {
   width: 100%;
   min-height: 245px;
+  max-height: 245px;
   margin: 0.5rem;
 }
 #top-right {
@@ -93,19 +85,14 @@
 
 .pic-circle {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: auto;
-  /* border: 1px solid blue; */
-  width: 30%;
-  /* height: 75px;  */
+  width: 20%;
 }
 .pic-circle img {
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  margin-right: 3rem;
-  /* border: 1px solid red; */
+  max-height: 75px;
+  width: 100%;
+  margin-right: 1rem;
 }
 .text-row-2 {
   display: flex;
@@ -136,17 +123,14 @@
 .amenities {
   margin: 2rem;
   width: 40vw;
-  /* height: 35vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: right;
   border-top: 1px solid gray;
   flex-wrap: wrap;
-  /* border: 1px solid red; */
 }
 .offerings {
-  /* border: 1px solid red; */
   width: 40vw;
   margin: 3rem;
 }
@@ -154,7 +138,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  /* border: 2px solid green; */
   width: 100%;
   margin: 3rem;
 }
@@ -163,32 +146,33 @@
   display: flex;
   width: 50%;
   flex-direction: column;
-  /* border: 1px solid blue; */
 }
 .amen {
   display: flex;
   align-items: center;
   margin: 0.8rem;
-  /* border: 1px solid green; */
 }
 ion-icon {
   font-size: 28px;
   margin-right: 0.5rem;
 }
-/* review styles */
 
+/* review styles */
 .reviews {
   width: 90vw;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 .review-title {
   margin: 2rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+.modal-btn {
+  border: 1px solid blue;
 }
 .review-holder {
   display: flex;
@@ -197,8 +181,6 @@ ion-icon {
   align-items: flex-start;
   width: 100%;
   margin: 1rem;
-  /* border: 1px solid orange; */
-  /* max-height: 45vh; */
 }
 .split {
   display: flex;
@@ -218,7 +200,6 @@ ion-icon {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* border: 1px solid blue; */
   width: 55vh;
   position: sticky;
   margin-top: 1rem;
@@ -231,11 +212,9 @@ ion-icon {
   align-items: center;
   justify-content: flex-start;
   margin: 0.5rem;
-  /* border: 1px solid red; */
 }
 .pricing-info h3 {
   font-size: 24px;
-  /* color: #ff385c; */
 }
 .box {
   display: flex;
@@ -243,7 +222,7 @@ ion-icon {
   align-items: center;
   border-radius: 32px;
   height: 250px;
-  width: 400px;
+  width: 450px;
   border: 2px solid lightgray;
   background-color: white;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -255,32 +234,30 @@ ion-icon {
   justify-content: space-between;
   align-items: center;
 }
+.x {
+  width: 55%;
+  display: flex;
+  align-items: center;
+}
 .x p {
   text-decoration: underline;
+  text-align: center;
+  font-size: 19px;
 }
 .booking-form {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-top: 1rem; */
+  padding-left: 10px;
+  width: 100%;
   border: 1px solid red;
-  width: 95%;
-  height: 100%;
 }
-/* input {
-  width: 30%;
-  height: 60px;
-  border-radius: 12px;
-  border: 1px solid lightgray;
-} */
 .date-picker {
   height: 60px;
   border-radius: 12px;
-  width: 40%;
+  width: 85%;
   border: 1px solid lightgray;
-
-  /* border: 1px solid blue; */
 }
 .booking-btn {
   width: 370px;
@@ -291,14 +268,11 @@ ion-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid green; */
   margin-left: 7rem;
 }
 .map-title {
   display: flex;
   margin-right: 55rem;
-  /* border: 1px solid red; */
   height: 75px;
   width: 300px;
-  /* width: 100%; */
 }

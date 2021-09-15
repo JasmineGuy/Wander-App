@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import DatePicker from "react-datepicker";
@@ -58,6 +58,7 @@ const Listing = () => {
   const [average, setAverage] = useState();
   const [count, setCount] = useState();
 
+  //get all data re
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -67,12 +68,19 @@ const Listing = () => {
     });
   }, [location.pathname, location.search]);
 
-  useEffect(() => {
+  //call to get reviews from backend
+
+  const getReviews = useCallback(() => {
+    console.log("get reviews");
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
     axios.get(`/api/reviews/${id}`).then((res) => {
       setReviews(res.data);
     });
+  }, []);
+
+  useEffect(() => {
+    getReviews();
   }, [location.pathname, location.search]);
 
   useEffect(() => {
@@ -115,8 +123,10 @@ const Listing = () => {
   const openModal = () => {
     setIsModalActive(true);
   };
+
   const closeModal = () => {
     setIsModalActive(false);
+    getReviews();
   };
 
   const editReview = (reviewData) => {
@@ -135,8 +145,11 @@ const Listing = () => {
   };
 
   // console.log("property:", property);
-  console.log("count:", count);
-  console.log("avg:", average);
+  // console.log("count:", count);
+  // console.log("avg:", average);
+  console.log("isEditing:", isEditing);
+  console.log("reviewData:".reviewData);
+
   return (
     <div>
       <Header2 />
@@ -266,8 +279,8 @@ const Listing = () => {
                       <p> / night</p>
                     </div>
                     <div className="x">
+                      <ion-icon name="star" id="star"></ion-icon>
                       <p>
-                        {" "}
                         {average} ({count} reviews)
                       </p>
                     </div>
@@ -296,6 +309,9 @@ const Listing = () => {
                 <ion-icon name="star" id="star"></ion-icon>
                 {average} ({count} reviews)
               </h2>
+              <div className="button-wrapper">
+                <ReviewButton openModal={openModal} />
+              </div>
             </div>
             <div className="review-holder">
               {reviews && reviews.length ? (
@@ -320,9 +336,6 @@ const Listing = () => {
                   <p className=""> Be the first to review this property</p>
                 </div>
               )}
-            </div>
-            <div className="button-wrapper">
-              <ReviewButton openModal={openModal} />
             </div>
           </div>
           <div className="map-section">
