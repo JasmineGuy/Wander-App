@@ -21,7 +21,7 @@ const Header = () => {
         <h4>Trip Boards</h4>
         <h4>
           <div className="circle">
-            <Icon.User />
+            <ion-icon name="person-circle-outline"></ion-icon>
           </div>
         </h4>
       </div>

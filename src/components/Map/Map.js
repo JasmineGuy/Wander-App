@@ -9,8 +9,8 @@ const containerStyle = {
 };
 
 const Map = ({ lat, lng }) => {
-  console.log("lat:", lat);
-  console.log("lng:", lng);
+  // console.log("lat:", lat);
+  // console.log("lng:", lng);
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -23,15 +23,13 @@ const Map = ({ lat, lng }) => {
     address: "320 Singleton Blvd Dallas TX, 75212",
   };
 
-  //   console.log("isloaded:", isLoaded);
   const [map, setMap] = React.useState(null);
-  //   console.log("map:", map);
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
     map.fitBounds(bounds);
-    console.log("bounds:", bounds);
+    // console.log("bounds:", bounds);
     setMap(map);
-    console.log("map:", map);
+    // console.log("map:", map);
   }, []);
 
   const onUnmount = React.useCallback(function callback(map) {

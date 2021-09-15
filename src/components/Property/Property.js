@@ -18,7 +18,6 @@ const Property = ({
   const history = useHistory();
 
   const clickHandler = () => {
-    // console.log("clicked");
     history.push(`/listing?id=${id}`);
   };
   return (
@@ -53,9 +52,6 @@ const Property = ({
           </div>
         </div>
       </div>
-      {/* <div className="fave">
-        <h3 className="price"> ${price} /night</h3>
-      </div> */}
     </div>
   );
 };

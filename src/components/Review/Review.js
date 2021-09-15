@@ -6,9 +6,10 @@ const Review = ({
   first,
   image,
   editReview,
-  deleteReview,
   reviewID,
   reviewData,
+  openDeleteModal,
+  // deleteReview,
 }) => {
   return (
     <div className="review-card">
@@ -26,7 +27,7 @@ const Review = ({
             ></ion-icon>
             <ion-icon
               reviewID={reviewID}
-              onClick={() => deleteReview(reviewData)}
+              onClick={openDeleteModal}
               size="small"
               name="trash-outline"
             ></ion-icon>

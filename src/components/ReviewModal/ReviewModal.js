@@ -73,7 +73,6 @@ const ReviewModal = ({
     }
 
     setTimeout(() => {
-      console.log("byebye");
       handleCloseModal();
     }, 3000);
   };
@@ -83,13 +82,8 @@ const ReviewModal = ({
     setRating();
     setIsDisabled(false);
     setResponseMessage("");
-
     closeModal();
   };
-
-  // console.log("reviewText:", reviewText);
-
-  console.log("isDisabled:", isDisabled);
 
   return (
     <div className="review-modal">
@@ -101,10 +95,7 @@ const ReviewModal = ({
         <div className="close-x">
           <Icon.X onClick={handleCloseModal} />
         </div>
-        <form
-          // onSubmit={(e) => handleSubmit(e)}
-          onSubmit={(e) => (isDisabled ? () => {} : handleSubmit(e))}
-        >
+        <form onSubmit={(e) => (isDisabled ? () => {} : handleSubmit(e))}>
           <div className="top-form">
             How would your rate your stay?
             <ReactStars

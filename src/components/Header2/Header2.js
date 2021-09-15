@@ -24,8 +24,8 @@ const Header2 = () => {
         </NavLink>
         <h4>Trip Boards</h4>
         <h4>
-          <div className="circle">
-            <Icon.User />
+          <div className="circle-h2">
+            <ion-icon id="user" name="person-circle-outline"></ion-icon>
           </div>
         </h4>
       </div>

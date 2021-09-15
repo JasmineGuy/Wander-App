@@ -18,7 +18,6 @@ const categoryMapping = {
 
 const Properties = () => {
   let location = useLocation();
-  // let history = useHistory();
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
@@ -26,11 +25,10 @@ const Properties = () => {
     const categoryParam = params.get("id");
     const searchParam = params.get("query");
     const id = categoryMapping[categoryParam];
-    console.log("id:", id);
-    // console.log("in properties");
+    // console.log("id:", id);
 
-    console.log("s param:", searchParam);
-    console.log("c param:", categoryParam);
+    // console.log("s param:", searchParam);
+    // console.log("c param:", categoryParam);
 
     if (categoryParam) {
       axios.get(`/api/properties/${id}`).then((res) => {
@@ -45,21 +43,7 @@ const Properties = () => {
         setProperties(res.data);
       });
     }
-
-    // if (location.pathname === "/campers") {
-    //   axios.get(`/api/category/${categoryMapping["campers"]}`).then((res) => {
-    //     setProperties(res.data);
-    //   });
-    // }
   }, [location.pathname, location.search]);
-
-  // console.log("properties:", properties);
-  // console.log("location:", location);
-  // console.log("history:", history);
-  // console.log("params:", id);
-  // console.log("search:", location.search);
-
-  // console.log("searchParam: ", searchParam);
 
   return (
     <div>
@@ -86,8 +70,6 @@ const Properties = () => {
               );
             })
           ) : (
-            // skeleton
-            // null
             <div>
               <Skeleton count={100} duration={3} />
             </div>

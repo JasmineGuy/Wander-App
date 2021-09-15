@@ -13,6 +13,7 @@ import Review from "../Review/Review";
 import ReviewButton from "../ReviewButton/ReviewButton";
 import "../Listing/Listing.css";
 import ReviewModal from "../ReviewModal/ReviewModal";
+import DeleteModal from "../DeleteModal/DeleteModal";
 import ThingsToKnow from "../ThingsToKnow/ThingsToKnow";
 import Map from "../Map/Map";
 
@@ -51,6 +52,8 @@ const Listing = () => {
   const [property, setProperty] = useState();
   const [reviews, setReviews] = useState();
   const [isModalActive, setIsModalActive] = useState(false);
+  const [isDeleteModalActive, setIsDeleteModalActive] = useState(false);
+  const [deleteID, setDeleteID] = useState();
   const [isEditing, setIsEditing] = useState(false);
   const [reviewData, setReviewData] = useState();
   const [startDate, setStartDate] = useState(new Date());
@@ -58,7 +61,7 @@ const Listing = () => {
   const [average, setAverage] = useState();
   const [count, setCount] = useState();
 
-  //get all data re
+  //get all property data
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -68,8 +71,7 @@ const Listing = () => {
     });
   }, [location.pathname, location.search]);
 
-  //call to get reviews from backend
-
+  //calls to get reviews from backend OR refresh reviews after new crud
   const getReviews = useCallback(() => {
     console.log("get reviews");
     const params = new URLSearchParams(location.search);
@@ -83,6 +85,7 @@ const Listing = () => {
     getReviews();
   }, [location.pathname, location.search]);
 
+  //get review averages
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -93,6 +96,7 @@ const Listing = () => {
     });
   }, [location.pathname, location.search]);
 
+  //get review count
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -101,6 +105,7 @@ const Listing = () => {
     });
   }, [location.pathname, location.search]);
 
+  //function to render all amenity icons - used with lines 19-47 categoryMapping
   const renderAmenity = (amenity) => {
     return (
       <ion-icon
@@ -111,6 +116,7 @@ const Listing = () => {
     );
   };
 
+  //Google Maps integration initialization
   let map;
   const google = window.google;
   const initMap = () => {
@@ -120,6 +126,7 @@ const Listing = () => {
     });
   };
 
+  // Modal functions
   const openModal = () => {
     setIsModalActive(true);
   };
@@ -129,27 +136,30 @@ const Listing = () => {
     getReviews();
   };
 
+  const openDeleteModal = () => {
+    setIsDeleteModalActive(true);
+  };
+
+  const closeDeleteModal = () => {
+    setIsDeleteModalActive(false);
+    getReviews();
+  };
+
   const editReview = (reviewData) => {
-    // console.log("clicked to edit");
     setIsModalActive(true);
     setIsEditing(true);
     setReviewData(reviewData);
   };
 
-  const deleteReview = (reviewData) => {
-    console.log("clicked to delete");
-    setReviewData(reviewData);
-    axios.delete(`/api/review/${reviewData.review_id}`).then((res) => {
+  const deleteReview = (reviewID) => {
+    console.log("made it to deleteReview");
+    setIsDeleteModalActive(true);
+    setDeleteID(reviewID);
+    axios.delete(`/api/review/${reviewID}`).then((res) => {
       console.log("review has been deleted");
     });
   };
-
-  // console.log("property:", property);
-  // console.log("count:", count);
-  // console.log("avg:", average);
-  console.log("isEditing:", isEditing);
-  console.log("reviewData:".reviewData);
-
+  console.log("reviewData in listing", reviewData);
   return (
     <div>
       <Header2 />
@@ -199,9 +209,11 @@ const Listing = () => {
                     </h2>
                   </div>
                   <div className="text-row-2">
-                    <p>{property.max_guests} Guests </p>
-                    <p>{property.beds} Beds </p>
-                    <p>{property.baths} Baths </p>
+                    <span>{property.max_guests} Guests </span>
+                    <span className="partition"> . </span>
+                    <span>{property.beds} Beds </span>
+                    <span className="partition"> . </span>
+                    <span>{property.baths} Baths </span>
                   </div>
                 </div>
 
@@ -214,14 +226,22 @@ const Listing = () => {
                   <ion-icon name="home-outline"></ion-icon>
                   <p>Entire Home</p>
                 </div>
+                <p className="mini-desc">
+                  You’ll have the apartment to yourself.
+                </p>
                 <div className="second">
                   <ion-icon name="bag-check-outline"></ion-icon>
                   <p>Self Check-in</p>
                 </div>
+                <p className="mini-desc">Check yourself in with smartlock.</p>
                 <div className="third">
                   <ion-icon name="medal-outline"></ion-icon>
                   <p>{property.f_name} is a Superhost</p>
                 </div>
+                <p className="mini-desc">
+                  Superhosts are highly rated hosts committed to providing great
+                  stays for guests.
+                </p>
               </div>
               <div className="description">
                 <p>{property.description}</p>
@@ -286,23 +306,35 @@ const Listing = () => {
                     </div>
                   </div>
                   <div className="booking-form">
-                    <DatePicker
-                      className="date-picker"
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                    />
-                    <DatePicker
-                      className="date-picker"
-                      selected={endDate}
-                      onChange={(date) => setEndDate(date)}
-                    />
-                    {/* <button className="booking-btn">Reserve</button> */}
+                    <div className="dates">
+                      <DatePicker
+                        className="date-picker"
+                        id="start-date"
+                        placeholder="CHECK-IN"
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                      />
+                      <DatePicker
+                        className="date-picker"
+                        id="end-date"
+                        placeholder="CHECKOUT"
+                        selected={endDate}
+                        onChange={(date) => setEndDate(date)}
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="GUESTS"
+                        className="guests"
+                      />
+                    </div>
+                    <button className="booking-btn">Reserve</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* <p>calendar</p> */}
           <div className="reviews">
             <div className="review-title">
               <h2>
@@ -320,13 +352,14 @@ const Listing = () => {
                     <Review
                       key={index}
                       reviewID={review.review_id}
-                      reviewText={review.text}
                       text={review.text}
                       first={review.f_name}
                       last={review.l_name}
                       image={review.img_url}
                       reviewData={review}
                       editReview={editReview}
+                      openDeleteModal={openDeleteModal}
+                      closeDeleteModal={closeDeleteModal}
                       deleteReview={deleteReview}
                     />
                   );
@@ -361,6 +394,14 @@ const Listing = () => {
         isModalActive={isModalActive}
         isEditing={isEditing}
         reviewData={reviewData}
+        // reviewID={review_id}
+      />
+      <DeleteModal
+        isDeleteModalActive={isDeleteModalActive}
+        closeDeleteModal={closeDeleteModal}
+        openDeleteModal={openDeleteModal}
+        deleteReview={deleteReview}
+        deleteID={deleteID}
       />
     </div>
   );
