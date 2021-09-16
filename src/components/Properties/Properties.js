@@ -25,10 +25,6 @@ const Properties = () => {
     const categoryParam = params.get("id");
     const searchParam = params.get("query");
     const id = categoryMapping[categoryParam];
-    // console.log("id:", id);
-
-    // console.log("s param:", searchParam);
-    // console.log("c param:", categoryParam);
 
     if (categoryParam) {
       axios.get(`/api/properties/${id}`).then((res) => {
@@ -75,9 +71,7 @@ const Properties = () => {
             </div>
           )}
         </div>
-        <div className="map">
-          <Map />
-        </div>
+        <div className="map">{/* <Map /> */}</div>
       </div>
       <Footer />
     </div>

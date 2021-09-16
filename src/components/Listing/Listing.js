@@ -58,6 +58,8 @@ const Listing = () => {
   const [reviewData, setReviewData] = useState();
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [days, setDays] = useState();
+  const [baseTotal, setBaseTotal] = useState();
   const [average, setAverage] = useState();
   const [count, setCount] = useState();
 
@@ -65,7 +67,6 @@ const Listing = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
-    console.log("id:", id);
     axios.get(`/api/listing/${id}`).then((res) => {
       setProperty(res.data);
     });
@@ -73,17 +74,16 @@ const Listing = () => {
 
   //calls to get reviews from backend OR refresh reviews after new crud
   const getReviews = useCallback(() => {
-    console.log("get reviews");
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
     axios.get(`/api/reviews/${id}`).then((res) => {
       setReviews(res.data);
     });
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     getReviews();
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.search, getReviews]);
 
   //get review averages
   useEffect(() => {
@@ -136,8 +136,9 @@ const Listing = () => {
     getReviews();
   };
 
-  const openDeleteModal = () => {
+  const openDeleteModal = (reviewID) => {
     setIsDeleteModalActive(true);
+    setDeleteID(reviewID);
   };
 
   const closeDeleteModal = () => {
@@ -151,15 +152,23 @@ const Listing = () => {
     setReviewData(reviewData);
   };
 
-  const deleteReview = (reviewID) => {
-    console.log("made it to deleteReview");
-    setIsDeleteModalActive(true);
-    setDeleteID(reviewID);
-    axios.delete(`/api/review/${reviewID}`).then((res) => {
-      console.log("review has been deleted");
-    });
+  const deleteReview = (deleteID) => {
+    axios.delete(`/api/review/${deleteID}`).then((res) => {});
+    setTimeout(() => {
+      closeDeleteModal();
+    }, 3000);
   };
-  console.log("reviewData in listing", reviewData);
+
+  // console.log("prop price:", property.price_per_night);
+  //booking functions
+  const calculateDays = (startDate, endDate) => {
+    let days = (endDate - startDate) / 3600000 / 24;
+    setDays(days);
+    let total = days * property.price_per_night;
+    setBaseTotal(total);
+    // console.log("days:", days);
+    // console.log("total:", total);
+  };
   return (
     <div>
       <Header2 />
@@ -329,7 +338,45 @@ const Listing = () => {
                         className="guests"
                       />
                     </div>
-                    <button className="booking-btn">Reserve</button>
+                    <button
+                      onClick={() =>
+                        calculateDays(
+                          startDate,
+                          endDate,
+                          property.price_per_night
+                        )
+                      }
+                      className="booking-btn"
+                    >
+                      Reserve
+                    </button>
+                    <div className="disclaimer">
+                      <p>You won't be charged yet</p>
+                    </div>
+
+                    <div className="calculator">
+                      <p>
+                        $ {property.price_per_night} x #{days}
+                      </p>
+                      <p>{baseTotal}</p>
+                    </div>
+                    <div className="cleaning-fee">
+                      <p>Cleaning fee</p>
+                      <p>$35 x {days} nights</p>
+                    </div>
+                    <div className="service-fee">
+                      <p>Service Fee</p>
+                      <p>$15 x {days} nights</p>
+                    </div>
+                    <div className="fees">
+                      <p>Taxes and fees</p>
+                      <p> $28 x {days} nights</p>
+                    </div>
+                    <div className="box-line"></div>
+                    <div className="total">
+                      <h4>Total</h4>
+                      <h4>$$$</h4>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -337,10 +384,12 @@ const Listing = () => {
           </div>
           <div className="reviews">
             <div className="review-title">
-              <h2>
+              <div className="bit">
                 <ion-icon name="star" id="star"></ion-icon>
-                {average} ({count} reviews)
-              </h2>
+                <h2>
+                  {average} ({count} reviews)
+                </h2>
+              </div>
               <div className="button-wrapper">
                 <ReviewButton openModal={openModal} />
               </div>
@@ -360,7 +409,7 @@ const Listing = () => {
                       editReview={editReview}
                       openDeleteModal={openDeleteModal}
                       closeDeleteModal={closeDeleteModal}
-                      deleteReview={deleteReview}
+                      // deleteReview={deleteReview}
                     />
                   );
                 })
@@ -375,7 +424,7 @@ const Listing = () => {
             <div className="map-title">
               <h2>Where you'll be</h2>
             </div>
-            <Map lat={32.77786047151945} lng={-96.82844087369267} />
+            <Map lat={property.lat} lng={property.lng} />
           </div>
           <ThingsToKnow />
         </div>

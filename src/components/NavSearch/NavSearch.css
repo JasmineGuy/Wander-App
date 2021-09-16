@@ -4,15 +4,15 @@
   font-family: "Roboto", sans-serif;
 }
 
-.search-bar {
+.nav-search-bar {
   position: relative;
+  margin-left: 7rem;
 }
-.search-bar input {
-  height: 55px;
-  width: 450px;
+.nav-search-bar input {
+  height: 40px;
+  width: 300px;
   border-radius: 32px;
-  margin-bottom: 450px;
-  border: 1px solid transparent;
+  border: 1px solid lightgray;
   padding: 0.5rem;
   font-size: 18px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -25,23 +25,29 @@ select:focus {
   outline: none;
 }
 
-.search-bar input {
+.nav-search-bar input {
   padding-left: 30px;
 }
-.search-btn {
+.nav-search-btn {
   background-color: #ff385c;
   color: white;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   padding: 0.5rem;
   border: 2px solid transparent;
   position: absolute;
   z-index: 1;
-  right: -20px;
-  top: -25px;
+  right: -25px;
+  top: -23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.search-btn:hover {
+.nav-search-btn:hover {
   cursor: pointer;
   background-color: #f5103a;
+}
+.search-icon {
+  font-size: small;
 }

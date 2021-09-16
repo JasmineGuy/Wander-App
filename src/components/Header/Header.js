@@ -1,7 +1,6 @@
 import React from "react";
 import "../Header/Header.css";
 import { NavLink } from "react-router-dom";
-import * as Icon from "react-feather";
 
 const Header = () => {
   return (
@@ -21,7 +20,7 @@ const Header = () => {
         <h4>Trip Boards</h4>
         <h4>
           <div className="circle">
-            <ion-icon name="person-circle-outline"></ion-icon>
+            <ion-icon id="menu1" name="menu-outline"></ion-icon>
           </div>
         </h4>
       </div>

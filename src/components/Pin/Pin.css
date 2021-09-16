@@ -1,0 +1,12 @@
+.pin {
+  background-color: #ff385c;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.pin-icon {
+  color: white;
+}

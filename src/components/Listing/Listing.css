@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 10vw;
+  width: 12vw;
   height: 5vh;
 }
 
@@ -138,7 +138,7 @@
   width: 40vw;
 }
 
-/* amentity styles */
+/* amenity styles */
 .amenities {
   margin: 2rem;
   width: 40vw;
@@ -189,6 +189,11 @@ ion-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: 1px solid blue; */
+}
+.bit {
+  display: flex;
+  align-items: center;
 }
 .modal-btn {
   border: 1px solid blue;
@@ -216,15 +221,18 @@ ion-icon {
   width: 40%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .booking-box {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 55vh;
-  position: sticky;
   margin-top: 1rem;
-  position: sticky;
+  /* position: fixed; */
+  left: 850px;
+  top: 30px;
+  /* display: none; */
 }
 .pricing-info {
   display: flex;
@@ -242,7 +250,7 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   border-radius: 32px;
-  height: 300px;
+  height: 700px;
   width: 450px;
   border: 2px solid lightgray;
   background-color: white;
@@ -300,6 +308,28 @@ ion-icon {
 }
 #end-date {
   border-top-right-radius: 12px;
+}
+
+.calculator,
+.cleaning-fee,
+.service-fee,
+.fees,
+.total {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  /* padding-left: 1rem; */
+  /* padding-right: 1rem; */
+}
+.disclaimer {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.5rem;
+}
+.box-line {
+  width: 80%;
+  height: 2px;
+  background-color: lightgrey;
 }
 /* map styles */
 .map-section {

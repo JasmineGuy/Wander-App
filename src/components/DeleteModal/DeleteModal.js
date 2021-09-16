@@ -8,20 +8,23 @@ const DeleteModal = ({
   closeDeleteModal,
   deleteReview,
   isDeleteModalActive,
-  reviewID,
+  deleteID,
 }) => {
   const [deleteConfirmation, setDeleteConfirmation] = useState("");
   const [isDeleteDisabled, setIsDeleteDisabled] = useState(false);
 
-  const handleDelete = () => {
-    console.log("hello");
+  const handleDelete = (deleteID) => {
     setIsDeleteDisabled(true);
+    deleteReview(deleteID);
     setDeleteConfirmation("Your review was successfully deleted");
-    deleteReview(reviewID);
-    closeDeleteModal();
   };
 
-  console.log("reviewID:", reviewID);
+  const handleCloseDeleteModal = () => {
+    setIsDeleteDisabled(false);
+    setDeleteConfirmation("");
+    // closeDeleteModal();
+  };
+
   return (
     <div className="delete-modal">
       <Dialog
@@ -30,7 +33,7 @@ const DeleteModal = ({
         onDismiss={handleDelete}
       >
         <div className="close-x">
-          <Icon.X onClick={closeDeleteModal} />
+          <Icon.X onClick={handleCloseDeleteModal} />
         </div>
 
         <div className="top-form">
@@ -38,7 +41,7 @@ const DeleteModal = ({
         </div>
         <div className="very-bottom">
           <button
-            onClick={() => handleDelete}
+            onClick={() => handleDelete(deleteID)}
             className={isDeleteDisabled ? "delete-btn disabled" : "delete-btn"}
             disabled={isDeleteDisabled}
           >

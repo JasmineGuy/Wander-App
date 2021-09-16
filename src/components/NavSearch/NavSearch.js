@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "../Search/Search.css";
+import "../NavSearch/NavSearch.css";
 import * as Icon from "react-feather";
 
-const Search = () => {
+const NavSearch = () => {
   const history = useHistory();
   const [userInput, setUserInput] = useState("");
 
@@ -13,22 +13,21 @@ const Search = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-
     history.push(`/properties?query=${userInput}`);
   };
 
   return (
-    <form className="search-bar" onSubmit={(e) => handleClick(e)}>
+    <form className="nav-search-bar" onSubmit={(e) => handleClick(e)}>
       <input
         type="text"
-        placeholder="Search by city or state"
+        placeholder="Start your search"
         onChange={(e) => handleChange(e.target.value)}
       />
-      <button className="search-btn">
-        <Icon.Search />
+      <button className="nav-search-btn">
+        <Icon.Search className="search-icon" />
       </button>
     </form>
   );
 };
 
-export default Search;
+export default NavSearch;

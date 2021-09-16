@@ -1,7 +1,6 @@
 import React from "react";
-import Search from "../Search/Search";
+import NavSearch from "../NavSearch/NavSearch";
 import { NavLink } from "react-router-dom";
-import * as Icon from "react-feather";
 import "../Header2/Header2.css";
 
 const Header2 = () => {
@@ -16,7 +15,7 @@ const Header2 = () => {
         </NavLink>
       </div>
       <div className="search-container">
-        <Search />
+        <NavSearch />
       </div>
       <div className="links">
         <NavLink className="nav-link" to="/properties">
@@ -25,7 +24,7 @@ const Header2 = () => {
         <h4>Trip Boards</h4>
         <h4>
           <div className="circle-h2">
-            <ion-icon id="user" name="person-circle-outline"></ion-icon>
+            <ion-icon id="menu" name="menu-outline"></ion-icon>
           </div>
         </h4>
       </div>

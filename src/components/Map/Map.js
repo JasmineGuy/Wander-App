@@ -9,12 +9,12 @@ const containerStyle = {
 };
 
 const Map = ({ lat, lng }) => {
-  // console.log("lat:", lat);
-  // console.log("lng:", lng);
+  console.log("lat:", lat);
+  console.log("lng:", lng);
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "",
+    googleMapsApiKey: process.env.GOOGLE_API_KEY,
   });
 
   const center = {
@@ -42,7 +42,7 @@ const Map = ({ lat, lng }) => {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={11}
+          zoom={15}
           onLoad={onLoad}
           onUnmount={onUnmount}
         >

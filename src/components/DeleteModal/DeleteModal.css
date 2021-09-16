@@ -44,7 +44,7 @@
 .close-x {
   text-align: right;
 }
-.response-message {
+.confirmation-message {
   display: flex;
   justify-content: center;
   align-items: center;

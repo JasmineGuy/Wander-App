@@ -9,7 +9,7 @@ const Review = ({
   reviewID,
   reviewData,
   openDeleteModal,
-  // deleteReview,
+  closeDeleteModal,
 }) => {
   return (
     <div className="review-card">
@@ -19,19 +19,21 @@ const Review = ({
             <img alt="reviewer" src={image} />
             <h4>{first}</h4>
           </div>
-          <div className="crud-btns">
-            <ion-icon
-              onClick={() => editReview(reviewData)}
-              size="small"
-              name="create-outline"
-            ></ion-icon>
-            <ion-icon
-              reviewID={reviewID}
-              onClick={openDeleteModal}
-              size="small"
-              name="trash-outline"
-            ></ion-icon>
-          </div>
+          {reviewData && reviewData.user_id === 31 ? (
+            <div className="crud-btns">
+              <ion-icon
+                onClick={() => editReview(reviewData)}
+                size="small"
+                name="create-outline"
+              ></ion-icon>
+              <ion-icon
+                reviewID={reviewID}
+                onClick={() => openDeleteModal(reviewID)}
+                size="small"
+                name="trash-outline"
+              ></ion-icon>
+            </div>
+          ) : null}
         </div>
         <p>{text}</p>
       </div>
