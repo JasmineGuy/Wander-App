@@ -15,16 +15,16 @@ const Header = () => {
       </div>
       <div className="links">
         <NavLink className="nav-link" to="/properties">
-          <h4>View All</h4>
+          <h3>View All</h3>
         </NavLink>
         <NavLink className="nav-link" to="/favorites">
           <h4>Favorites</h4>
         </NavLink>
-        <h4>
+        <h3>
           <div className="circle">
             <ion-icon id="menu1" name="menu-outline"></ion-icon>
           </div>
-        </h4>
+        </h3>
       </div>
     </div>
   );

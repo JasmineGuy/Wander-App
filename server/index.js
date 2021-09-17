@@ -28,6 +28,7 @@ app.post("/api/review/:id", ctrl.createReview);
 app.put("/api/review/:id", ctrl.editReview);
 app.get("/api/average/:id", ctrl.getAverage);
 app.get("/api/count/:id", ctrl.getCount);
+app.post("/api/favorites", ctrl.addFavorite);
 
 app.delete("/api/review/:id", ctrl.deleteReview);
 

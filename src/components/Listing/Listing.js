@@ -3,19 +3,19 @@ import { useLocation } from "react-router-dom";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
 
+import Skeleton from "react-loading-skeleton";
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
 import Review from "../Review/Review";
 import ReviewButton from "../ReviewButton/ReviewButton";
-import "../Listing/Listing.css";
 import ReviewModal from "../ReviewModal/ReviewModal";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
 import ThingsToKnow from "../ThingsToKnow/ThingsToKnow";
 import Map from "../Map/Map";
+import "../Listing/Listing.css";
 
 const categoryMapping = {
   Backyard: "leaf-outline",
@@ -53,15 +53,21 @@ const Listing = () => {
   const [reviews, setReviews] = useState();
   const [isModalActive, setIsModalActive] = useState(false);
   const [isDeleteModalActive, setIsDeleteModalActive] = useState(false);
+  const [isConfirmModalActive, setIsConfirmModalActive] = useState(false);
   const [deleteID, setDeleteID] = useState();
   const [isEditing, setIsEditing] = useState(false);
   const [reviewData, setReviewData] = useState();
+  const [average, setAverage] = useState();
+  const [count, setCount] = useState();
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [days, setDays] = useState();
+  const [price, setPrice] = useState();
   const [baseTotal, setBaseTotal] = useState();
-  const [average, setAverage] = useState();
-  const [count, setCount] = useState();
+  const [cleaning, setCleaning] = useState();
+  const [service, setService] = useState();
+  const [taxes, setTaxes] = useState();
+  const [grandTotal, setGrandTotal] = useState();
 
   //get all property data
   useEffect(() => {
@@ -126,6 +132,15 @@ const Listing = () => {
     });
   };
 
+  // const addToTripBoard = (propertyID) => {
+  //   console.log("fave button clicked");
+  //   axios
+  //     .post("/api/favorites", { propID: propertyID, userID: 31 })
+  //     .then((res) => {
+  //       console.log("added to trips");
+  //     });
+  // };
+
   // Modal functions
   const openModal = () => {
     setIsModalActive(true);
@@ -146,6 +161,17 @@ const Listing = () => {
     getReviews();
   };
 
+  const openConfirmModal = () => {
+    setIsConfirmModalActive(true);
+    console.log("clicked reserve");
+    console.log("made it here");
+    console.log("active?:", isConfirmModalActive);
+  };
+
+  const closeConfirmModal = () => {
+    setIsConfirmModalActive(false);
+  };
+
   const editReview = (reviewData) => {
     setIsModalActive(true);
     setIsEditing(true);
@@ -159,16 +185,39 @@ const Listing = () => {
     }, 3000);
   };
 
-  // console.log("prop price:", property.price_per_night);
   //booking functions
-  const calculateDays = (startDate, endDate) => {
-    let days = (endDate - startDate) / 3600000 / 24;
+  useEffect(() => {
+    if (property) {
+      // console.log("changes to dates detected");
+      setPrice(property.price_per_night);
+      calculator(startDate, endDate, price);
+    }
+  }, [startDate, endDate]);
+
+  const calculator = (startDate, endDate, price) => {
+    let days = Math.ceil((endDate - startDate) / 3600000 / 24);
     setDays(days);
-    let total = days * property.price_per_night;
+    let total = days * price;
     setBaseTotal(total);
-    // console.log("days:", days);
-    // console.log("total:", total);
+    let cleaning = days * 35;
+    setCleaning(cleaning);
+    let service = days * 15;
+    setService(service);
+    let taxes = days * 28;
+    setTaxes(taxes);
+    let grandTotal = total + cleaning + service + taxes;
+    setGrandTotal(grandTotal);
   };
+
+  const renderRow = (display) => {
+    if (display) {
+      return `$${display}`;
+    } else {
+      return "-";
+    }
+  };
+
+  console.log("what about now?:", isConfirmModalActive);
   return (
     <div>
       <Header2 />
@@ -184,12 +233,18 @@ const Listing = () => {
                 {average} ({count} reviews)
               </p>
             </div>
-            <div>
+            <div className="address-and-like-btn">
               <p id="generic-address">
                 {property.city}, {property.state}, {property.country}
               </p>
+              <ion-icon
+                id="fave-heart"
+                name="heart-outline"
+                // onClick={() => addToTripBoard(property.id)}
+              ></ion-icon>
             </div>
           </div>
+
           <div className="images-container">
             <div className="left-side">
               <img
@@ -331,51 +386,35 @@ const Listing = () => {
                         onChange={(date) => setEndDate(date)}
                       />
                     </div>
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="GUESTS"
-                        className="guests"
-                      />
-                    </div>
-                    <button
-                      onClick={() =>
-                        calculateDays(
-                          startDate,
-                          endDate,
-                          property.price_per_night
-                        )
-                      }
-                      className="booking-btn"
-                    >
-                      Reserve
-                    </button>
                     <div className="disclaimer">
-                      <p>You won't be charged yet</p>
+                      <h4>You won't be charged yet</h4>
                     </div>
 
                     <div className="calculator">
                       <p>
-                        $ {property.price_per_night} x #{days}
+                        ${property.price_per_night} x {days} nights
                       </p>
-                      <p>{baseTotal}</p>
+                      {renderRow(baseTotal)}
                     </div>
                     <div className="cleaning-fee">
-                      <p>Cleaning fee</p>
-                      <p>$35 x {days} nights</p>
+                      <p>Cleaning fee x {days} nights</p>
+                      {renderRow(cleaning)}
                     </div>
                     <div className="service-fee">
-                      <p>Service Fee</p>
-                      <p>$15 x {days} nights</p>
+                      <p>Service Fee x {days} nights</p>
+                      {renderRow(service)}
                     </div>
                     <div className="fees">
-                      <p>Taxes and fees</p>
-                      <p> $28 x {days} nights</p>
+                      <p>Taxes and fees x {days} nights</p>
+                      {renderRow(taxes)}
                     </div>
                     <div className="box-line"></div>
                     <div className="total">
-                      <h4>Total</h4>
-                      <h4>$$$</h4>
+                      <h3>Total</h3>
+                      {renderRow(grandTotal)}
+                    </div>
+                    <div className="reserve-btn-wrapper">
+                      <button onClick={openConfirmModal}>Reserve</button>
                     </div>
                   </div>
                 </div>
@@ -409,7 +448,6 @@ const Listing = () => {
                       editReview={editReview}
                       openDeleteModal={openDeleteModal}
                       closeDeleteModal={closeDeleteModal}
-                      // deleteReview={deleteReview}
                     />
                   );
                 })
@@ -443,7 +481,6 @@ const Listing = () => {
         isModalActive={isModalActive}
         isEditing={isEditing}
         reviewData={reviewData}
-        // reviewID={review_id}
       />
       <DeleteModal
         isDeleteModalActive={isDeleteModalActive}
@@ -451,6 +488,13 @@ const Listing = () => {
         openDeleteModal={openDeleteModal}
         deleteReview={deleteReview}
         deleteID={deleteID}
+      />
+      <ConfirmModal
+        property={property}
+        isConfirmModalActive={isConfirmModalActive}
+        closeConfirmModal={closeConfirmModal}
+        startDate={startDate}
+        endDate={endDate}
       />
     </div>
   );

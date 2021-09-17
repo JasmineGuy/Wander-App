@@ -11,15 +11,16 @@ An app that allows users to browse, search, book and review unique vacation rent
 <li>App will allow users to view rental locations on a map</li>
 <li>App will allow users to select dates to book a rental.</li>
 <li>App will allow users to create, edit and delete reviews for listings.</li>
-<li>Users can sign up as hosts</li>
-<li>Hosts can create listings</li>
+<li>Users can add listings to a "Trip Board"</li>
 </ul>
 
 <h2>Future Functionality</h2>
 <ul>
 
-<li>Users can add listings to a "Trip Board"</li>
+
 <li>Users can refine their search results with filters</li>
+<li>Users can sign up as hosts</li>
+<li>Hosts can create listings</li>
 <li>Carousel of pictures on search view</li>
 <li>Users without specific search criteria can use the 'explore' tab which randomizes rental options</li>
 </ul>

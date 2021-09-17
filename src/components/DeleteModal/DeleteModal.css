@@ -2,7 +2,7 @@
   width: 30vw;
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .form {

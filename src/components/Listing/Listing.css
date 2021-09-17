@@ -24,9 +24,21 @@
   display: flex;
   align-items: center;
 }
+
 #generic-address {
   margin-left: 1rem;
   text-decoration: underline;
+}
+.address-and-like-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 1rem;
+}
+#fave-heart {
+  color: #ff385c;
+  /* font-size: 24px; */
 }
 /* photo styles */
 .images-container {
@@ -232,7 +244,6 @@ ion-icon {
   /* position: fixed; */
   left: 850px;
   top: 30px;
-  /* display: none; */
 }
 .pricing-info {
   display: flex;
@@ -240,7 +251,7 @@ ion-icon {
   width: 50%;
   align-items: center;
   justify-content: flex-start;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 .pricing-info h3 {
   font-size: 24px;
@@ -250,8 +261,8 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   border-radius: 32px;
-  height: 700px;
-  width: 450px;
+  height: 650px;
+  /* width: 450px; */
   border: 2px solid lightgray;
   background-color: white;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -267,6 +278,8 @@ ion-icon {
   width: 55%;
   display: flex;
   align-items: center;
+  justify-content: right;
+  margin: 1rem;
 }
 .x p {
   text-decoration: underline;
@@ -278,36 +291,47 @@ ion-icon {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  /* border: 1px solid blue; */
 }
 .dates {
   display: flex;
   justify-content: space-around;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   width: 90%;
+  /* border: 1px solid red; */
 }
 .date-picker {
   height: 60px;
-  width: 203px;
+  width: 200px;
   border: 1px solid gray;
+}
+.reserve-btn-wrapper {
+  /* border: 1px solid blue; */
+  margin-top: -30px;
 }
 .booking-btn {
-  width: 370px;
+  width: 350px;
   font-size: 20px;
 }
-.guests {
-  height: 60px;
-  width: 400.5px;
-  border: 1px solid gray;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  margin-left: 0.53rem;
-  padding-left: 0.5rem;
-}
+
 #start-date {
+  display: flex;
+  justify-content: center;
+  padding-left: 0.5rem;
   border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+
+  margin-left: 0.5rem;
+  font-size: 18px;
 }
 #end-date {
+  display: flex;
+  justify-content: center;
+  padding-left: 0.5rem;
   border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-right: 0.5rem;
+  font-size: 18px;
 }
 
 .calculator,
@@ -318,13 +342,12 @@ ion-icon {
   display: flex;
   width: 85%;
   justify-content: space-between;
-  /* padding-left: 1rem; */
-  /* padding-right: 1rem; */
+  align-items: center;
 }
 .disclaimer {
   display: flex;
   justify-content: center;
-  margin-top: -1.5rem;
+  /* margin-top: -1.5rem; */
 }
 .box-line {
   width: 80%;
