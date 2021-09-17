@@ -107,4 +107,12 @@ module.exports = {
       .delete_review([id])
       .then((results) => res.status(200).send(results));
   },
+  addFavorite: (req, res) => {
+    let { propID, userID } = req.body;
+    console.log("userId:", userID);
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .add_favorite([propID, userID])
+      .then((faves) => res.status(200).send(faves));
+  },
 };

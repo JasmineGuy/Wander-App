@@ -31,6 +31,7 @@ const DeleteModal = ({
         className="delete-modal"
         isOpen={isDeleteModalActive}
         onDismiss={handleDelete}
+        aria-label="menu"
       >
         <div className="close-x">
           <Icon.X onClick={handleCloseDeleteModal} />

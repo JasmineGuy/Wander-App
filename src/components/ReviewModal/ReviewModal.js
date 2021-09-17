@@ -91,6 +91,7 @@ const ReviewModal = ({
         className="modal"
         isOpen={isModalActive}
         onDismiss={handleCloseModal}
+        aria-label="menu"
       >
         <div className="close-x">
           <Icon.X onClick={handleCloseModal} />

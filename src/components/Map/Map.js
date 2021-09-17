@@ -9,8 +9,8 @@ const containerStyle = {
 };
 
 const Map = ({ lat, lng }) => {
-  console.log("lat:", lat);
-  console.log("lng:", lng);
+  // console.log("lat:", lat);
+  // console.log("lng:", lng);
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
