@@ -3,6 +3,7 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Properties from "./components/Properties/Properties";
 import Listing from "./components/Listing/Listing";
+import Favorites from "./components/Favorites/Favorites";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/properties" component={Properties} />
         <Route path="/properties/:id" component={Properties} />
         <Route path="/listing" component={Listing} />
+        <Route path="/favorites" component={Favorites} />
       </Switch>
     </div>
   );

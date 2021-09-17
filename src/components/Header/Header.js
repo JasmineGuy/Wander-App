@@ -17,7 +17,9 @@ const Header = () => {
         <NavLink className="nav-link" to="/properties">
           <h4>View All</h4>
         </NavLink>
-        <h4>Trip Boards</h4>
+        <NavLink className="nav-link" to="/favorites">
+          <h4>Favorites</h4>
+        </NavLink>
         <h4>
           <div className="circle">
             <ion-icon id="menu1" name="menu-outline"></ion-icon>
