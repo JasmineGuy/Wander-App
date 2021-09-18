@@ -3,13 +3,27 @@ import * as Icon from "react-feather";
 import "../Property/Property.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../../ducks/favoritesReducer";
 
-const Property = ({ id, image, name, guests, beds, baths, price }) => {
-  //get review averages
+const Property = ({
+  id,
+  image,
+  name,
+  guests,
+  beds,
+  baths,
+  price,
+  property,
+}) => {
   const [average, setAverage] = useState();
   const [count, setCount] = useState();
   const [propertyID, setPropertyID] = useState();
+  const favorites = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [isFave, setIsFave] = useState(false);
 
+  //get review averages
   useEffect(() => {
     axios.get(`/api/average/${id}`).then((res) => {
       let result = res.data[0].avg * 100;
@@ -30,16 +44,18 @@ const Property = ({ id, image, name, guests, beds, baths, price }) => {
     history.push(`/listing?id=${id}`);
   };
 
-  // const addToTripBoard = (propertyID) => {
-  //   console.log("fave button clicked");
-  //   setPropertyID(id);
-  //   axios
-  //     .post("/api/favorites", { propID: propertyID, userID: 31 })
-  //     .then((res) => {
-  //       console.log("added to trips");
-  //     });
-  // };
-
+  const favoriteHandler = (property) => {
+    console.log("fave button clicked");
+    if (!isFave) {
+      dispatch(addFavorite(property));
+      setIsFave(true);
+    } else {
+      console.log("fave btn clicked again");
+      dispatch(removeFavorite(property.property_id));
+      setIsFave(false);
+    }
+  };
+  console.log("guest:", guests);
   return (
     <div className="property-card">
       <div className="image-holder">
@@ -47,9 +63,9 @@ const Property = ({ id, image, name, guests, beds, baths, price }) => {
       </div>
       <div className="right">
         <ion-icon
-          // onClick={() => addToTripBoard(propertyID)}
+          onClick={() => favoriteHandler(property)}
           id="fave-me"
-          name="heart-outline"
+          name={isFave ? "heart" : "heart-outline"}
         ></ion-icon>
         <div className="top-row">
           <h3>{name}</h3>

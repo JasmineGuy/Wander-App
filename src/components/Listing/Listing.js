@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../../ducks/favoritesReducer";
+
 import { useLocation } from "react-router-dom";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import DatePicker from "react-datepicker";
@@ -68,6 +71,9 @@ const Listing = () => {
   const [service, setService] = useState();
   const [taxes, setTaxes] = useState();
   const [grandTotal, setGrandTotal] = useState();
+  const favorites = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [isFave, setIsFave] = useState(false);
 
   //get all property data
   useEffect(() => {
@@ -132,14 +138,17 @@ const Listing = () => {
     });
   };
 
-  // const addToTripBoard = (propertyID) => {
-  //   console.log("fave button clicked");
-  //   axios
-  //     .post("/api/favorites", { propID: propertyID, userID: 31 })
-  //     .then((res) => {
-  //       console.log("added to trips");
-  //     });
-  // };
+  const favoriteHandler = (property) => {
+    console.log("fave button clicked");
+    if (!isFave) {
+      dispatch(addFavorite(property));
+      setIsFave(true);
+    } else {
+      console.log("fave btn clicked again");
+      dispatch(removeFavorite(property.property_id));
+      setIsFave(false);
+    }
+  };
 
   // Modal functions
   const openModal = () => {
@@ -163,9 +172,6 @@ const Listing = () => {
 
   const openConfirmModal = () => {
     setIsConfirmModalActive(true);
-    console.log("clicked reserve");
-    console.log("made it here");
-    console.log("active?:", isConfirmModalActive);
   };
 
   const closeConfirmModal = () => {
@@ -188,7 +194,6 @@ const Listing = () => {
   //booking functions
   useEffect(() => {
     if (property) {
-      // console.log("changes to dates detected");
       setPrice(property.price_per_night);
       calculator(startDate, endDate, price);
     }
@@ -217,7 +222,6 @@ const Listing = () => {
     }
   };
 
-  console.log("what about now?:", isConfirmModalActive);
   return (
     <div>
       <Header2 />
@@ -239,8 +243,8 @@ const Listing = () => {
               </p>
               <ion-icon
                 id="fave-heart"
-                name="heart-outline"
-                // onClick={() => addToTripBoard(property.id)}
+                name={isFave ? "heart" : "heart-outline"}
+                onClick={() => favoriteHandler(property)}
               ></ion-icon>
             </div>
           </div>

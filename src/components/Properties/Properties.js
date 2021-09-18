@@ -62,12 +62,13 @@ const Properties = () => {
                   amen3={property.amen_3}
                   price={property.price_per_night}
                   host={property.f_name}
+                  property={property}
                 />
               );
             })
           ) : (
             <div>
-              <Skeleton count={100} duration={3} />
+              <Skeleton count={10} duration={3} />
             </div>
           )}
         </div>
