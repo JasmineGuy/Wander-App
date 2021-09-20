@@ -22,20 +22,16 @@ const initialState = {
 };
 
 export default function favoritesReducer(state = initialState, action) {
-  console.log("action:", action);
   switch (action.type) {
     case ADD_FAVORITE:
       const copy = [...state.favorites, action.payload];
-      console.log("copy:", copy);
       return {
         ...state,
         favorites: copy,
       };
     case REMOVE_FAVORITE:
       const deleteCopy = [...state.favorites];
-      // console.log("dltcopy:", deleteCopy);
       const final = deleteCopy.filter((x) => x.property_id !== action.payload);
-      console.log("final:", final);
       return {
         ...state,
         favorites: final,

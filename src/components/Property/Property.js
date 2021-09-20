@@ -55,7 +55,6 @@ const Property = ({
       setIsFave(false);
     }
   };
-  console.log("guest:", guests);
   return (
     <div className="property-card">
       <div className="image-holder">

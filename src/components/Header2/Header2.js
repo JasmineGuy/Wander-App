@@ -24,11 +24,11 @@ const Header2 = () => {
         <NavLink className="nav-link" to="/favorites">
           <h4>Favorites</h4>
         </NavLink>
-        <h4>
+        {/* <h4>
           <div className="circle-h2">
             <ion-icon id="menu" name="menu-outline"></ion-icon>
           </div>
-        </h4>
+        </h4> */}
       </div>
     </div>
   );

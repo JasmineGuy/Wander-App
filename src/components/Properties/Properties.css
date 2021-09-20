@@ -9,10 +9,14 @@
   background-color: #f5f5f5;
   /* border: 1px solid blue; */
   padding-bottom: 1rem;
+  position: relative;
 }
 .list {
   width: 55vw;
 }
 .map {
-  width: 45vw;
+  width: 50vw;
+  height: 100vh;
+  /* position: -webkit-sticky; */
+  left: 780px;
 }
