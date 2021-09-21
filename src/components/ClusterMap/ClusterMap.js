@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 import {
   GoogleMap,
@@ -11,12 +11,14 @@ import "./ClusterMap.css";
 
 const containerStyle = {
   width: "100%",
-  height: "100vh",
+  // height: "100vh",
+  height: "100%",
 };
 
 const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
   const [map, setMap] = React.useState(null);
   let location = useLocation();
+  let history = useHistory();
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -32,8 +34,8 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
     setMap(null);
   }, []);
 
-  const handlePinClick = (e) => {
-    console.log("pinLocation: ", e);
+  const handlePinClick = (id) => {
+    history.push(`/listing?id=${id}`);
   };
 
   return (
@@ -44,6 +46,7 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
             <div className="map-wrapper">
               <GoogleMap
                 mapContainerStyle={containerStyle}
+                // className="mapContainer"
                 center={center}
                 zoom={(location.pathname = "/properties" ? 4 : 10)}
                 onUnmount={onUnmount}
@@ -52,7 +55,7 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
                   <Marker
                     key={index}
                     position={item}
-                    onClick={handlePinClick}
+                    onClick={() => handlePinClick(item.id)}
                   />
                 ))}
               </GoogleMap>

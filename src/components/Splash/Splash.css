@@ -6,8 +6,30 @@
   align-items: center;
   margin: auto;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/splash3.jpeg?alt=media&token=59324fad-01b5-470b-bbb8-04429d2872fd");
-  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/splash2.jpeg?alt=media&token=c9f9fa39-1ca9-4dbf-aa24-4638f59966b9"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
+}
+
+@media (max-width: 375px) {
+  .splash-container {
+    width: 100%;
+    height: 50vh;
+  }
+}
+@media (max-width: 1024px) {
+  .splash-container {
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    height: 75vh;
+  }
+}
+@media (min-width: 1400px) {
+  .splash-container {
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
 }

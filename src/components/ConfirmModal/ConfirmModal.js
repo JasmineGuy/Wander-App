@@ -24,26 +24,30 @@ const ConfirmModal = ({
   return (
     <div>
       <Dialog
-        className="modal"
+        className="confirm-modal"
         isOpen={isConfirmModalActive}
         onDismiss={closeConfirmModal}
         aria-label="menu-3"
       >
         {property ? (
           <>
-            <div className="close-x">
+            <div className="confirm-close-x">
               <Icon.X onClick={closeConfirmModal} />
             </div>
-            <div className="title">
+            <div className="confirm-title">
               <p>Your reservation details:</p>
             </div>
-            <div className="details">
-              <div className="image-container">
-                <img alt="feature-img" src={property.cover_pic} id="pic" />
+            <div className="confirm-details">
+              <div className="confirm-image-container">
+                <img
+                  alt="confirm-feature-img"
+                  src={property.cover_pic}
+                  id="pic"
+                />
               </div>
-              <div className="whole-thing">
-                <div className="hard-details">
-                  <div className="left-hd">
+              <div className="confirm-whole-thing">
+                <div className="confirm-hard-details">
+                  <div className="confirm-left-hd">
                     <h3>
                       {property.name} Hosted by {property.f_name}
                     </h3>
@@ -51,11 +55,13 @@ const ConfirmModal = ({
                       {property.address} {property.city}, {property.state}
                     </h4>
                   </div>
-                  <div className="right-hd">
+                  <div className="confirm-right-hd">
                     <button onClick={() => handleConfirm}>Confirm</button>
                   </div>
                 </div>
-                <div className="email-message">{reservationMessage}</div>
+                <div className="confirm-email-message">
+                  {reservationMessage}
+                </div>
               </div>
             </div>
           </>

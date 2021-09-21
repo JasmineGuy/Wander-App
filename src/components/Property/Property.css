@@ -21,12 +21,18 @@
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072);
 }
+.image-container {
+  width: 50%;
+  height: 90%;
+}
+.mobile-title {
+  visibility: hidden;
+}
 .image-holder {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
-  width: 50%;
+  width: 100%;
   margin: 0.5rem;
 }
 .property-card img {
@@ -109,4 +115,27 @@
 }
 #star {
   margin-bottom: 0.25rem;
+}
+@media (max-width: 375px) {
+  .right {
+    display: none;
+  }
+  .mobile-title {
+    /* display: none; */
+    visibility: visible;
+  }
+  .property-card {
+    height: auto;
+  }
+  .image-container {
+    width: 100%;
+  }
+  .image-holder {
+    width: 90%;
+  }
+  .property-card img {
+    /* background-color: lightgray; */
+    width: 100%;
+    min-width: 20px;
+  }
 }

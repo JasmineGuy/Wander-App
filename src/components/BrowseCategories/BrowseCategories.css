@@ -9,7 +9,6 @@
   margin-left: 2rem;
   font-size: 32px;
   font-weight: bold;
-  /* border: 1px solid red; */
 }
 .cat-container {
   display: flex;
@@ -17,13 +16,11 @@
   align-items: center;
   height: 55vh;
   margin: 1rem;
-  /* border: 1px solid red; */
 }
 .cat-holder {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* border: 1px solid blue; */
   height: 80%;
   width: 25%;
   margin: 0.5rem;
@@ -58,4 +55,110 @@
 #domes {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Domes%2F4%2F1.jpeg?alt=media&token=2d70c147-ece5-4875-b80e-32f13f9b45b0");
   background-size: cover;
+}
+@media (max-width: 375px) {
+  .title-holder h2 {
+    /* margin-top: 1rem; */
+    /* margin-left: 2rem; */
+    font-size: 12px;
+  }
+
+  .cat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid green;
+  }
+  .cat-holder {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 2rem;
+    color: gray;
+    font-size: 12px;
+    border: 1px solid blue;
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 50%;
+    width: 50%;
+  }
+  .cat-holder h3 {
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  .title-holder h2 {
+    /* margin-top: 1rem; */
+    /* margin-right: -7rem; */
+    font-size: 24px;
+  }
+  .cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 90vw;
+    padding: 0.5rem;
+    /* border: 1px solid red; */
+  }
+  .cat-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80;
+    width: 25%;
+    margin: 0.5rem;
+    color: gray;
+    /* border: 1px solid green; */
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 25vh;
+    width: 25vw;
+  }
+  .category-btn h3 {
+    margin-top: -0.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .title-holder h2 {
+    /* margin-top: 1rem; */
+    /* margin-left: 20rem; */
+    font-size: 24px;
+  }
+  .cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 95vw;
+    padding: 0.5rem;
+    /* border: 1px solid red; */
+  }
+  .cat-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80;
+    width: 25%;
+    margin: 0.5rem;
+    color: gray;
+    /* border: 1px solid green; */
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 15vh;
+    width: 20vw;
+  }
+  .category-btn h3 {
+    margin-top: -0.5rem;
+  }
 }

@@ -8,7 +8,7 @@ const ThingsToKnow = () => {
         <h2>Things to know</h2>
       </div>
       <div className="btm-row">
-        <div className="column">
+        <div className="ttk-column">
           <h3>House Rules</h3>
           <div className="ttk-row">
             <ion-icon name="time-outline"></ion-icon>
@@ -27,11 +27,11 @@ const ThingsToKnow = () => {
             <p>No smoking</p>
           </div>
         </div>
-        <div className="column">
+        <div className="ttk-column">
           <h3>Health & Safety</h3>
           <div className="ttk-row">
             <ion-icon name="medkit-outline"></ion-icon>
-            <p>COVID-19 guidelines apply</p>
+            <p>COVID-19 guidelines</p>
           </div>
           <div className="ttk-row">
             <ion-icon name="videocam-outline"></ion-icon>
@@ -42,7 +42,7 @@ const ThingsToKnow = () => {
             <p>Smoke alarm</p>
           </div>
         </div>
-        <div className="column">
+        <div className="ttk-column">
           <h3>Cancellation Policy</h3>
 
           <div className="ttk-row">

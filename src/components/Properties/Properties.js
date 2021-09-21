@@ -32,10 +32,10 @@ const Properties = () => {
       arr.push({
         lat: parseFloat(place[i].lat),
         lng: parseFloat(place[i].lng),
+        id: place[i].property_id,
       });
       latSum += parseFloat(place[i].lat);
       lngSum += parseFloat(place[i].lng);
-      console.log("latSum:", latSum);
     }
     setCoordinates(arr);
     setAverageLat(latSum / parseInt(place.length));
@@ -66,10 +66,8 @@ const Properties = () => {
     }
   }, [location.pathname, location.search]);
 
-  console.log({ coordinates });
-
   return (
-    <div>
+    <div className="envelope">
       <Header2 />
       <div className="properties-display">
         <div className="list">
@@ -95,7 +93,11 @@ const Properties = () => {
             })
           ) : (
             <div>
-              <Skeleton count={10} duration={3} />
+              {[1, 2, 3].map((row, index) => (
+                <div key={index} className="skeleton-container">
+                  <Skeleton height="100%" />
+                </div>
+              ))}
             </div>
           )}
         </div>

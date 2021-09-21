@@ -19,6 +19,18 @@
   width: 15vw;
   height: 5vh;
 }
+.listing-skeleton-outer {
+  display: flex;
+  padding-top: 13px;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.listing-skeleton {
+  height: 500px;
+  margin-bottom: 8px;
+  width: 95%;
+}
 
 .gray {
   display: flex;
@@ -141,7 +153,7 @@
 .mini-desc {
   margin-left: 4.25rem;
   color: gray;
-  margin-top: -3rem;
+  /* margin-top: -3rem; */
 }
 
 /* description styles */
@@ -292,6 +304,7 @@ ion-icon {
   justify-content: space-around;
   align-items: center;
   /* border: 1px solid blue; */
+  height: 100%;
 }
 .dates {
   display: flex;
@@ -347,7 +360,6 @@ ion-icon {
 .disclaimer {
   display: flex;
   justify-content: center;
-  /* margin-top: -1.5rem; */
 }
 .box-line {
   width: 80%;

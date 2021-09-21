@@ -7,7 +7,7 @@ const TryHosting = () => {
       <div className="try-hosting-container">
         <div className="left">
           <h1 className="call-to-action">Try Hosting</h1>
-          <p>
+          <p className="dangit">
             Earn extra income and unlock new opportunities by sharing your
             space.
           </p>

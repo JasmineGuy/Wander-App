@@ -395,7 +395,7 @@ const Listing = () => {
                     </div>
 
                     <div className="calculator">
-                      <p>
+                      <p className="tally">
                         ${property.price_per_night} x {days} nights
                       </p>
                       {renderRow(baseTotal)}
@@ -471,8 +471,12 @@ const Listing = () => {
           <ThingsToKnow />
         </div>
       ) : (
-        <div>
-          <Skeleton />
+        <div className="listing-skeleton-outer">
+          {[1, 2, 3].map((row, index) => (
+            <div className="listing-skeleton">
+              <Skeleton height="100%" />
+            </div>
+          ))}
         </div>
       )}
       <Footer />

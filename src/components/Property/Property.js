@@ -57,9 +57,13 @@ const Property = ({
   };
   return (
     <div className="property-card">
-      <div className="image-holder">
-        <img alt="property-pic" src={image} onClick={clickHandler} />
+      <div className="image-container">
+        <div className="mobile-title">{name}</div>
+        <div className="image-holder">
+          <img alt="property-pic" src={image} onClick={clickHandler} />
+        </div>
       </div>
+
       <div className="right">
         <ion-icon
           onClick={() => favoriteHandler(property)}
