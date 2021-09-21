@@ -2,11 +2,13 @@
   margin-left: 5rem;
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 90%;
 }
+
 .title {
   min-height: 5vh;
   display: flex;
+  margin-top: 1rem;
 }
 #star {
   color: #ff385c;
@@ -23,7 +25,6 @@
   display: flex;
   padding-top: 13px;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 .listing-skeleton {
@@ -45,12 +46,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-left: 1rem;
+  width: 90%;
+  margin-right: 2.5rem;
 }
 #fave-heart {
   color: #ff385c;
-  /* font-size: 24px; */
 }
 /* photo styles */
 .images-container {
@@ -153,7 +153,7 @@
 .mini-desc {
   margin-left: 4.25rem;
   color: gray;
-  /* margin-top: -3rem; */
+  margin-top: -2rem;
 }
 
 /* description styles */
@@ -253,9 +253,8 @@ ion-icon {
   align-items: flex-start;
   width: 55vh;
   margin-top: 1rem;
-  /* position: fixed; */
-  left: 850px;
-  top: 30px;
+  /* left: 850px;
+  top: 30px; */
 }
 .pricing-info {
   display: flex;
@@ -296,7 +295,7 @@ ion-icon {
 .x p {
   text-decoration: underline;
   text-align: center;
-  font-size: 19px;
+  font-size: 18px;
 }
 .booking-form {
   display: flex;
@@ -372,11 +371,249 @@ ion-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 7rem;
+  margin-bottom: -15rem;
+  /* margin-left: 7rem; */
+  /* border: 1px solid red; */
 }
 .map-title {
   display: flex;
-  margin-right: 55rem;
-  height: 75px;
-  width: 300px;
+  /* margin-right: 60rem; */
+  height: 50px;
+  width: 200px;
+  /* border: 1px solid red; */
+}
+@media (max-width: 375px) {
+  .listing-container {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .title h1 {
+    font-size: 12px;
+  }
+  #star {
+    color: #ff385c;
+    size: 12px;
+  }
+  .ratings-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 5vh;
+    font-size: 12px;
+  }
+  .gray {
+    font-size: 10px;
+  }
+  #generic-address {
+    display: none;
+  }
+  #fave-heart {
+    color: #ff385c;
+    font-size: 16px;
+  }
+  .left-side {
+    border: 1px solid red;
+    width: 70%;
+    margin-left: -0rem;
+    height: 400px;
+  }
+  .feature-img {
+    border-radius: 12px;
+    width: 250px;
+    height: 100vh;
+    max-height: 250px;
+  }
+  .middle {
+    display: none;
+  }
+  .right-side {
+    display: none;
+  }
+  .map-section {
+    display: none;
+  }
+}
+
+@media (max-width: 770px) {
+  .ratings-wrapper {
+    width: 20vw;
+  }
+  .text-row-2 {
+    width: 70%;
+    max-width: 500px;
+  }
+  .booking-box {
+    width: 40vh;
+  }
+  .box {
+    width: 80%;
+    height: 500px;
+  }
+  .box-header {
+    width: 90%;
+  }
+  .pricing-info {
+    font-size: 16px;
+  }
+  .pricing-info h3 {
+    font-size: 14px;
+  }
+
+  .x {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .x p {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 10px;
+    width: 100%;
+  }
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  .dates {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+  }
+  .date-picker {
+    height: 60px;
+    width: 125px;
+    border: 1px solid gray;
+    font-size: 12px;
+  }
+  .reserve-btn-wrapper {
+    margin-top: -30px;
+  }
+  .booking-btn {
+    width: 350px;
+    font-size: 20px;
+  }
+  #start-date {
+    font-size: 12px;
+  }
+  #end-date {
+    font-size: 12px;
+  }
+
+  .calculator,
+  .cleaning-fee,
+  .service-fee,
+  .fees,
+  .total {
+    width: 70%;
+    font-size: 12px;
+  }
+  .disclaimer {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .box-line {
+    height: 1px;
+    background-color: lightgrey;
+  }
+  .map-section {
+    margin-left: -6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ratings-wrapper {
+    width: 20vw;
+  }
+  .text-row-2 {
+    width: 70%;
+    max-width: 500px;
+  }
+  .booking-box {
+    width: 40vh;
+  }
+  .box {
+    width: 80%;
+    height: 500px;
+  }
+  .box-header {
+    width: 90%;
+  }
+  .pricing-info {
+    font-size: 16px;
+  }
+  .pricing-info h3 {
+    font-size: 14px;
+  }
+
+  .x {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .x p {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 10px;
+    width: 100%;
+  }
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  .dates {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+  }
+  .date-picker {
+    height: 60px;
+    width: 125px;
+    border: 1px solid gray;
+    font-size: 12px;
+  }
+  .reserve-btn-wrapper {
+    margin-top: -30px;
+  }
+  .booking-btn {
+    width: 350px;
+    font-size: 20px;
+  }
+  #start-date {
+    font-size: 12px;
+  }
+  #end-date {
+    font-size: 12px;
+  }
+
+  .calculator,
+  .cleaning-fee,
+  .service-fee,
+  .fees,
+  .total {
+    width: 70%;
+    font-size: 12px;
+  }
+  .disclaimer {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .box-line {
+    height: 1px;
+    background-color: lightgrey;
+  }
+  .map-section {
+    margin-left: -6rem;
+  }
 }

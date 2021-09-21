@@ -118,6 +118,7 @@ const ReviewModal = ({
           <button
             className={isDisabled ? "review-btn disabled" : "review-btn"}
             disabled={isDisabled}
+            onClick={handleSubmit}
           >
             {isEditing ? "Update" : "Submit"}
           </button>

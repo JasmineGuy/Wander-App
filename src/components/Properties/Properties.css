@@ -24,6 +24,16 @@
 .envelope {
   overflow-x: hidden;
 }
+@media (max-width: 375px) {
+  .list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+  }
+}
 
 @media (max-width: 770px) {
   .properties-display {
@@ -35,10 +45,12 @@
     width: 100vw;
     height: 50vh;
     margin-top: 1rem;
+    margin-left: 1rem;
   }
   .map {
     height: 50vh;
-    width: 100%;
+    width: 95%;
+    margin-left: 1.25rem;
   }
 }
 @media (max-width: 1024px) {
@@ -51,19 +63,11 @@
     width: 100vw;
     height: 50vh;
     margin-top: 1rem;
+    margin-left: 1rem;
   }
   .map {
+    width: 95%;
+    margin-left: 1.5rem;
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 375px) {
-  .list {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: -1rem;
   }
 }

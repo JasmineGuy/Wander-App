@@ -11,7 +11,9 @@ const TryHosting = () => {
             Earn extra income and unlock new opportunities by sharing your
             space.
           </p>
-          <button>Learn More</button>
+          <div className="learn-more">
+            <button>Learn More</button>
+          </div>
         </div>
       </div>
     </div>
