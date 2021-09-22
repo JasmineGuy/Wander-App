@@ -13,8 +13,6 @@ const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  console.log("location app:", location);
-
   useEffect(() => {
     if (location.pathname) {
       dispatch(setReduxRoute(location.pathname));

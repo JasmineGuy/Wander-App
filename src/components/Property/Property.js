@@ -37,8 +37,6 @@ const Property = ({
     window.addEventListener("resize", updateMedia);
   }, [window]);
 
-  console.log("IS MOBILE: ", isMobile);
-
   //get review averages
   useEffect(() => {
     axios.get(`/api/average/${id}`).then((res) => {

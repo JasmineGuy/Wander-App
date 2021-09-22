@@ -13,8 +13,7 @@ const Map = ({ lat, lng }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    // googleMapsApiKey: process.env.GOOGLE_API_KEY,
-    googleMapsApiKey: "AIzaSyDWdnn-obpn7FH-vGbrm69phBUhDtVPtZg",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
 
   const center = {
