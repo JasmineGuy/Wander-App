@@ -242,7 +242,7 @@ const Listing = () => {
                 {property.city}, {property.state}, {property.country}
               </p>
               <ion-icon
-                id="fave-heart"
+                id="big-fave"
                 name={isFave ? "heart" : "heart-outline"}
                 onClick={() => favoriteHandler(property)}
               ></ion-icon>
@@ -457,7 +457,7 @@ const Listing = () => {
                 })
               ) : (
                 <div>
-                  <p className=""> Be the first to review this property</p>
+                  <p>Be the first to review this property</p>
                 </div>
               )}
             </div>

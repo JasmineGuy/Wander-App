@@ -5,7 +5,7 @@ import {
   GoogleMap,
   useJsApiLoader,
   Marker,
-  MarkerClusterer,
+  // MarkerClusterer,
 } from "@react-google-maps/api";
 import "./ClusterMap.css";
 

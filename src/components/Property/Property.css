@@ -21,40 +21,42 @@
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+  position: relative;
 }
 .image-container {
   width: 55%;
-  height: 100%;
-  /* border: 1px solid blue; */
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.mobile-title {
-  visibility: hidden;
+.overhead-title {
+  display: none;
+}
+.overhead-title-mobile {
+  visibility: visible;
 }
 .image-holder {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0.5rem;
   height: 100%;
-  /* border: 1px solid red; */
+  margin-bottom: 1rem;
 }
-.property-card img {
+.cowabunga {
+  height: 100%;
   background-color: lightgray;
   width: 100%;
-  min-width: 350px;
-  max-width: 350px;
-  max-height: 250px;
+}
+.property-card img {
   min-height: 250px;
-
+  max-height: 300px;
   height: 100%;
   border-radius: 12px;
   border: 1px solid lightgray;
-  margin-left: -1rem;
 }
 .property-card img:hover {
   cursor: pointer;
@@ -64,18 +66,23 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-  width: 100%;
+  width: 30vw;
   min-height: 250px;
-  height: 75%;
+  height: 60%;
   margin: 1rem;
-  position: relative;
 }
-#fave-me {
-  font-size: 18px;
+.toggle-icons {
+  font-size: smaller;
   color: #ff385c;
   position: absolute;
-  left: 285px;
-  top: -25px;
+  left: 700px;
+  top: 30px;
+}
+#fave-me {
+  font-size: 16px;
+}
+.toggle-icons:hover {
+  cursor: pointer;
 }
 .right .top-row {
   margin-top: -0.25rem;
@@ -118,23 +125,20 @@
   align-items: center;
   justify-content: right;
   width: 100%;
-  position: absolute;
-  top: 225px;
 }
 .review-part {
   display: flex;
   align-items: center;
   width: 70%;
+  font-size: 14px;
 }
 #star {
   margin-bottom: 0.25rem;
+  font-size: 16px;
 }
-@media (max-width: 375px) {
+@media (max-width: 550px) {
   .right {
     display: none;
-  }
-  .mobile-title {
-    visibility: visible;
   }
   .property-card {
     height: auto;
@@ -153,10 +157,12 @@
   #fave-me {
     display: none;
   }
+  .toggle-icons {
+    display: none;
+  }
 }
 @media (max-width: 770px) {
   .property-card {
-    border: 1px solid red;
   }
   .right {
     height: 50%;
@@ -165,12 +171,17 @@
 }
 @media (max-width: 1024px) {
   .property-card {
-    border: 1px solid red;
   }
   .right {
     height: 50%;
   }
   #fave-me {
     display: none;
+  }
+  .cowabunga {
+    height: 100%;
+    background-color: lightgray;
+    /* min-width: 300px; */
+    max-width: 90%;
   }
 }

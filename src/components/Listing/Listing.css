@@ -12,13 +12,14 @@
 }
 #star {
   color: #ff385c;
-  size: small;
+  size: 16px;
+  margin-top: 0.25rem;
 }
 .ratings-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 15vw;
+  width: 12vw;
   height: 5vh;
 }
 .listing-skeleton-outer {
@@ -49,8 +50,9 @@
   width: 90%;
   margin-right: 2.5rem;
 }
-#fave-heart {
+#big-fave {
   color: #ff385c;
+  font-size: 20px;
 }
 /* photo styles */
 .images-container {
@@ -219,6 +221,7 @@ ion-icon {
   display: flex;
   align-items: center;
 }
+
 .modal-btn {
   border: 1px solid blue;
 }
@@ -229,6 +232,7 @@ ion-icon {
   align-items: flex-start;
   width: 100%;
   margin: 1rem;
+  margin-bottom: 3rem;
 }
 
 /* styles that split the page */
@@ -302,15 +306,12 @@ ion-icon {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid blue; */
   height: 100%;
 }
 .dates {
   display: flex;
   justify-content: space-around;
-  /* padding-left: 10px; */
   width: 90%;
-  /* border: 1px solid red; */
 }
 .date-picker {
   height: 60px;
@@ -409,7 +410,7 @@ ion-icon {
   #generic-address {
     display: none;
   }
-  #fave-heart {
+  #big-fave {
     color: #ff385c;
     font-size: 16px;
   }
@@ -438,29 +439,44 @@ ion-icon {
 
 @media (max-width: 770px) {
   .ratings-wrapper {
-    width: 20vw;
+    width: 30vw;
+    font-size: 12px;
+  }
+  .images-container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 80%;
   }
   .text-row-2 {
-    width: 70%;
-    max-width: 500px;
+    width: 100%;
+    font-size: 13px;
+    margin: 0.25rem;
+  }
+  .split-left {
+    margin-left: -2rem;
+  }
+  .split-right {
+    width: 100%;
   }
   .booking-box {
-    width: 40vh;
+    width: 100%;
   }
   .box {
-    width: 80%;
+    width: 100%;
     height: 500px;
+    margin-top: 2rem;
+    /* border: 1px solid purple; */
   }
   .box-header {
-    width: 90%;
+    width: 98%;
   }
   .pricing-info {
-    font-size: 16px;
+    font-size: 12px;
+    width: 100%;
   }
   .pricing-info h3 {
-    font-size: 14px;
+    font-size: 12px;
   }
-
   .x {
     width: 55%;
     display: flex;
@@ -486,23 +502,17 @@ ion-icon {
     width: 90%;
   }
   .date-picker {
-    height: 60px;
-    width: 125px;
     border: 1px solid gray;
-    font-size: 12px;
+    width: 90%;
   }
-  .reserve-btn-wrapper {
-    margin-top: -30px;
-  }
-  .booking-btn {
-    width: 350px;
-    font-size: 20px;
-  }
-  #start-date {
-    font-size: 12px;
-  }
+  #start-date,
   #end-date {
     font-size: 12px;
+    height: 50px;
+    width: 80px;
+  }
+  .reserve-btn-wrapper {
+    margin-top: -25px;
   }
 
   .calculator,
@@ -518,12 +528,21 @@ ion-icon {
     justify-content: center;
     font-size: 14px;
   }
-  .box-line {
-    height: 1px;
-    background-color: lightgrey;
-  }
   .map-section {
-    margin-left: -6rem;
+    display: none;
+  }
+  .review-holder {
+    margin-left: -1rem;
+  }
+  .reviews {
+    border-bottom: 1px solid gray;
+  }
+  .review-title {
+    font-size: 14px;
+  }
+  .bit {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -589,12 +608,12 @@ ion-icon {
     width: 350px;
     font-size: 20px;
   }
-  #start-date {
+  /* #start-date {
     font-size: 12px;
   }
   #end-date {
     font-size: 12px;
-  }
+  } */
 
   .calculator,
   .cleaning-fee,
