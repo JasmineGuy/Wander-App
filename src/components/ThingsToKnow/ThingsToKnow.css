@@ -40,7 +40,7 @@ ion-icon {
 }
 @media (max-width: 770px) {
   .things-container {
-    display: none;
+    /* border: 1px solid red; */
   }
 }
 
@@ -48,7 +48,7 @@ ion-icon {
   .things-container {
     display: flex;
     justify-content: center;
-    border-top: 1px solid gray;
+    border: none;
     width: 100%;
     height: 100%;
     margin: -1rem;

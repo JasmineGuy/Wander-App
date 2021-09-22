@@ -17,10 +17,13 @@ const ConfirmModal = ({
   const handleConfirm = () => {
     console.log("clicked confirm");
     setReservationMessage(
-      "Thank you for finalizing your reservation. Your host will be  reaching out with further instructions"
+      "Thank you for confirming your reservation. Your host will be reaching out with further instructions"
     );
-    closeConfirmModal();
+    setTimeout(() => {
+      closeConfirmModal();
+    }, 3000);
   };
+
   return (
     <div>
       <Dialog
@@ -56,11 +59,11 @@ const ConfirmModal = ({
                     </h4>
                   </div>
                   <div className="confirm-right-hd">
-                    <button onClick={() => handleConfirm}>Confirm</button>
+                    <button onClick={handleConfirm}>Confirm</button>
                   </div>
                 </div>
                 <div className="confirm-email-message">
-                  {reservationMessage}
+                  <p>{reservationMessage}</p>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@ const App = () => {
     if (location.pathname) {
       dispatch(setReduxRoute(location.pathname));
     }
-  }, [location.pathname]);
+  }, [location.pathname, dispatch]);
 
   return (
     <div>

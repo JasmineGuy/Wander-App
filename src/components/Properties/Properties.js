@@ -66,7 +66,7 @@ const Properties = () => {
     }
   }, [location.pathname, location.search]);
 
-  console.log("window:", window.innerWidth);
+  // console.log("window:", window.innerWidth);
   return (
     <div className="envelope">
       <Header2 />

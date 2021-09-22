@@ -7,11 +7,10 @@
 .nav-search-bar {
   position: relative;
   margin-left: 20rem;
-  /* border: 1px solid red; */
 }
 .nav-search-bar input {
   height: 40px;
-  width: 250px;
+  width: 230px;
   border-radius: 32px;
   border: 1px solid lightgray;
   padding: 0.5rem;
@@ -67,7 +66,12 @@ select:focus {
     display: none;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 1375px) {
+  .nav-search-bar {
+    display: none;
+  }
+}
+@media (min-width: 1430px) {
   .nav-search-bar {
     display: none;
   }

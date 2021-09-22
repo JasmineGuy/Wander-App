@@ -215,15 +215,10 @@ ion-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid blue; */
 }
 .bit {
   display: flex;
   align-items: center;
-}
-
-.modal-btn {
-  border: 1px solid blue;
 }
 .review-holder {
   display: flex;
@@ -319,7 +314,6 @@ ion-icon {
   border: 1px solid gray;
 }
 .reserve-btn-wrapper {
-  /* border: 1px solid blue; */
   margin-top: -30px;
 }
 .booking-btn {
@@ -373,16 +367,13 @@ ion-icon {
   justify-content: center;
   align-items: center;
   margin-bottom: -15rem;
-  /* margin-left: 7rem; */
-  /* border: 1px solid red; */
 }
 .map-title {
   display: flex;
-  /* margin-right: 60rem; */
   height: 50px;
   width: 200px;
-  /* border: 1px solid red; */
 }
+
 @media (max-width: 375px) {
   .listing-container {
     overflow-x: hidden;
@@ -397,12 +388,7 @@ ion-icon {
     size: 12px;
   }
   .ratings-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 60%;
-    height: 5vh;
-    font-size: 12px;
+    display: none;
   }
   .gray {
     font-size: 10px;
@@ -411,20 +397,18 @@ ion-icon {
     display: none;
   }
   #big-fave {
-    color: #ff385c;
-    font-size: 16px;
+    display: none;
   }
   .left-side {
-    border: 1px solid red;
     width: 70%;
     margin-left: -0rem;
     height: 400px;
   }
-  .feature-img {
+  .left-side .feature-img {
+    width: 300px;
+    max-height: 200px;
     border-radius: 12px;
-    width: 250px;
-    height: 100vh;
-    max-height: 250px;
+    margin-left: -2rem;
   }
   .middle {
     display: none;
@@ -433,6 +417,76 @@ ion-icon {
     display: none;
   }
   .map-section {
+    display: none;
+  }
+  .split {
+    flex-direction: column;
+  }
+  .split-right {
+    margin-bottom: 3rem;
+    border-top: 1px solid gray;
+    margin-left: -1rem;
+  }
+  .text-row-1 h2 {
+    font-size: 14px;
+    height: 10vh;
+    margin-left: -1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .text-row-2 {
+    display: none;
+  }
+  .pic-circle {
+    display: none;
+  }
+  .first,
+  .second,
+  .third {
+    width: 100vw;
+    margin-left: -0.5rem;
+  }
+  .mini-desc {
+    display: none;
+  }
+  .description {
+    width: 60vw;
+  }
+  .offerings h2 {
+    font-size: 16px;
+    width: 70vw;
+  }
+  .left-list,
+  .right-list {
+    margin-left: -1rem;
+  }
+  .amenities {
+    flex-direction: column;
+  }
+  .amen p {
+    font-size: 1px;
+  }
+  .booking-box {
+    margin-left: -2rem;
+  }
+  .booking-form {
+    width: 80%;
+  }
+  .reviews {
+    flex-direction: column;
+    margin-left: -1rem;
+  }
+  .review-title {
+    display: flex;
+    flex-direction: column;
+  }
+  .bit {
+    font-size: 12px;
+  }
+  .review-holder {
+    overflow-y: scroll;
+  }
+  .ttk-wrap {
     display: none;
   }
 }
@@ -465,7 +519,6 @@ ion-icon {
     width: 100%;
     height: 500px;
     margin-top: 2rem;
-    /* border: 1px solid purple; */
   }
   .box-header {
     width: 98%;
@@ -544,6 +597,9 @@ ion-icon {
     display: flex;
     align-items: center;
   }
+  .ttk-wrap {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -608,12 +664,6 @@ ion-icon {
     width: 350px;
     font-size: 20px;
   }
-  /* #start-date {
-    font-size: 12px;
-  }
-  #end-date {
-    font-size: 12px;
-  } */
 
   .calculator,
   .cleaning-fee,

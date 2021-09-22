@@ -468,7 +468,9 @@ const Listing = () => {
             </div>
             <Map lat={property.lat} lng={property.lng} />
           </div>
-          <ThingsToKnow />
+          <div className="ttk-wrap">
+            <ThingsToKnow />
+          </div>
         </div>
       ) : (
         <div className="listing-skeleton-outer">

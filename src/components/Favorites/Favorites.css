@@ -11,3 +11,9 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 375px) {
+  .no-faves-message {
+    margin-left: 1rem;
+    text-align: center;
+  }
+}

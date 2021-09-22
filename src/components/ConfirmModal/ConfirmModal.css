@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin: 0.5rem;
 }
 .confirm-image-container {
   width: 50%;
@@ -30,9 +31,10 @@
 .confirm-left-hd {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 60%;
+  width: 70%;
+  height: 70%;
   padding: 0.5rem;
+  margin-top: 1rem;
   justify-content: space-evenly;
 }
 .confirm-right-hd {
@@ -46,9 +48,13 @@
 
 .confirm-email-message {
   width: 90%;
-  height: 20%;
+  height: 45%;
   padding: 0.5rem;
-  margin-left: 0.5rem;
+  margin-left: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .confirm-whole-thing {
   margin-top: -1.5rem;

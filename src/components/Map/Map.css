@@ -6,13 +6,10 @@
 }
 .map-title {
   display: flex;
-  /* justify-content: center; */
-  /* border: 1px solid red; */
   margin: 3rem;
 }
 .map-wrapper {
   display: flex;
   justify-content: center;
-  /* border: 1px solid blue; */
   margin: 1rem;
 }

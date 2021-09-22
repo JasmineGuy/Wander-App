@@ -2,7 +2,6 @@
   width: 30vw;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid green; */
 }
 
 /* .form {
@@ -17,7 +16,6 @@
   flex-direction: column;
   align-items: center;
   margin: 1rem;
-  /* border: 1px solid red; */
 }
 .bottom-form {
   display: flex;
@@ -25,14 +23,10 @@
   justify-content: center;
   margin: auto;
 }
-/* .review-space {
-  height: 250px;
-  padding: 1rem;
-} */
+
 .delete-very-bottom {
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 .review-btn {
   cursor: pointer;
