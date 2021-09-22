@@ -475,7 +475,7 @@ const Listing = () => {
       ) : (
         <div className="listing-skeleton-outer">
           {[1, 2, 3].map((row, index) => (
-            <div className="listing-skeleton">
+            <div className="listing-skeleton" key={index}>
               <Skeleton height="100%" />
             </div>
           ))}

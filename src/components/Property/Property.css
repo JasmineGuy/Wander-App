@@ -68,15 +68,19 @@
   align-items: baseline;
   width: 30vw;
   min-height: 250px;
-  height: 60%;
+  height: 50%;
   margin: 1rem;
 }
+
 .toggle-icons {
-  font-size: smaller;
+  font-size: 16px;
   color: #ff385c;
-  position: absolute;
-  left: 685px;
-  top: 30px;
+  width: 100%;
+  text-align: left;
+  margin-top: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 #fave-me {
   font-size: 16px;
@@ -119,6 +123,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 1rem;
 }
 .price-row {
   display: flex;
@@ -168,9 +173,6 @@
     height: 50%;
     min-width: 300px;
   }
-  .toggle-icons {
-    display: none;
-  }
 }
 @media (max-width: 1024px) {
   .property-card {
@@ -178,21 +180,10 @@
   .right {
     height: 50%;
   }
-  .toggle-icons {
-    display: none;
-  }
-  #fave-me {
-    display: none;
-  }
+
   .cowabunga {
     height: 100%;
     background-color: lightgray;
-    /* min-width: 300px; */
     max-width: 90%;
   }
 }
-@media (min-width: 1405px) {
-  .toggle-icons {
-    display: none;
-  }
-} ;

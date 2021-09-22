@@ -40,7 +40,7 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
   return (
     <div>
       <>
-        {isLoaded ? (
+        {isLoaded && center.lat && center.lng ? (
           <div className="container-div">
             <div className="map-wrapper">
               <GoogleMap

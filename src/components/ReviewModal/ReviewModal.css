@@ -39,3 +39,75 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 375px) {
+  .review-modal {
+    width: 70vw;
+    height: 70%;
+  }
+  .review-top-form {
+    margin-left: 0rem;
+  }
+  .review-bottom-form {
+    height: 40%;
+  }
+  .review-space {
+    height: 250px;
+    padding: 1rem;
+  }
+  .review-very-bottom {
+    height: 15vh;
+    border: 1px solid red;
+  }
+  .review-btn {
+    cursor: pointer;
+    width: 50%;
+  }
+
+  .review-response-message {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+@media (max-width: 770px) {
+  .review-modal {
+    width: 70vw;
+    height: 70%;
+    margin-right: 4rem;
+  }
+  .review-top-form {
+    margin-left: 0rem;
+  }
+  .review-bottom-form {
+    height: 40%;
+  }
+
+  .review-btn {
+    cursor: pointer;
+    width: 30%;
+  }
+
+  .review-response-message {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .review-modal {
+    width: 50vw;
+    height: 70%;
+  }
+  .review-top-form {
+    margin-left: -0rem;
+  }
+  .review-bottom-form {
+    height: 40%;
+  }
+  .review-btn {
+    cursor: pointer;
+    width: 30%;
+  }
+  .review-response-message {
+    text-align: center;
+    font-size: 14px;
+  }
+}

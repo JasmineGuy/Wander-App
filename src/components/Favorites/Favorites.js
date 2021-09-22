@@ -11,9 +11,7 @@ import "./Favorites.css";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state);
-  // const dispatch = useDispatch();
   const [list, setList] = useState([]);
-  // const location = useLocation();
   const [coordinates, setCoordinates] = useState([]);
   const [averageLat, setAverageLat] = useState();
   const [averageLng, setAverageLng] = useState();
@@ -40,10 +38,6 @@ const Favorites = () => {
     setAverageLat(latSum / parseInt(list.length));
     setAverageLng(lngSum / parseInt(list.length));
   }, []);
-
-  console.log("list:", list);
-  console.log("avgLat:", averageLat);
-  console.log("coordinates:", coordinates);
 
   return (
     <div>

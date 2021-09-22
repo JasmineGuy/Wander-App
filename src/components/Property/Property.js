@@ -77,19 +77,9 @@ const Property = ({
 
   return (
     <div className="property-card">
-      <div className="above-it-all">
-        <div className="toggle-icons">
-          {reduxRoute === "/properties" ? (
-            <ion-icon
-              onClick={() => favoriteHandler(property)}
-              id="fave-me"
-              name={isFave ? "heart" : "heart-outline"}
-            ></ion-icon>
-          ) : (
-            <ion-icon name="close-outline" onClick={deleteFave}></ion-icon>
-          )}
-        </div>
-      </div>
+      {/* <div className="above-it-all"> */}
+
+      {/* </div> */}
       <div className="image-container">
         <div className={isMobile ? "overhead-title-mobile" : "overhead-title"}>
           {name}
@@ -104,6 +94,17 @@ const Property = ({
         </div>
       </div>
       <div className="right">
+        <div className="toggle-icons">
+          {reduxRoute === "/properties" ? (
+            <ion-icon
+              onClick={() => favoriteHandler(property)}
+              id="fave-me"
+              name={isFave ? "heart" : "heart-outline"}
+            ></ion-icon>
+          ) : (
+            <ion-icon name="close-outline" onClick={deleteFave}></ion-icon>
+          )}
+        </div>
         <div className="top-row">
           <h3>{name}</h3>
           <div className="line"></div>

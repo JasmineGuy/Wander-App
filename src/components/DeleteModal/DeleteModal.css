@@ -4,12 +4,6 @@
   flex-direction: column;
 }
 
-/* .form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-} */
 .delete-top-form {
   width: 100%;
   display: flex;
@@ -42,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .delete-btn {
   cursor: pointer;
