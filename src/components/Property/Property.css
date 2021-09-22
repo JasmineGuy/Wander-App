@@ -4,12 +4,13 @@
   font-family: "Poppins", sans-serif;
 }
 .properties-display {
-  margin-bottom: 2rem;
+  margin-left: -2rem;
 }
 .property-card {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   height: 40vh;
   border-bottom: 1px solid #dfe0e1;
   border-top: 1px solid #dfe0e1;
@@ -20,25 +21,44 @@
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+  position: relative;
+}
+.image-container {
+  width: 55%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.overhead-title {
+  display: none;
+}
+.overhead-title-mobile {
+  visibility: visible;
 }
 .image-holder {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90%;
-  width: 50%;
-  margin: 0.5rem;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
 }
-.property-card img {
+.cowabunga {
+  height: 100%;
   background-color: lightgray;
   width: 100%;
-  min-width: 350px;
-  max-width: 350px;
+}
+.property-card img {
+  min-height: 250px;
+  max-height: 300px;
   height: 100%;
   border-radius: 12px;
   border: 1px solid lightgray;
 }
-.property-card:hover {
+.property-card img:hover {
   cursor: pointer;
 }
 .right {
@@ -46,17 +66,23 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-  width: 100%;
+  width: 30vw;
   min-height: 250px;
+  height: 60%;
   margin: 1rem;
-  position: relative;
 }
-#fave-me {
-  font-size: 18px;
+.toggle-icons {
+  font-size: smaller;
   color: #ff385c;
   position: absolute;
-  left: 315px;
-  top: -25px;
+  left: 700px;
+  top: 30px;
+}
+#fave-me {
+  font-size: 16px;
+}
+.toggle-icons:hover {
+  cursor: pointer;
 }
 .right .top-row {
   margin-top: -0.25rem;
@@ -99,14 +125,63 @@
   align-items: center;
   justify-content: right;
   width: 100%;
-  position: absolute;
-  top: 225px;
 }
 .review-part {
   display: flex;
   align-items: center;
   width: 70%;
+  font-size: 14px;
 }
 #star {
   margin-bottom: 0.25rem;
+  font-size: 16px;
+}
+@media (max-width: 550px) {
+  .right {
+    display: none;
+  }
+  .property-card {
+    height: auto;
+  }
+  .image-container {
+    width: 100%;
+  }
+  .image-holder {
+    width: 90%;
+  }
+  .property-card img {
+    width: 100%;
+    min-width: 20px;
+    max-height: 250px;
+  }
+  #fave-me {
+    display: none;
+  }
+  .toggle-icons {
+    display: none;
+  }
+}
+@media (max-width: 770px) {
+  .property-card {
+  }
+  .right {
+    height: 50%;
+    min-width: 300px;
+  }
+}
+@media (max-width: 1024px) {
+  .property-card {
+  }
+  .right {
+    height: 50%;
+  }
+  #fave-me {
+    display: none;
+  }
+  .cowabunga {
+    height: 100%;
+    background-color: lightgray;
+    /* min-width: 300px; */
+    max-width: 90%;
+  }
 }

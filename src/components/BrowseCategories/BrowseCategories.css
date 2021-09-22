@@ -3,13 +3,15 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.title-holder {
+  overflow-x: scroll;
+}
 .title-holder h2 {
   color: gray;
   margin-top: 3.5rem;
   margin-left: 2rem;
   font-size: 32px;
   font-weight: bold;
-  /* border: 1px solid red; */
 }
 .cat-container {
   display: flex;
@@ -17,13 +19,11 @@
   align-items: center;
   height: 55vh;
   margin: 1rem;
-  /* border: 1px solid red; */
 }
 .cat-holder {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* border: 1px solid blue; */
   height: 80%;
   width: 25%;
   margin: 0.5rem;
@@ -58,4 +58,98 @@
 #domes {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wander-2d5ff.appspot.com/o/Domes%2F4%2F1.jpeg?alt=media&token=2d70c147-ece5-4875-b80e-32f13f9b45b0");
   background-size: cover;
+}
+@media (max-width: 375px) {
+  .title-holder h2 {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .cat-container {
+    min-width: 660px;
+    margin-left: 0rem;
+    overflow-x: scroll;
+  }
+  .cat-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+    font-size: 11px;
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 50%;
+    width: 100%;
+  }
+  .cat-holder h3 {
+    margin: auto;
+  }
+}
+@media (max-width: 770px) {
+  .title-holder h2 {
+    font-size: 24px;
+  }
+  .cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 90vw;
+    padding: 0.5rem;
+    min-width: 770px;
+    overflow-x: scroll;
+  }
+
+  .cat-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80;
+    width: 25%;
+    margin: 0.5rem;
+    color: gray;
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 25vh;
+    width: 25vw;
+  }
+  .category-btn h3 {
+    margin-top: -0.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .title-holder h2 {
+    font-size: 24px;
+  }
+  .cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 95vw;
+    padding: 0.5rem;
+  }
+  .cat-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80;
+    width: 25%;
+    margin: 0.5rem;
+    color: gray;
+  }
+  .category-btn {
+    background-color: black;
+    border-radius: 12px;
+    height: 15vh;
+    width: 20vw;
+  }
+  .category-btn h3 {
+    margin-top: -0.5rem;
+  }
 }

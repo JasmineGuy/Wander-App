@@ -1,32 +1,33 @@
-.modal {
+.confirm-modal {
   width: 70%;
   height: 55%;
 }
-.close-x {
+.confirm-close-x {
   text-align: right;
   margin-right: 20px;
 }
-.details {
+.confirm-details {
   display: flex;
   margin: 0.5rem;
 }
-.title {
+.confirm-title {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.image-container {
+.confirm-image-container {
   width: 50%;
 }
 #pic {
-  width: 100%;
+  width: 90%;
   border-radius: 12px;
+  border: 1px solid lightgray;
 }
-.hard-details {
+.confirm-hard-details {
   display: flex;
   align-items: flex-start;
 }
-.left-hd {
+.confirm-left-hd {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -34,7 +35,7 @@
   padding: 0.5rem;
   justify-content: space-evenly;
 }
-.right-hd {
+.confirm-right-hd {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,14 +44,12 @@
   width: 40%;
 }
 
-.email-message {
-  /* border: 1px solid blue; */
+.confirm-email-message {
   width: 90%;
   height: 20%;
   padding: 0.5rem;
   margin-left: 0.5rem;
-  /* color: pink; */
 }
-.whole-thing {
+.confirm-whole-thing {
   margin-top: -1.5rem;
 }

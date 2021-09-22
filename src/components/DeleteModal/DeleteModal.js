@@ -22,7 +22,7 @@ const DeleteModal = ({
   const handleCloseDeleteModal = () => {
     setIsDeleteDisabled(false);
     setDeleteConfirmation("");
-    // closeDeleteModal();
+    closeDeleteModal();
   };
 
   return (
@@ -33,14 +33,14 @@ const DeleteModal = ({
         onDismiss={handleDelete}
         aria-label="menu"
       >
-        <div className="close-x">
+        <div className="delete-close-x">
           <Icon.X onClick={handleCloseDeleteModal} />
         </div>
 
-        <div className="top-form">
+        <div className="delete-top-form">
           Are you sure you would like to delete this review?
         </div>
-        <div className="very-bottom">
+        <div className="delete-very-bottom">
           <button
             onClick={() => handleDelete(deleteID)}
             className={isDeleteDisabled ? "delete-btn disabled" : "delete-btn"}
@@ -49,7 +49,7 @@ const DeleteModal = ({
             Delete Review
           </button>
         </div>
-        <div className="confirmation-message">{deleteConfirmation}</div>
+        <div className="delete-confirmation-message">{deleteConfirmation}</div>
       </Dialog>
     </div>
   );

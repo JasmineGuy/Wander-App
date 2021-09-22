@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="logo-container">
+    <div className="home-header">
+      <div className="home-logo-container">
         <NavLink className="nav-link" to="/">
           <img
             alt="logo"
@@ -13,16 +13,14 @@ const Header = () => {
           />
         </NavLink>
       </div>
-      <div className="links">
-        <NavLink className="nav-link" to="/properties">
-          <h3>View All</h3>
+
+      <div className="home-links">
+        <NavLink className="home-nav-link" to="/properties">
+          <h4>View All</h4>
         </NavLink>
-        {/* <h4>Trip Boards</h4> */}
-        <h3>
-          <div className="circle">
-            <ion-icon id="menu1" name="menu-outline"></ion-icon>
-          </div>
-        </h3>
+        <NavLink className="home-nav-link" to="/favorites">
+          <h4>Favorites</h4>
+        </NavLink>
       </div>
     </div>
   );

@@ -86,47 +86,46 @@ const ReviewModal = ({
   };
 
   return (
-    <div className="review-modal">
-      <Dialog
-        className="modal"
-        isOpen={isModalActive}
-        onDismiss={handleCloseModal}
-        aria-label="menu"
-      >
-        <div className="close-x">
-          <Icon.X onClick={handleCloseModal} />
+    <Dialog
+      className="review-modal"
+      isOpen={isModalActive}
+      onDismiss={handleCloseModal}
+      aria-label="menu"
+    >
+      <div className="review-close-x">
+        <Icon.X onClick={handleCloseModal} />
+      </div>
+      <form onSubmit={(e) => (isDisabled ? () => {} : handleSubmit(e))}>
+        <div className="review-top-form">
+          How would your rate your stay?
+          <ReactStars
+            count={5}
+            onChange={assignRating}
+            size={24}
+            color2={"#ff385c"}
+            value={rating}
+          />
         </div>
-        <form onSubmit={(e) => (isDisabled ? () => {} : handleSubmit(e))}>
-          <div className="top-form">
-            How would your rate your stay?
-            <ReactStars
-              count={5}
-              onChange={assignRating}
-              size={24}
-              color2={"#ff385c"}
-              value={rating}
-            />
-          </div>
-          <div className="bottom-form">
-            <textarea
-              className="review-space"
-              placeholder="Leave a detailed review here"
-              onChange={handleReviewText}
-              value={reviewText}
-            ></textarea>
-          </div>
-          <div className="very-bottom">
-            <button
-              className={isDisabled ? "review-btn disabled" : "review-btn"}
-              disabled={isDisabled}
-            >
-              {isEditing ? "Update" : "Submit"}
-            </button>
-          </div>
-          <div className="response-message">{responseMessage}</div>
-        </form>
-      </Dialog>
-    </div>
+        <div className="review-bottom-form">
+          <textarea
+            className="review-space"
+            placeholder="Leave a detailed review here"
+            onChange={handleReviewText}
+            value={reviewText}
+          ></textarea>
+        </div>
+        <div className="review-very-bottom">
+          <button
+            className={isDisabled ? "review-btn disabled" : "review-btn"}
+            disabled={isDisabled}
+            onClick={handleSubmit}
+          >
+            {isEditing ? "Update" : "Submit"}
+          </button>
+        </div>
+        <div className="review-response-message">{responseMessage}</div>
+      </form>
+    </Dialog>
   );
 };
 

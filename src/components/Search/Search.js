@@ -23,6 +23,7 @@ const Search = () => {
         type="text"
         placeholder="Search by city or state"
         onChange={(e) => handleChange(e.target.value)}
+        id="search-placeholder"
       />
       <button className="search-btn">
         <Icon.Search />

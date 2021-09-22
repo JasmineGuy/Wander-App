@@ -26,7 +26,6 @@
     "react-scripts": "4.0.3",
     "react-stars": "^2.2.5",
     "redux": "^4.1.1",
-    "redux-promise-middleware": "^6.1.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

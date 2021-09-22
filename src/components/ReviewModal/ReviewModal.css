@@ -1,25 +1,16 @@
-.modal {
+.review-modal {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid green; */
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-.top-form {
+.review-top-form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1rem;
-  /* border: 1px solid red; */
 }
-.bottom-form {
+.review-bottom-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,10 +20,9 @@
   height: 250px;
   padding: 1rem;
 }
-.very-bottom {
+.review-very-bottom {
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 .review-btn {
   cursor: pointer;
@@ -41,10 +31,10 @@
   background-color: gray;
   cursor: default;
 }
-.close-x {
+.review-close-x {
   text-align: right;
 }
-.response-message {
+.review-response-message {
   display: flex;
   justify-content: center;
   align-items: center;

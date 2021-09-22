@@ -5,13 +5,13 @@
   /* border: 1px solid green; */
 }
 
-.form {
+/* .form {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-}
-.top-form {
+} */
+.delete-top-form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -25,11 +25,11 @@
   justify-content: center;
   margin: auto;
 }
-.review-space {
+/* .review-space {
   height: 250px;
   padding: 1rem;
-}
-.very-bottom {
+} */
+.delete-very-bottom {
   display: flex;
   justify-content: center;
   /* border: 1px solid red; */
@@ -41,10 +41,10 @@
   background-color: gray;
   cursor: default;
 }
-.close-x {
+.delete-close-x {
   text-align: right;
 }
-.confirmation-message {
+.delete-confirmation-message {
   display: flex;
   justify-content: center;
   align-items: center;

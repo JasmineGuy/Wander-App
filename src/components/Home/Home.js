@@ -7,7 +7,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="all">
       <Splash />
       <BrowseCategories />
       <TryHosting />
