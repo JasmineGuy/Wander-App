@@ -33,7 +33,6 @@
 .home-nav-link {
   text-decoration: none;
   color: #ff385c;
-  border: 1px solid red;
 }
 .home-nav-link:hover {
   cursor: pointer;

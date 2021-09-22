@@ -7,12 +7,12 @@ const TryHosting = () => {
       <div className="try-hosting-container">
         <div className="left">
           <h1 className="call-to-action">Try Hosting</h1>
-          <p className="dangit">
+          <p className="dangit" id="it">
             Earn extra income and unlock new opportunities by sharing your
             space.
           </p>
           <div className="learn-more">
-            <button>Learn More</button>
+            <button id="lm">Learn More</button>
           </div>
         </div>
       </div>

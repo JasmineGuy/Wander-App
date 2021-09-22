@@ -56,32 +56,33 @@
 
 @media (max-width: 375px) {
   .overall {
-    display: flex;
-    flex-direction: column;
-    max-height: 30vh;
     width: 90vw;
-    margin-left: -3rem;
+    border: none;
   }
   .try-hosting-container {
-    height: 20vh;
+    height: 15vh;
   }
 
   .left .call-to-action {
     font-size: 20px;
     margin-left: -1rem;
   }
-  .left .dangit {
-    font-size: 12px;
+  .left {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .dangit {
+    font-size: 10px;
     margin-left: -1rem;
-    width: 90%;
+    width: 100%;
   }
-  .learn-more {
-    margin-left: -3rem;
+  #it {
+    font-size: 12px;
+    width: 100%;
   }
-  .left button {
-    height: 30px;
+
+  #lm {
     width: 150px;
-    border-radius: 12px;
     font-size: 12px;
   }
 }
