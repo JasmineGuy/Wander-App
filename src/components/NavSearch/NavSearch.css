@@ -66,12 +66,12 @@ select:focus {
     display: none;
   }
 }
-@media (max-width: 1375px) {
+@media (max-width: 1374px) {
   .nav-search-bar {
     display: none;
   }
 }
-@media (min-width: 1430px) {
+@media (min-width: 1425px) {
   .nav-search-bar {
     display: none;
   }

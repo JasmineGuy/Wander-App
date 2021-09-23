@@ -109,7 +109,6 @@ module.exports = {
   },
   addFavorite: (req, res) => {
     let { propID, userID } = req.body;
-    console.log("userId:", userID);
     const dbInstance = req.app.get("db");
     dbInstance
       .add_favorite([propID, userID])

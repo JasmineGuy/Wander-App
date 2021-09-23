@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Header2 from "../Header2/Header2";
 import Footer from "../Footer/Footer";
@@ -11,13 +10,11 @@ import "./Favorites.css";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state);
-  const [list, setList] = useState([]);
   const [coordinates, setCoordinates] = useState([]);
   const [averageLat, setAverageLat] = useState();
   const [averageLng, setAverageLng] = useState();
 
   useEffect(() => {
-    setList(favorites.favoritesReducer.favorites);
     calcCoordinates(favorites.favoritesReducer.favorites);
   }, [favorites.favoritesReducer.favorites]);
 
@@ -43,41 +40,43 @@ const Favorites = () => {
     <div>
       <Header2 />
       <div className="properties-display">
-        <div className="list">
-          {favorites.favoritesReducer.favorites &&
-          favorites.favoritesReducer.favorites.length ? (
-            favorites.favoritesReducer.favorites.map((item, index) => {
-              return (
-                <Property
-                  key={index}
-                  id={item.property_id}
-                  image={item.cover_pic}
-                  name={item.name}
-                  guests={item.max_guests}
-                  beds={item.beds}
-                  baths={item.baths}
-                  amen1={item.amen_1}
-                  amen2={item.amen_2}
-                  amen3={item.amen_3}
-                  price={item.price_per_night}
-                  host={item.f_name}
-                  property={item}
-                />
-              );
-            })
-          ) : (
-            <div className="no-faves-message">
-              You have not yet added any rentals to your favorites
+        {favorites.favoritesReducer.favorites &&
+        favorites.favoritesReducer.favorites.length ? (
+          <>
+            <div className="list">
+              {favorites.favoritesReducer.favorites.map((item, index) => {
+                return (
+                  <Property
+                    key={index}
+                    id={item.property_id}
+                    image={item.cover_pic}
+                    name={item.name}
+                    guests={item.max_guests}
+                    beds={item.beds}
+                    baths={item.baths}
+                    amen1={item.amen_1}
+                    amen2={item.amen_2}
+                    amen3={item.amen_3}
+                    price={item.price_per_night}
+                    host={item.f_name}
+                    property={item}
+                  />
+                );
+              })}
             </div>
-          )}
-        </div>
-        <div className="map">
-          <ClusterMap
-            coordinates={coordinates}
-            averageLat={averageLat}
-            averageLng={averageLng}
-          />
-        </div>
+            <div className="map">
+              <ClusterMap
+                coordinates={coordinates}
+                averageLat={averageLat}
+                averageLng={averageLng}
+              />
+            </div>
+          </>
+        ) : (
+          <div className="no-faves-message">
+            You have not yet added any rentals to your favorites
+          </div>
+        )}
       </div>
       <Footer />
     </div>

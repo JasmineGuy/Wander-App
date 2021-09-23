@@ -11,7 +11,6 @@ import "./ClusterMap.css";
 
 const containerStyle = {
   width: "100%",
-  // height: "100vh",
   height: "100%",
 };
 
@@ -62,7 +61,7 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
           </div>
         ) : (
           <>
-            <div>Loading....</div>
+            <div></div>
           </>
         )}
       </>

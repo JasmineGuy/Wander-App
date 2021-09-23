@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as Icon from "react-feather";
+import React, { useState, useEffect } from "react";
 import "../Property/Property.css";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite } from "../../ducks/favoritesReducer";
@@ -18,16 +17,14 @@ const Property = ({
 }) => {
   const [average, setAverage] = useState();
   const [count, setCount] = useState();
-  const [propertyID, setPropertyID] = useState();
-  // const favorites = useSelector((state) => state);
+  const favorites = useSelector((state) => state);
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
   const [isFave, setIsFave] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  // const location = useLocation();
-  const windowRef = useRef();
 
   const { reduxRoute } = reduxState.reduxRouteReducer;
+  const favoritesArr = favorites.favoritesReducer.favorites;
 
   const updateMedia = () => {
     setIsMobile(window.innerWidth < 550);
@@ -63,14 +60,21 @@ const Property = ({
       dispatch(addFavorite(property));
       setIsFave(true);
     } else {
-      console.log("fave btn clicked again");
       dispatch(removeFavorite(property.property_id));
       setIsFave(false);
     }
   };
 
+  useEffect(() => {
+    const isInFaves = favoritesArr.find((fav) => fav.property_id === id);
+    if (isInFaves) {
+      setIsFave(true);
+    } else {
+      setIsFave(false);
+    }
+  }, [favoritesArr, id]);
+
   const deleteFave = () => {
-    console.log("deletefave clicked: ", id);
     dispatch(removeFavorite(id));
     setIsFave(false);
   };

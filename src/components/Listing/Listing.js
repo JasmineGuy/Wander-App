@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addFavorite, removeFavorite } from "../../ducks/favoritesReducer";
 
 import { useLocation } from "react-router-dom";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
@@ -71,7 +70,6 @@ const Listing = () => {
   const [service, setService] = useState();
   const [taxes, setTaxes] = useState();
   const [grandTotal, setGrandTotal] = useState();
-  const favorites = useSelector((state) => state);
   const dispatch = useDispatch();
   const [isFave, setIsFave] = useState(false);
 
@@ -139,12 +137,10 @@ const Listing = () => {
   };
 
   const favoriteHandler = (property) => {
-    console.log("fave button clicked");
     if (!isFave) {
       dispatch(addFavorite(property));
       setIsFave(true);
     } else {
-      console.log("fave btn clicked again");
       dispatch(removeFavorite(property.property_id));
       setIsFave(false);
     }
@@ -197,7 +193,7 @@ const Listing = () => {
       setPrice(property.price_per_night);
       calculator(startDate, endDate, price);
     }
-  }, [startDate, endDate]);
+  }, [startDate, endDate, price, property]);
 
   const calculator = (startDate, endDate, price) => {
     let days = Math.ceil((endDate - startDate) / 3600000 / 24);

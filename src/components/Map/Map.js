@@ -54,7 +54,7 @@ const Map = ({ lat, lng }) => {
         </div>
       ) : (
         <>
-          <div>Loading....</div>
+          <div></div>
         </>
       )}
     </>

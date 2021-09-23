@@ -15,7 +15,6 @@ const ConfirmModal = ({
   const [reservationMessage, setReservationMessage] = useState("");
 
   const handleConfirm = () => {
-    console.log("clicked confirm");
     setReservationMessage(
       "Thank you for confirming your reservation. Your host will be reaching out with further instructions"
     );
