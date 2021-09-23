@@ -6,11 +6,15 @@
 .actual-review {
   margin: 0.5rem;
 }
-.actual-review img {
-  max-height: 75px;
-  max-width: 100%;
+.user-pic {
+  width: 77px;
+  height: 77px;
+  min-width: 77px;
   border-radius: 50%;
   margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-holder {
@@ -21,7 +25,7 @@
   height: 15vh;
 }
 .info-holder .info-left {
-  /* width: 30%; */
+  max-width: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;

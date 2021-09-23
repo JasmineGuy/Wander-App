@@ -115,10 +115,16 @@
   justify-content: center;
   width: 25%;
 }
-.pic-circle img {
+
+.host-pic {
+  width: 77px;
+  height: 77px;
+  min-width: 77px;
   border-radius: 50%;
-  max-height: 100px;
-  width: 90%;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text-row-2 {
   display: flex;

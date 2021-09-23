@@ -282,7 +282,7 @@ const Listing = () => {
                 </div>
 
                 <div className="pic-circle">
-                  <img alt="host" src={property.img_url} />
+                  <img className="host-pic" alt="host" src={property.img_url} />
                 </div>
               </div>
               <div className="bullets">

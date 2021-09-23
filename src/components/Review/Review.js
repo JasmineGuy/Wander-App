@@ -16,7 +16,7 @@ const Review = ({
       <div className="actual-review">
         <div className="info-holder">
           <div className="info-left">
-            <img alt="reviewer" src={image} />
+            <img className="user-pic" alt="reviewer" src={image} />
             <h4>{first}</h4>
           </div>
           {reviewData && reviewData.user_id === 31 ? (
