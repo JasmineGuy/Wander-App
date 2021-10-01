@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "client", "../build")));
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
-const port = process.env.PORT || 3000;
+const port = SERVER_PORT || 3000;
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -39,6 +39,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "../build", "index.html"));
 });
 
-app.listen(SERVER_PORT, () => {
+app.listen(port, () => {
   console.log(`Server listening on port ${SERVER_PORT}`);
 });
