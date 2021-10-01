@@ -28,6 +28,12 @@
     "redux": "^4.1.1",
     "web-vitals": "^1.1.2"
   },
+
+  {
+  "engines": {
+    "node": "~14.18.0"
+  }
+}
   "scripts": {
     "start": "node ./server/index.js && npm build",
     "build": "react-scripts build",
