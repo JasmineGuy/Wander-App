@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "client", "../build")));
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 massive({
   connectionString: CONNECTION_STRING,
