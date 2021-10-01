@@ -12,7 +12,7 @@ const port = SERVER_PORT || 3000;
 
 massive({
   connectionString: CONNECTION_STRING,
-  ssl: { rejectUnauthorized: false },
+  ssl: { rejectUnauthorized: false, require: true },
 })
   .then((dbInstance) => {
     app.set("db", dbInstance);
