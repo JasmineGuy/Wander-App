@@ -2,10 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const ctrl = require("./properties_controller");
+const path = require("path");
 
 const app = express();
+app.use(express.static(path.join(__dirname, "client", "../build")));
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
+// const port = process.env.PORT || 3000;
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -32,7 +35,9 @@ app.post("/api/favorites", ctrl.addFavorite);
 
 app.delete("/api/review/:id", ctrl.deleteReview);
 
-// app.get("/api/campers", ctrl.getCampers);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "../build", "index.html"));
+});
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on port ${SERVER_PORT}`);
