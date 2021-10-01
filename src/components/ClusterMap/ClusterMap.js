@@ -1,12 +1,7 @@
 import React from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-  // MarkerClusterer,
-} from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import "./ClusterMap.css";
 
 const containerStyle = {
@@ -21,7 +16,7 @@ const ClusterMap = ({ coordinates, averageLat, averageLng }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+    googleMapsApiKey: REACT_APP_GOOGLE_API_KEY,
   });
 
   const center = { lat: averageLat, lng: averageLng };
