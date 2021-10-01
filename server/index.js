@@ -15,6 +15,7 @@ massive({
   ssl: { rejectUnauthorized: false, require: true },
 })
   .then((dbInstance) => {
+    console.log("database connected");
     app.set("db", dbInstance);
   })
   .catch((err) => console.log(err));
@@ -32,7 +33,6 @@ app.put("/api/review/:id", ctrl.editReview);
 app.get("/api/average/:id", ctrl.getAverage);
 app.get("/api/count/:id", ctrl.getCount);
 app.post("/api/favorites", ctrl.addFavorite);
-
 app.delete("/api/review/:id", ctrl.deleteReview);
 
 app.get("*", (req, res) => {
