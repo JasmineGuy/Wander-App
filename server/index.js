@@ -39,6 +39,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "../build", "index.html"));
 });
 
-app.listen(port, () => {
+app.listen(5432, () => {
   console.log(`Server listening on port ${SERVER_PORT}`);
 });
