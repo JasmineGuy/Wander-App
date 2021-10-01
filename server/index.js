@@ -5,7 +5,7 @@ const ctrl = require("./properties_controller");
 const path = require("path");
 
 const app = express();
-app.use(express.static(path.join(__dirname, "client", "../build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 const { PORT, DATABASE_URL } = process.env;
 const port = PORT || 4000;
@@ -36,7 +36,7 @@ app.post("/api/favorites", ctrl.addFavorite);
 app.delete("/api/review/:id", ctrl.deleteReview);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "../build", "index.html"));
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 app.listen(port, () => {
