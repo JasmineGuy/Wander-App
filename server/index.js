@@ -7,11 +7,11 @@ const path = require("path");
 const app = express();
 app.use(express.static(path.join(__dirname, "client", "../build")));
 
-const { PORT, CONNECTION_STRING } = process.env;
+const { PORT, DATABASE_URL } = process.env;
 const port = PORT || 4000;
 
 massive({
-  connectionString: CONNECTION_STRING,
+  connectionString: DATABASE_URL,
   ssl: { rejectUnauthorized: false, require: true },
 })
   .then((dbInstance) => {
