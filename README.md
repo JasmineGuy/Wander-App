@@ -11,25 +11,35 @@ https://user-images.githubusercontent.com/85497001/136992001-819a6756-117a-41c5-
 <h2>App Functionality</h2>
 <ul>
 <li>App will allow users to search for vacation rentals by city or state.</li>
-![Wander Demo2](https://user-images.githubusercontent.com/85497001/136991586-164b05c8-2650-44c6-b841-3a8ba4f4fe36.gif)
-  
+
+  ![Wander Demo2](https://user-images.githubusercontent.com/85497001/136993594-153e9247-083e-4958-91d7-61611c230b16.gif)
+
 
 
 
 <li>App will allow users to view rental details and reviews</li>
 <li>App will allow users to view rental locations on a map</li>
-https://user-images.githubusercontent.com/85497001/136992250-485b145e-0366-43c0-89eb-cd30ed28bf05.mp4
+
+
+https://user-images.githubusercontent.com/85497001/136995068-ae8dac69-51d7-48e5-834f-423d9dbd7c6f.mp4
+
+
+
   
 <li>App will allow users to select dates to book a rental.</li>
 <li>App will allow users to create, edit and delete reviews for listings.</li>
 
-https://user-images.githubusercontent.com/85497001/136992765-dff7854c-bed5-4104-a9e6-8e8635766f3f.mp4
+https://user-images.githubusercontent.com/85497001/136994760-f8f33aed-2be0-4cfb-83db-bc3db962dc4e.mp4
+
+
+
 
 
 <li>Users can add listings to a "Trip Board"</li>
-  
 
-https://user-images.githubusercontent.com/85497001/136992349-00c0d9b8-6533-4873-b04d-50576c5cc5d9.mp4
+https://user-images.githubusercontent.com/85497001/136994970-44dad290-afe8-4d8d-92da-31e6b8729a6d.mp4
+
+
 
 
 </ul>
