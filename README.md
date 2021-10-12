@@ -27,6 +27,11 @@ https://user-images.githubusercontent.com/85497001/136995068-ae8dac69-51d7-48e5-
 
   
 <li>App will allow users to select dates to book a rental.</li>
+
+https://user-images.githubusercontent.com/85497001/136997379-c83e6a25-15fc-4460-bc19-bfdd7a41cc51.mp4
+
+  
+  
 <li>App will allow users to create, edit and delete reviews for listings.</li>
 
 https://user-images.githubusercontent.com/85497001/136994760-f8f33aed-2be0-4cfb-83db-bc3db962dc4e.mp4
